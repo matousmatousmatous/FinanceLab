@@ -17,7 +17,21 @@
       "Bash(npm --prefix /Users/mac/FinanceLab install @supabase/supabase-js)",
       "Bash(ls /Users/mac/FinanceLab/.env*)",
       "Bash(ls /Users/mac/FinanceLab/*.html /Users/mac/FinanceLab/*.js)",
-      "Bash(convert --version)"
+      "Bash(convert --version)",
+      "Bash(ls -la /Users/mac/FinanceLab/.env*)",
+      "Read(//Users/mac/**)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"Fix PDF detection for Supabase Storage — default to standard paths when Supabase enabled:*)",
+      "Bash(git push:*)",
+      "Bash(git commit:*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(find /Users/mac/FinanceLab/.claude/worktrees/stoic-davinci -type f -name package.json -o -name tsconfig.json -o -name .env* -o -name *.config.*)",
+      "Bash(for f:*)",
+      "Bash(do echo:*)",
+      "Read(//Users/mac/FinanceLab/.claude/worktrees/stoic-davinci/**)",
+      "Bash(done)",
+      "Bash(python3 -c \":*)",
+      "Bash(brew list:*)"
     ]
   }
 }

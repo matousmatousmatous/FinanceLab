@@ -1075,8 +1075,7 @@ async function startCurriculumSession(chapter, session, curriculum) {
 }
 
 async function startLearnPhase(topic, chapterText) {
-  setLoading(true, 'Preparing lesson structure…');
-  // Switch message after 4s to reflect Pass 2 writing phase
+  setLoading(true, 'Loading lesson…');
   const stageTimer = setTimeout(() => setLoading(true, 'Writing lesson…'), 4000);
   try {
     const session = state.currentSession?.session;

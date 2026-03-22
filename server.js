@@ -81,6 +81,41 @@ function writeSRS(data) {
   fs.writeFileSync(SRS_FILE, JSON.stringify(data, null, 2));
 }
 
+const LESSONS_DIR = process.env.LESSONS_DIR || path.join(__dirname, 'lessons');
+
+function loadPreGeneratedLesson(sessionId) {
+  const filePath = path.join(LESSONS_DIR, `${sessionId}.md`);
+  if (!fs.existsSync(filePath)) return null;
+  const raw = fs.readFileSync(filePath, 'utf8');
+  const lines = raw.split('\n');
+
+  // Extract title from first # heading
+  const titleIdx = lines.findIndex(l => l.startsWith('# '));
+  const title = titleIdx !== -1 ? lines[titleIdx].replace(/^# /, '').trim() : sessionId;
+
+  // Extract key takeaways from ## Key Takeaways section
+  const tkIdx = lines.findIndex(l => l.trim() === '## Key Takeaways');
+  const keyTakeaways = [];
+  if (tkIdx !== -1) {
+    for (let i = tkIdx + 1; i < lines.length; i++) {
+      const line = lines[i].trim();
+      if (line.startsWith('- ')) keyTakeaways.push(line.slice(2).trim());
+      else if (line.startsWith('## ')) break;
+    }
+  }
+
+  // Strip the # title line (rendered separately) and the ## Key Takeaways section
+  // (rendered separately by the client) from the content body
+  const bodyLines = lines.filter((_, i) => {
+    if (i === titleIdx) return false;            // drop the # title
+    if (tkIdx !== -1 && i >= tkIdx) return false; // drop Key Takeaways section
+    return true;
+  });
+  const content = bodyLines.join('\n').trimStart();
+
+  return { title, content, keyTakeaways };
+}
+
 function readCurriculum() {
   try { return JSON.parse(fs.readFileSync(CURRICULUM_FILE, 'utf8')); }
   catch { return null; }
@@ -539,6 +574,20 @@ const LESSON_SYSTEM = `You are a sharp, no-nonsense finance tutor preparing a st
 app.post('/api/learn', async (req, res) => {
   try {
     const { topicId, topicTitle, chapterText, learningObjectives, analystNote, spotlightCompany } = req.body;
+
+    // ── Pre-generated lesson check ────────────────────────────────────────────
+    const preGen = loadPreGeneratedLesson(topicId);
+    if (preGen) {
+      console.log(`[/api/learn] Serving pre-generated lesson for "${topicId}"`);
+      const prog = readProgress();
+      if (!prog.sessionState) prog.sessionState = {};
+      prog.sessionState.topicId = topicId;
+      prog.sessionState.phase = 'learn';
+      prog.sessionState.learnCompleted = true;
+      prog.sessionState.timestamp = new Date().toISOString();
+      writeProgress(prog);
+      return res.json({ ...preGen, outline: null });
+    }
 
     const charCount = chapterText ? chapterText.length : 0;
     console.log(`[/api/learn] topic="${topicTitle}" chapterText=${charCount} chars${charCount === 0 ? ' ⚠ NO PDF TEXT' : ''}`);
