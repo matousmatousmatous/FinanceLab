@@ -23,7 +23,7 @@
         {
           "id": "ch01-s01",
           "sessionNumber": 1,
-          "title": "The Language of Business & the IFRS Framework",
+          "title": "The Accounting Framework & Financial Statements",
           "focusPages": { "book": "1–21", "pdf": "37–57" },
           "learningObjectives": [
             "Explain why accounting is called the 'language of business' and who uses financial reports",
@@ -101,7 +101,7 @@
         {
           "id": "ch02-s01",
           "sessionNumber": 1,
-          "title": "The Accounting System: Accounts, Debits & Credits",
+          "title": "Inventory",
           "focusPages": { "book": "58–82", "pdf": "94–118" },
           "learningObjectives": [
             "Define a business transaction and explain what makes an event recordable",
@@ -177,7 +177,7 @@
         {
           "id": "ch03-s01",
           "sessionNumber": 1,
-          "title": "Accrual vs. Cash Basis & Adjusting Entries",
+          "title": "Accounts Receivable",
           "focusPages": { "book": "129–155", "pdf": "165–191" },
           "learningObjectives": [
             "Explain the difference between accrual accounting and cash-basis accounting with real examples",
@@ -257,7 +257,7 @@
         {
           "id": "ch04-s01",
           "sessionNumber": 1,
-          "title": "Reading Annual Reports & IFRS Presentation Standards",
+          "title": "The Statement of Cash Flows",
           "focusPages": { "book": "207–252", "pdf": "243–288" },
           "learningObjectives": [
             "Describe the structure of a corporate annual report and what each section contains",
@@ -305,7 +305,7 @@
         {
           "id": "ch05-s01",
           "sessionNumber": 1,
-          "title": "Internal Controls, Cash Management & Bank Reconciliation",
+          "title": "Measuring Performance",
           "focusPages": { "book": "253–285", "pdf": "289–321" },
           "learningObjectives": [
             "Define internal control and explain its five components (COSO framework: control environment, risk assessment, control activities, information/communication, monitoring)",
@@ -383,7 +383,7 @@
         {
           "id": "ch06-s01",
           "sessionNumber": 1,
-          "title": "Inventory Accounting: FIFO, Weighted Average & Lower of Cost",
+          "title": "Minority Interest & Consolidation",
           "focusPages": { "book": "328–388", "pdf": "364–424" },
           "learningObjectives": [
             "Distinguish between a merchandising company and a service company; understand the cost of goods sold (COGS) calculation",
@@ -433,7 +433,7 @@
         {
           "id": "ch07-s01",
           "sessionNumber": 1,
-          "title": "Property, Plant & Equipment: Recognition, Depreciation & Disposal",
+          "title": "Mergers & Acquisitions",
           "focusPages": { "book": "389–430", "pdf": "425–466" },
           "learningObjectives": [
             "Apply the recognition criteria for PPE (IAS 16): probable future economic benefits, reliable measurement of cost",
