@@ -1,0 +1,868 @@
+{
+  "meta": {
+    "textbook": "Principles of Corporate Finance, Seventh Edition",
+    "authors": "Richard A. Brealey, Stewart C. Myers",
+    "publisher": "McGraw-Hill",
+    "year": 2003,
+    "totalPdfPages": 1061,
+    "prerequisite": "curriculum_harrison.json",
+    "description": "Corporate finance curriculum following completion of Harrison Financial Accounting. Covers valuation, risk, capital structure, and M&A. 17 chapters selected for PE/IB/M&A relevance. PDF pages are direct — no offset needed.",
+    "chaptersIncluded": [1,2,3,4,5,6,7,8,9,11,13,14,15,16,17,18,19,33],
+    "chaptersSkipped": "10 (sensitivity analysis — covered in sessions), 12 (agency theory — touched in Ch14), 20-22 (options — future module), 23-32 (specialized financing, working capital), 34-35 (governance, conclusion)"
+  },
+  "chapters": [
+    {
+      "id": "bm01",
+      "number": 1,
+      "title": "Finance and the Financial Manager",
+      "pdfPageStart": 6,
+      "pdfPageEnd": 15,
+      "part": "I — Value",
+      "difficulty": 1,
+      "sessions": [
+        {
+          "id": "bm01-s01",
+          "sessionNumber": 1,
+          "title": "What Corporate Finance Is Actually About",
+          "focusPages": { "pdf": "6–15" },
+          "learningObjectives": [
+            "State the two fundamental questions of corporate finance: investment decision and financing decision",
+            "Distinguish real assets from financial assets",
+            "Explain the goal of the firm: maximize shareholder value (not profit, not revenue)",
+            "Describe the role of the financial manager: investment, financing, and cash management",
+            "Understand the separation of ownership and management and the principal-agent problem",
+            "Explain why financial markets matter: they determine the opportunity cost of capital",
+            "Introduce the concept of the opportunity cost of capital as the benchmark return"
+          ],
+          "keyConcepts": [
+            "Investment decision (capital budgeting): which real assets to acquire",
+            "Financing decision: how to fund those assets (debt vs. equity)",
+            "Goal of the firm: maximize market value of equity (not accounting profit)",
+            "Principal-agent problem: managers may not always act in shareholders' interests",
+            "Opportunity cost of capital: the return foregone by investing in a project instead of financial markets",
+            "Real assets: plant, equipment, IP, brand; Financial assets: stocks, bonds, derivatives"
+          ],
+          "coreFormulasForLibrary": [
+            "Goal of the Firm = Maximize market value of shareholders' equity",
+            "Financial Manager's job: (1) Capital budgeting — which assets to buy; (2) Financing — how to pay for them; (3) Working capital management — day-to-day cash flows",
+            "Opportunity Cost of Capital = Return foregone by not investing in the best available alternative of equivalent risk"
+          ],
+          "quizTopics": [
+            "Multiple choice: a manager maximizes quarterly earnings at the expense of long-term investment — is this consistent with the goal of the firm?",
+            "Short answer: what is the difference between a real asset and a financial asset? Give two examples of each.",
+            "Short answer: explain the principal-agent problem and give one mechanism used to align manager and shareholder interests"
+          ],
+          "analystNote": "Every PE and IB decision is an application of these two questions. A buyout is an investment decision; the debt/equity mix in the cap structure is the financing decision. The whole job of an analyst is to determine whether a real asset is worth more than it costs."
+        }
+      ]
+    },
+    {
+      "id": "bm02",
+      "number": 2,
+      "title": "Present Value and the Opportunity Cost of Capital",
+      "pdfPageStart": 16,
+      "pdfPageEnd": 35,
+      "part": "I — Value",
+      "difficulty": 2,
+      "sessions": [
+        {
+          "id": "bm02-s01",
+          "sessionNumber": 1,
+          "title": "The Time Value of Money & Net Present Value",
+          "focusPages": { "pdf": "16–35" },
+          "learningObjectives": [
+            "Explain why a dollar today is worth more than a dollar tomorrow (time value of money)",
+            "Calculate present value (PV) of a single future cash flow",
+            "Calculate net present value (NPV) of an investment",
+            "Explain the NPV decision rule: invest if NPV > 0",
+            "Understand why the discount rate equals the opportunity cost of capital",
+            "Distinguish between the rate of return and the cost of capital",
+            "Use the concept of risk to adjust the discount rate: riskier cash flows require higher discount rates"
+          ],
+          "keyConcepts": [
+            "Present Value: today's value of a future cash flow, discounted at the opportunity cost of capital",
+            "Net Present Value: PV of all inflows minus cost of investment",
+            "NPV rule: accept all projects with NPV > 0; reject if NPV < 0",
+            "Discount rate = opportunity cost of capital = rate of return investors can earn elsewhere at equivalent risk",
+            "Rate of return = profit / investment",
+            "Future Value: how much a current investment grows to"
+          ],
+          "coreFormulasForLibrary": [
+            "Present Value (PV) = C₁ / (1 + r)",
+            "Net Present Value (NPV) = C₀ + C₁/(1+r) = −Investment + PV of cash flows",
+            "Rate of Return = (C₁ − Investment) / Investment",
+            "NPV Rule: Invest if NPV > 0; the project adds value to shareholders",
+            "Future Value (FV) = C₀ × (1 + r)ᵗ"
+          ],
+          "quizTopics": [
+            "Fill-in-the-blank: an investment costs €100,000 today and pays back €115,000 in one year. The opportunity cost of capital is 10%. Calculate NPV and state whether to invest.",
+            "Multiple choice: if the discount rate rises, what happens to the present value of a future cash flow?",
+            "Short answer: explain in plain language why NPV is a better decision rule than payback period"
+          ],
+          "analystNote": "NPV is the mathematical foundation of every DCF model you will ever build. Every IB analyst's job is to determine whether an investment has positive NPV. If you can't explain NPV clearly in an interview, the rest of the technical questions won't matter."
+        }
+      ]
+    },
+    {
+      "id": "bm03",
+      "number": 3,
+      "title": "How to Calculate Present Values",
+      "pdfPageStart": 36,
+      "pdfPageEnd": 61,
+      "part": "I — Value",
+      "difficulty": 2,
+      "sessions": [
+        {
+          "id": "bm03-s01",
+          "sessionNumber": 1,
+          "title": "Perpetuities, Annuities & Multi-Period Discounting",
+          "focusPages": { "pdf": "36–61" },
+          "learningObjectives": [
+            "Calculate present value of multi-period cash flows by discounting each period separately",
+            "Apply compound interest and distinguish it from simple interest",
+            "Calculate PV of a perpetuity: a constant cash flow forever",
+            "Calculate PV of a growing perpetuity (Gordon Growth Model foundation)",
+            "Calculate PV of an annuity: a constant cash flow for a fixed number of periods",
+            "Understand nominal vs. real interest rates and the Fisher equation",
+            "Apply continuous compounding"
+          ],
+          "keyConcepts": [
+            "Compound interest: interest earns interest — the foundation of all discounting",
+            "Perpetuity: constant cash flow C every period forever; PV = C/r",
+            "Growing perpetuity: cash flow grows at rate g forever; PV = C/(r−g)",
+            "Annuity: constant cash flow for T periods; has a closed-form PV formula",
+            "Fisher equation: (1 + nominal rate) = (1 + real rate)(1 + inflation rate)",
+            "Real vs. nominal: always discount real cash flows at real rates, nominal at nominal"
+          ],
+          "coreFormulasForLibrary": [
+            "PV of Perpetuity = C / r (constant cash flow C forever at discount rate r)",
+            "PV of Growing Perpetuity = C₁ / (r − g) (requires r > g)",
+            "PV of Annuity = C × [1/r − 1/(r(1+r)ᵀ)]",
+            "Fisher Equation: (1 + r_nominal) = (1 + r_real) × (1 + inflation)",
+            "Multi-period PV: PV = C₁/(1+r) + C₂/(1+r)² + ... + Cₜ/(1+r)ᵗ"
+          ],
+          "quizTopics": [
+            "Fill-in-the-blank: a bond pays €50 per year forever. The discount rate is 8%. What is its PV? If the discount rate rises to 10%, what happens to the PV?",
+            "Fill-in-the-blank: a company expects FCF of €10m next year, growing at 3% forever. WACC is 9%. What is the terminal value (PV of growing perpetuity)?",
+            "Multiple choice: nominal interest rate is 8%, inflation is 3%. What is the real interest rate (approximately)?"
+          ],
+          "analystNote": "The growing perpetuity formula IS the terminal value formula in every DCF you will build. The terminal value often represents 60–80% of total DCF value in PE models. Getting this formula wrong is the single most common modelling error."
+        }
+      ]
+    },
+    {
+      "id": "bm04",
+      "number": 4,
+      "title": "The Value of Common Stocks",
+      "pdfPageStart": 62,
+      "pdfPageEnd": 93,
+      "part": "I — Value",
+      "difficulty": 2,
+      "sessions": [
+        {
+          "id": "bm04-s01",
+          "sessionNumber": 1,
+          "title": "Valuing Stocks: Dividends, Growth & the Price-Earnings Ratio",
+          "focusPages": { "pdf": "62–93" },
+          "learningObjectives": [
+            "Derive the Dividend Discount Model (DDM): stock price = PV of all future dividends",
+            "Apply the Gordon Growth Model: constant-growth DDM",
+            "Distinguish between value stocks (assets in place) and growth stocks (PVGO)",
+            "Understand what the P/E ratio really measures: price per dollar of current earnings",
+            "Decompose stock price into assets in place + present value of growth opportunities (PVGO)",
+            "Explain why high P/E doesn't always mean overvalued — it may reflect high expected growth",
+            "Understand how stock prices change when expected returns or growth rates change"
+          ],
+          "keyConcepts": [
+            "Dividend Discount Model: P₀ = DIV₁/(r−g) for constant growth",
+            "Expected return on stock: r = DIV₁/P₀ + g (dividend yield + capital gains yield)",
+            "PVGO: Present Value of Growth Opportunities — the portion of stock price attributable to future investments",
+            "P/E ratio = 1/r if no growth; P/E > 1/r implies positive PVGO",
+            "Plowback ratio (b): fraction of earnings reinvested; payout ratio = 1 − b",
+            "Sustainable growth rate: g = ROE × plowback ratio"
+          ],
+          "coreFormulasForLibrary": [
+            "Gordon Growth Model (DDM): P₀ = DIV₁ / (r − g)",
+            "Expected Return on Stock: r = DIV₁/P₀ + g (dividend yield + growth rate)",
+            "Stock Price = EPS/r + PVGO (assets in place + growth opportunities)",
+            "Sustainable Growth Rate: g = ROE × Plowback Ratio (b)",
+            "P/E Ratio = P₀ / EPS₁ — high P/E implies market expects high future growth or PVGO"
+          ],
+          "quizTopics": [
+            "Fill-in-the-blank: a stock pays a dividend of €3 next year, growing at 5% forever. Investors require 10% return. Calculate the stock price.",
+            "Multiple choice: two companies have the same EPS but different P/E ratios. What does this imply?",
+            "Short answer: explain what PVGO is and why a company with high ROE should reinvest rather than pay dividends"
+          ],
+          "analystNote": "The Gordon Growth Model is the terminal value formula in disguise. When you build a DCF and write TV = FCF/(WACC−g), you are using exactly this formula. Also: understanding PVGO explains why growth companies trade at 30x earnings while mature companies trade at 10x."
+        }
+      ]
+    },
+    {
+      "id": "bm05",
+      "number": 5,
+      "title": "Why NPV Leads to Better Investment Decisions",
+      "pdfPageStart": 94,
+      "pdfPageEnd": 121,
+      "part": "I — Value",
+      "difficulty": 2,
+      "sessions": [
+        {
+          "id": "bm05-s01",
+          "sessionNumber": 1,
+          "title": "NPV vs. IRR, Payback & Other Criteria",
+          "focusPages": { "pdf": "94–121" },
+          "learningObjectives": [
+            "Explain why NPV is the gold-standard investment criterion",
+            "Calculate and apply Internal Rate of Return (IRR): the discount rate at which NPV = 0",
+            "State the IRR decision rule: invest if IRR > opportunity cost of capital",
+            "Identify the pitfalls of IRR: multiple IRRs, scale problem, timing problem, lending vs. borrowing",
+            "Calculate payback period and profitability index and explain their weaknesses",
+            "Apply NPV correctly to mutually exclusive projects and projects with different lives",
+            "Understand why NPV additivity matters for corporate portfolio decisions"
+          ],
+          "keyConcepts": [
+            "IRR: the discount rate making NPV = 0; accept if IRR > cost of capital",
+            "IRR pitfall 1: multiple IRRs possible when cash flows change sign more than once",
+            "IRR pitfall 2: scale — a project with high IRR but small scale may have lower NPV than a large project",
+            "IRR pitfall 3: timing — IRR favors quick payback; NPV correctly accounts for all cash flows",
+            "Payback period: time to recover investment — ignores time value and cash flows after payback",
+            "NPV additivity: NPV(A+B) = NPV(A) + NPV(B) — allows portfolio-level analysis"
+          ],
+          "coreFormulasForLibrary": [
+            "IRR Definition: NPV = 0 = C₀ + C₁/(1+IRR) + C₂/(1+IRR)² + ...",
+            "IRR Rule: Accept project if IRR > opportunity cost of capital (use with caution)",
+            "Payback Period = Number of years to recover initial investment (ignores TVM — weak rule)",
+            "Profitability Index = NPV / Initial Investment (useful for ranking under capital rationing)",
+            "NPV Additivity: NPV(A) + NPV(B) = NPV(A+B) — NPV is the only additive criterion"
+          ],
+          "quizTopics": [
+            "Fill-in-the-blank: project costs €1,000 today, pays €600 in year 1 and €600 in year 2. Cost of capital is 10%. Calculate NPV and IRR.",
+            "Multiple choice: two mutually exclusive projects have IRR of 25% and 20% respectively. Which should you choose?",
+            "Short answer: give two scenarios where following the IRR rule leads to the wrong decision"
+          ],
+          "analystNote": "IRR is how PE firms communicate returns — 'this deal generates a 25% IRR over 5 years.' But internally, smart analysts also check NPV and MOIC (multiple of invested capital). IRR can be gamed by timing cash flows; always triangulate."
+        }
+      ]
+    },
+    {
+      "id": "bm06",
+      "number": 6,
+      "title": "Making Investment Decisions with the NPV Rule",
+      "pdfPageStart": 122,
+      "pdfPageEnd": 154,
+      "part": "I — Value",
+      "difficulty": 3,
+      "sessions": [
+        {
+          "id": "bm06-s01",
+          "sessionNumber": 1,
+          "title": "Building a DCF: Cash Flows, CapEx, Working Capital & Tax",
+          "focusPages": { "pdf": "122–154" },
+          "learningObjectives": [
+            "Apply the golden rule: discount cash flows, not accounting profits",
+            "Identify incremental cash flows: only changes in cash flow caused by the decision",
+            "Avoid sunk costs: they are irrelevant to the investment decision",
+            "Include opportunity costs: foregone cash flows count",
+            "Calculate the after-tax operating cash flow from a project",
+            "Account for changes in net working capital as a cash flow",
+            "Calculate terminal value / salvage value at project end",
+            "Build a complete project-level DCF from scratch"
+          ],
+          "keyConcepts": [
+            "Cash flow, not profit: add back depreciation, subtract CapEx and WC increases",
+            "Incremental cash flows: only changes attributable to the project",
+            "Sunk costs: already spent, irrelevant — do not include",
+            "Opportunity costs: must include (e.g. using a building you own has a cost)",
+            "Depreciation tax shield: depreciation reduces taxable income → tax saving = D&A × tax rate",
+            "Working capital: increase in NWC = use of cash; decrease = source of cash",
+            "After-tax operating CF = EBIT × (1 − tax rate) + D&A"
+          ],
+          "coreFormulasForLibrary": [
+            "After-Tax Operating Cash Flow = EBIT × (1 − Tax Rate) + Depreciation",
+            "Free Cash Flow to Firm (FCFF) = EBIT(1−t) + D&A − CapEx − ΔNWC",
+            "Depreciation Tax Shield = Depreciation × Tax Rate (reduces tax paid, not a cash cost)",
+            "Terminal Value (Gordon Growth) = FCF_final × (1+g) / (WACC − g)",
+            "Sunk Cost Rule: If already spent and unrecoverable → exclude from NPV analysis"
+          ],
+          "quizTopics": [
+            "Fill-in-the-blank: given revenue, COGS, D&A, CapEx, working capital changes and tax rate, build a 3-year project FCF and calculate NPV at 10% WACC",
+            "Multiple choice: your company spent €500k on a feasibility study last year. Should it be included in the NPV analysis of the project?",
+            "Short answer: explain why an increase in accounts receivable is a cash outflow even though it appears as an asset on the balance sheet"
+          ],
+          "analystNote": "This is the chapter that separates analysts who understand finance from those who just know accounting. Every LBO model, DCF, and capital allocation decision requires you to convert accounting statements into cash flows. Master this before anything else in modelling."
+        }
+      ]
+    },
+    {
+      "id": "bm07",
+      "number": 7,
+      "title": "Introduction to Risk, Return, and the Opportunity Cost of Capital",
+      "pdfPageStart": 155,
+      "pdfPageEnd": 188,
+      "part": "II — Risk",
+      "difficulty": 2,
+      "sessions": [
+        {
+          "id": "bm07-s01",
+          "sessionNumber": 1,
+          "title": "Risk, Diversification & Market Risk",
+          "focusPages": { "pdf": "155–188" },
+          "learningObjectives": [
+            "Define risk as the variance/standard deviation of investment returns",
+            "Distinguish unique (idiosyncratic) risk from market (systematic) risk",
+            "Explain why diversification eliminates unique risk but not market risk",
+            "Understand that investors are only compensated for market risk in a competitive market",
+            "Interpret historical equity risk premium data: what return does the market demand over risk-free rate?",
+            "Define beta as a measure of a stock's sensitivity to market movements",
+            "Understand that a diversified portfolio's risk depends only on the betas of its components"
+          ],
+          "keyConcepts": [
+            "Unique/idiosyncratic risk: company-specific; eliminated through diversification",
+            "Market/systematic risk: economy-wide; cannot be diversified away",
+            "Variance and standard deviation: measures of spread of returns",
+            "Equity risk premium (ERP): excess return of equities over risk-free rate; historically ~7% in US",
+            "Beta (β): sensitivity of stock return to market return; β=1 means average market risk",
+            "Portfolio risk: as you add stocks, unique risk falls; market risk remains"
+          ],
+          "coreFormulasForLibrary": [
+            "Portfolio Variance (2 assets) = x₁²σ₁² + x₂²σ₂² + 2x₁x₂ρ₁₂σ₁σ₂",
+            "Beta (β) = Covariance(stock, market) / Variance(market) = ρ × (σ_stock / σ_market)",
+            "Equity Risk Premium (ERP) = E(R_market) − R_f (historically ~5–7% in developed markets)",
+            "Unique risk → diversified away; Market risk → priced by the market; only β matters"
+          ],
+          "quizTopics": [
+            "Multiple choice: stock A has high standard deviation but low beta. Stock B has low standard deviation but high beta. Which requires a higher expected return from investors?",
+            "Short answer: explain in plain English why a pharmaceutical company discovering that its lead drug has failed is unique risk, not market risk",
+            "Fill-in-the-blank: a portfolio holds equal weights in two stocks. Stock 1: σ=20%, Stock 2: σ=30%, correlation=0.4. Calculate portfolio standard deviation."
+          ],
+          "analystNote": "The insight that only market risk matters for pricing is non-obvious but critical. PE funds hold concentrated portfolios and add unique risk — which is why their investors expect higher returns than public equity. Understanding this is why LPs demand 20%+ IRR, not 10%."
+        }
+      ]
+    },
+    {
+      "id": "bm08",
+      "number": 8,
+      "title": "Risk and Return",
+      "pdfPageStart": 189,
+      "pdfPageEnd": 222,
+      "part": "II — Risk",
+      "difficulty": 3,
+      "sessions": [
+        {
+          "id": "bm08-s01",
+          "sessionNumber": 1,
+          "title": "CAPM: Pricing Risk & Estimating the Cost of Equity",
+          "focusPages": { "pdf": "189–222" },
+          "learningObjectives": [
+            "State and derive the Capital Asset Pricing Model (CAPM)",
+            "Interpret the Security Market Line (SML): the linear relationship between beta and expected return",
+            "Calculate the expected return on any asset given its beta, risk-free rate, and market risk premium",
+            "Understand CAPM assumptions and their limitations in practice",
+            "Use CAPM to estimate the cost of equity for a company",
+            "Distinguish between CAPM and APT (Arbitrage Pricing Theory) as alternative models",
+            "Understand the Fama-French three-factor model as an empirical extension of CAPM"
+          ],
+          "keyConcepts": [
+            "CAPM: E(R) = Rf + β(E(Rm) − Rf); expected return = risk-free rate + beta × market risk premium",
+            "Security Market Line (SML): plots expected return vs. beta — all fairly priced assets lie on it",
+            "Assets above SML: underpriced (positive alpha); below SML: overpriced (negative alpha)",
+            "CAPM assumptions: rational investors, no transaction costs, homogeneous expectations",
+            "Cost of equity via CAPM: the return required by equity investors",
+            "Fama-French factors: market, size (SMB), and value (HML) explain more of returns than CAPM alone"
+          ],
+          "coreFormulasForLibrary": [
+            "CAPM: E(R_i) = R_f + β_i × (E(R_m) − R_f)",
+            "Cost of Equity (CAPM) = Risk-Free Rate + Beta × Equity Risk Premium",
+            "Alpha (α) = Actual Return − Expected Return per CAPM (positive alpha = outperformance)",
+            "Security Market Line: intercept = R_f, slope = ERP = E(R_m) − R_f",
+            "Fama-French 3-Factor: E(R) = R_f + β_mkt×ERP + β_smb×SMB + β_hml×HML"
+          ],
+          "quizTopics": [
+            "Fill-in-the-blank: risk-free rate = 3%, ERP = 6%, beta = 1.3. Calculate expected return using CAPM.",
+            "Multiple choice: a stock has CAPM expected return of 10% but its actual expected return is 13%. Where does it plot relative to the SML?",
+            "Short answer: name two empirical failures of CAPM and explain how the Fama-French model addresses them"
+          ],
+          "analystNote": "CAPM is used in every DCF to calculate cost of equity. In PE, analysts typically use unlevered beta from comparable companies, relever it for the target's capital structure, then apply CAPM. It's imperfect but it's the standard. Know it cold."
+        }
+      ]
+    },
+    {
+      "id": "bm09",
+      "number": 9,
+      "title": "Capital Budgeting and Risk",
+      "pdfPageStart": 223,
+      "pdfPageEnd": 255,
+      "part": "II — Risk",
+      "difficulty": 3,
+      "sessions": [
+        {
+          "id": "bm09-s01",
+          "sessionNumber": 1,
+          "title": "WACC, Project Discount Rates & Company vs. Project Beta",
+          "focusPages": { "pdf": "223–255" },
+          "learningObjectives": [
+            "Calculate Weighted Average Cost of Capital (WACC) from cost of equity and after-tax cost of debt",
+            "Explain why WACC is used as the discount rate in DCF valuation",
+            "Understand that WACC reflects the risk of the firm's assets, not just equity",
+            "Distinguish asset beta (unlevered) from equity beta (levered): the Hamada equation",
+            "Unlever and relever beta to estimate cost of equity for a different capital structure",
+            "Apply the company WACC vs. project-specific WACC: when to use each",
+            "Understand the certainty equivalent method as an alternative to risk-adjusted discounting"
+          ],
+          "keyConcepts": [
+            "WACC: weighted average of after-tax cost of debt and cost of equity, weighted by market values",
+            "After-tax cost of debt: Rd × (1 − tax rate); interest is tax-deductible",
+            "Asset beta (βA) = Unlevered beta: reflects business risk only, no financial risk",
+            "Equity beta (βE) = Levered beta: includes both business risk and financial risk from leverage",
+            "Hamada equation: βE = βA × (1 + D(1−t)/E)",
+            "When to use WACC: for projects with same risk as overall firm; use project beta for different-risk projects"
+          ],
+          "coreFormulasForLibrary": [
+            "WACC = (E/V) × R_e + (D/V) × R_d × (1 − Tax Rate)  where V = E + D",
+            "Hamada Equation: β_Levered = β_Unlevered × [1 + (D/E) × (1 − Tax Rate)]",
+            "Unlevering Beta: β_Asset = β_Equity / [1 + (D/E) × (1 − Tax Rate)]",
+            "After-Tax Cost of Debt = Pre-Tax Cost of Debt × (1 − Corporate Tax Rate)",
+            "Cost of Equity (CAPM) = R_f + β_Equity × ERP"
+          ],
+          "quizTopics": [
+            "Fill-in-the-blank: D/E = 0.5, tax rate = 25%, R_f = 3%, ERP = 6%, βA = 0.9, Rd = 5%. Calculate WACC step by step.",
+            "Multiple choice: a company acquires a target in a completely different industry. Should it use its own WACC to value the target?",
+            "Short answer: explain in plain English why levered beta is always higher than unlevered beta (for positive leverage)"
+          ],
+          "analystNote": "WACC calculation is the most-tested concept in IB technical interviews. Walk through it step by step: (1) cost of equity via CAPM, (2) after-tax cost of debt, (3) weight by market value capital structure. Every DCF model you build lives and dies on this number."
+        }
+      ]
+    },
+    {
+      "id": "bm11",
+      "number": 11,
+      "title": "Where Positive NPV Comes From",
+      "pdfPageStart": 287,
+      "pdfPageEnd": 310,
+      "part": "III — Practical Problems in Capital Budgeting",
+      "difficulty": 2,
+      "sessions": [
+        {
+          "id": "bm11-s01",
+          "sessionNumber": 1,
+          "title": "Competitive Advantage, Economic Moats & Value Creation",
+          "focusPages": { "pdf": "287–310" },
+          "learningObjectives": [
+            "Explain why in a competitive market, most NPV = 0 in equilibrium",
+            "Identify the sources of positive NPV: competitive advantage, barriers to entry, economic moats",
+            "Understand the link between strategy and finance: Porter's five forces and NPV",
+            "Explain why analysts should be skeptical of positive NPV projections without a clear strategic rationale",
+            "Apply the concept of economic rents: only firms with durable advantages earn above-cost returns",
+            "Use this framework to critically evaluate management's investment case in a deal context"
+          ],
+          "keyConcepts": [
+            "Competitive equilibrium: in efficient markets, competition drives NPV to zero",
+            "Economic rents: returns above the cost of capital; only sustainable with barriers to entry",
+            "Sources of moats: patents, brand, scale advantages, switching costs, network effects",
+            "Strategy-finance link: positive NPV = durable competitive advantage",
+            "Analyst skepticism: if a project shows high NPV but no obvious moat, question the assumptions"
+          ],
+          "coreFormulasForLibrary": [
+            "Economic Profit = NOPAT − (Capital Invested × WACC) — positive only if ROIC > WACC",
+            "ROIC = NOPAT / Invested Capital (key measure of value creation vs. destruction)",
+            "Value Creation condition: ROIC > WACC → positive NPV; ROIC < WACC → destroys value"
+          ],
+          "quizTopics": [
+            "Short answer: a new entrant projects 30% IRR on a restaurant business with no differentiation. Why should you be skeptical?",
+            "Multiple choice: which of the following is most likely to generate sustained positive NPV: a patent, a lower cost structure, being first to market, or a celebrity endorsement?",
+            "Short answer: explain ROIC vs. WACC as a value creation framework and how you would use it in a PE due diligence"
+          ],
+          "analystNote": "This is the most important conceptual chapter in the book for PE. Before building a model, an analyst should ask: why does this company earn above its cost of capital? If you can't answer that, the model's terminal value assumptions are probably wrong."
+        }
+      ]
+    },
+    {
+      "id": "bm13",
+      "number": 13,
+      "title": "Corporate Financing and the Six Lessons of Market Efficiency",
+      "pdfPageStart": 344,
+      "pdfPageEnd": 375,
+      "part": "IV — Financial Decisions and Market Efficiency",
+      "difficulty": 2,
+      "sessions": [
+        {
+          "id": "bm13-s01",
+          "sessionNumber": 1,
+          "title": "Efficient Markets: What Prices Actually Tell You",
+          "focusPages": { "pdf": "344–375" },
+          "learningObjectives": [
+            "Define the Efficient Market Hypothesis (EMH) in its three forms: weak, semi-strong, strong",
+            "Explain what 'prices reflect all available information' means in practice",
+            "State Brealey & Myers's six lessons of market efficiency for financial managers",
+            "Understand why EMH implies that beating the market consistently requires private information",
+            "Explain the implications of EMH for capital structure and financing decisions",
+            "Discuss the evidence for and against market efficiency (behavioral finance challenges)"
+          ],
+          "keyConcepts": [
+            "Weak form EMH: prices reflect all past price data (technical analysis doesn't work)",
+            "Semi-strong form: prices reflect all publicly available information (fundamental analysis doesn't generate alpha consistently)",
+            "Strong form: prices reflect all information including private (insider trading)",
+            "Six lessons: (1) markets have no memory; (2) trust market prices; (3) read entrails; (4) no financial illusions; (5) DIY alternative; (6) seen one, seen them all",
+            "Implications: companies cannot time the market; there are no cheap sources of financing"
+          ],
+          "coreFormulasForLibrary": [
+            "EMH Weak Form: P_t reflects all historical price data → technical analysis has no edge",
+            "EMH Semi-Strong Form: P_t reflects all public information → public fundamental analysis has no consistent edge",
+            "EMH Strong Form: P_t reflects all information including private → even insiders cannot earn excess returns",
+            "EMH implication for corporates: cannot issue overvalued equity 'for free' — market sees through it"
+          ],
+          "quizTopics": [
+            "Multiple choice: a portfolio manager claims to generate consistent 15% returns using only publicly available earnings data. Which form of EMH does this violate?",
+            "Short answer: explain why, if markets are semi-strong efficient, a CFO cannot expect to time equity issuance to exploit a 'window' when the stock is overvalued",
+            "Short answer: name two empirical anomalies that challenge the efficient market hypothesis"
+          ],
+          "analystNote": "PE firms are explicitly betting against market efficiency — they buy companies at prices they believe undervalue them, then improve operations or use financial engineering to create value. Understanding EMH tells you exactly what the PE model assumes markets are getting wrong."
+        }
+      ]
+    },
+    {
+      "id": "bm14",
+      "number": 14,
+      "title": "An Overview of Corporate Financing",
+      "pdfPageStart": 376,
+      "pdfPageEnd": 399,
+      "part": "IV — Financial Decisions and Market Efficiency",
+      "difficulty": 1,
+      "sessions": [
+        {
+          "id": "bm14-s01",
+          "sessionNumber": 1,
+          "title": "Equity, Debt & the Capital Structure Toolkit",
+          "focusPages": { "pdf": "376–399" },
+          "learningObjectives": [
+            "Describe the main securities corporations issue: common equity, preferred equity, straight debt, convertibles",
+            "Understand the classes of stock: common vs. preferred; voting rights, dividend preference",
+            "Describe the main types of corporate debt: bonds, bank loans, revolvers, term loans, subordinated debt",
+            "Understand debt covenants: maintenance vs. incurrence covenants and why they matter",
+            "Explain the differences between public and private debt markets",
+            "Introduce the leveraged buyout capital structure: senior secured, senior unsecured, mezzanine, equity"
+          ],
+          "keyConcepts": [
+            "Common equity: residual claim, voting rights, unlimited upside, last in liquidation",
+            "Preferred equity: fixed dividend, priority over common in liquidation, often no voting",
+            "Senior secured debt: lowest risk, first priority in bankruptcy, lowest yield",
+            "Subordinated/junior debt: higher risk, higher yield, second priority",
+            "Covenants: restrictions on borrower behavior (leverage ratio, interest coverage minimums)",
+            "LBO capital structure: typically 60–70% debt, 30–40% equity, layered seniority"
+          ],
+          "coreFormulasForLibrary": [
+            "LBO Capital Structure: Senior Secured + Senior Unsecured + Mezzanine + Sponsor Equity (typically 60/40 to 70/30 debt/equity)",
+            "Debt Seniority (highest to lowest): Senior Secured → Senior Unsecured → Subordinated → Mezzanine → Equity",
+            "Covenant headroom = Actual metric vs. covenant threshold (e.g. Net Debt/EBITDA must stay below 5x)"
+          ],
+          "quizTopics": [
+            "Multiple choice: in a liquidation, which security gets paid first: senior secured bondholders, preferred shareholders, or common shareholders?",
+            "Short answer: explain the difference between a maintenance covenant and an incurrence covenant, with one example of each",
+            "Fill-in-the-blank: an LBO target has €100m EBITDA and is acquired for 8x. The deal is 65% debt financed. What is the total debt? What is the Debt/EBITDA at acquisition?"
+          ],
+          "analystNote": "The capital structure in this chapter is the foundation of LBO modelling. Every PE deal has a debt stack with multiple tranches, each with different rates, maturities, and covenants. You need to know this architecture before you can model one."
+        }
+      ]
+    },
+    {
+      "id": "bm15",
+      "number": 15,
+      "title": "How Corporations Issue Securities",
+      "pdfPageStart": 400,
+      "pdfPageEnd": 430,
+      "part": "IV — Financial Decisions and Market Efficiency",
+      "difficulty": 2,
+      "sessions": [
+        {
+          "id": "bm15-s01",
+          "sessionNumber": 1,
+          "title": "IPOs, Seasoned Offerings, Private Placements & the Role of Banks",
+          "focusPages": { "pdf": "400–430" },
+          "learningObjectives": [
+            "Describe the IPO process: registration, roadshow, bookbuilding, pricing, stabilization",
+            "Explain underpricing: why IPOs are systematically priced below first-day trading value",
+            "Describe seasoned equity offerings (SEOs) and why they signal negative information",
+            "Understand private placements vs. public offerings: costs, disclosure, investor base",
+            "Explain the role of investment banks as underwriters: firm commitment vs. best efforts",
+            "Describe how leveraged loans and high-yield bonds are issued in the context of LBOs",
+            "Understand rights issues as an alternative equity issuance mechanism"
+          ],
+          "keyConcepts": [
+            "IPO underpricing: average first-day return ~15–20%; rational explanation = winner's curse",
+            "Winner's curse: uninformed investors get more of overpriced IPOs, less of underpriced ones",
+            "SEO announcement effect: stock typically falls 2–3% on SEO announcement (dilution/signal)",
+            "Firm commitment underwriting: bank buys all shares at agreed price, bears distribution risk",
+            "Bookbuilding: investment bank gauges demand before final pricing",
+            "High-yield (junk) bond: sub-investment grade debt used in LBOs; rated BB+ or below"
+          ],
+          "coreFormulasForLibrary": [
+            "IPO Underpricing = (First-day closing price − Offer price) / Offer price × 100%",
+            "Gross Spread (underwriting fee) = typically 7% of proceeds for US IPOs",
+            "Dilution from equity issuance: new shares issued / (existing + new shares) × 100%"
+          ],
+          "quizTopics": [
+            "Multiple choice: why does a company's stock price typically fall when it announces a seasoned equity offering?",
+            "Short answer: explain the winner's curse in IPO markets and why it leads to systematic underpricing",
+            "Short answer: what is the difference between a firm commitment and best efforts underwriting? Which is more common for large deals and why?"
+          ],
+          "analystNote": "IB analysts work on IPOs and debt issuances constantly. The 7% gross spread on a $1bn IPO is $70m in fees — that's what funds the entire IB division. Understanding the mechanics of issuance tells you why banks are structured the way they are."
+        }
+      ]
+    },
+    {
+      "id": "bm16",
+      "number": 16,
+      "title": "The Dividend Controversy",
+      "pdfPageStart": 431,
+      "pdfPageEnd": 462,
+      "part": "V — Dividend Policy and Capital Structure",
+      "difficulty": 2,
+      "sessions": [
+        {
+          "id": "bm16-s01",
+          "sessionNumber": 1,
+          "title": "Dividends, Buybacks & Capital Allocation",
+          "focusPages": { "pdf": "431–462" },
+          "learningObjectives": [
+            "Explain the Modigliani-Miller dividend irrelevance theorem: in perfect markets, dividend policy doesn't matter",
+            "Understand why dividend policy may matter in practice: taxes, signalling, agency costs",
+            "Distinguish dividends from share buybacks as alternative forms of cash return",
+            "Explain the clientele effect: different investor bases prefer different payout policies",
+            "Understand the signalling hypothesis: dividends signal management's confidence in future earnings",
+            "Apply the concept of capital allocation: how should companies prioritize uses of free cash flow?"
+          ],
+          "keyConcepts": [
+            "MM dividend irrelevance: paying dividends and issuing new equity are equivalent — no value created",
+            "Tax disadvantage of dividends: in many jurisdictions, dividends taxed more than capital gains",
+            "Signalling: unexpected dividend cut → stock price falls; dividend initiation → stock rises",
+            "Buybacks vs. dividends: buybacks are more flexible, tax-efficient, but less commitment",
+            "Capital allocation priority: reinvest in positive NPV projects first; return excess cash to shareholders",
+            "Free cash flow problem: management may waste FCF on empire-building if not returned"
+          ],
+          "coreFormulasForLibrary": [
+            "MM Dividend Irrelevance: In perfect markets, firm value = NPV of investments (not affected by payout policy)",
+            "Dividend Yield = Annual Dividends per Share / Share Price",
+            "Payout Ratio = Dividends / Net Income",
+            "Buyback Yield = Annual Buybacks / Market Cap (increasingly used alongside dividend yield)"
+          ],
+          "quizTopics": [
+            "Multiple choice: under MM assumptions, if a company pays a €1 dividend and simultaneously issues €1 of new equity, what happens to shareholder wealth?",
+            "Short answer: name three reasons why dividend policy may actually matter in the real world",
+            "Short answer: a mature company with no positive NPV investments and €200m of cash. What should it do with the cash and why?"
+          ],
+          "analystNote": "Capital allocation is one of the most important things PE firms do. Post-acquisition, a PE owner decides exactly how to deploy FCF: debt repayment, bolt-on acquisitions, organic growth, or dividends (dividend recapitalizations). This chapter is the theoretical foundation."
+        }
+      ]
+    },
+    {
+      "id": "bm17",
+      "number": 17,
+      "title": "Does Debt Policy Matter?",
+      "pdfPageStart": 463,
+      "pdfPageEnd": 486,
+      "part": "V — Dividend Policy and Capital Structure",
+      "difficulty": 3,
+      "sessions": [
+        {
+          "id": "bm17-s01",
+          "sessionNumber": 1,
+          "title": "Modigliani-Miller I & II: Capital Structure Irrelevance",
+          "focusPages": { "pdf": "463–486" },
+          "learningObjectives": [
+            "State and explain Modigliani-Miller Proposition I (no taxes): firm value is independent of capital structure",
+            "State and explain MM Proposition II: cost of equity rises with leverage to exactly offset the benefit of cheap debt",
+            "Understand the intuition: adding debt doesn't create value, it just rearranges claims on the same asset pool",
+            "Explain the homemade leverage argument: investors can replicate any capital structure themselves",
+            "Identify the assumptions underlying MM and what happens when each is relaxed",
+            "Understand why MM is important even if unrealistic: it tells us exactly why capital structure might matter"
+          ],
+          "keyConcepts": [
+            "MM Prop I (no taxes): V_Levered = V_Unlevered; capital structure doesn't affect total firm value",
+            "MM Prop II (no taxes): R_E = R_A + (D/E)(R_A − R_D); cost of equity rises linearly with leverage",
+            "Homemade leverage: investors can borrow personally to replicate any firm capital structure",
+            "MM assumptions: no taxes, no bankruptcy costs, no information asymmetry, no transaction costs",
+            "Key insight: WACC is constant regardless of capital structure (in no-tax world)"
+          ],
+          "coreFormulasForLibrary": [
+            "MM Proposition I (no taxes): V_L = V_U (levered firm = unlevered firm in value)",
+            "MM Proposition II (no taxes): R_E = R_A + (D/E) × (R_A − R_D)",
+            "MM WACC implication (no taxes): WACC is constant regardless of leverage",
+            "MM tells us WHY capital structure matters: taxes, distress costs, and asymmetric information"
+          ],
+          "quizTopics": [
+            "Short answer: explain MM Prop I using the pizza analogy — how can slicing a pizza differently affect its total size?",
+            "Fill-in-the-blank: unlevered cost of capital = 10%, D/E = 1, Rd = 6%. Calculate R_E using MM Prop II.",
+            "Multiple choice: under MM assumptions, if a firm doubles its leverage, what happens to WACC?"
+          ],
+          "analystNote": "Every capital structure question in an interview starts with MM. 'In a perfect world, capital structure doesn't matter — but here's why it does in practice.' Know MM Prop I and II, then know which real-world frictions make them wrong."
+        }
+      ]
+    },
+    {
+      "id": "bm18",
+      "number": 18,
+      "title": "How Much Should a Firm Borrow?",
+      "pdfPageStart": 487,
+      "pdfPageEnd": 520,
+      "part": "V — Dividend Policy and Capital Structure",
+      "difficulty": 3,
+      "sessions": [
+        {
+          "id": "bm18-s01",
+          "sessionNumber": 1,
+          "title": "The Trade-Off Theory: Tax Shields vs. Financial Distress",
+          "focusPages": { "pdf": "487–520" },
+          "learningObjectives": [
+            "Derive MM Proposition I with corporate taxes: the value of the tax shield on debt",
+            "Explain why interest tax shields increase firm value: V_L = V_U + PV(tax shield)",
+            "Introduce the costs of financial distress: direct (legal, administrative) and indirect (loss of customers, employees, suppliers)",
+            "State the trade-off theory: optimal leverage balances tax shield against distress costs",
+            "Understand why high-risk, asset-light firms should borrow less than low-risk, asset-heavy firms",
+            "Introduce the pecking order theory as an alternative to trade-off theory"
+          ],
+          "keyConcepts": [
+            "MM with taxes: debt creates value through interest tax shield",
+            "PV of tax shield (perpetual debt): = Tax Rate × Debt (= T × D)",
+            "Financial distress: probability × cost; increases non-linearly with leverage",
+            "Trade-off theory: optimal D/V where marginal tax benefit = marginal distress cost",
+            "Pecking order theory: firms prefer internal financing → debt → equity (due to information asymmetry)",
+            "Industries with high optimal leverage: stable cash flows, tangible assets, high tax rates"
+          ],
+          "coreFormulasForLibrary": [
+            "MM Prop I with Taxes: V_L = V_U + T_c × D (PV of tax shield = corporate tax rate × debt)",
+            "WACC with Taxes: WACC = (E/V) × R_e + (D/V) × R_d × (1 − T_c) — lower than unlevered cost",
+            "Trade-Off Theory: V_L = V_U + PV(Tax Shield) − PV(Financial Distress Costs)",
+            "Optimal Leverage: where ∂[PV(Tax Shield)]/∂D = ∂[PV(Distress Costs)]/∂D"
+          ],
+          "quizTopics": [
+            "Fill-in-the-blank: V_U = €500m, tax rate = 25%, perpetual debt = €200m. Calculate V_L.",
+            "Multiple choice: which industry would you expect to have the highest debt ratio: airlines, software, utilities, or biotech?",
+            "Short answer: explain the pecking order theory and what it predicts about how companies finance new investments"
+          ],
+          "analystNote": "The tax shield is exactly why PE firms lever up their acquisitions. A company with €100m EBITDA financed with €400m of debt at 6% has €24m of interest — at 25% tax rate that's a €6m annual tax saving, worth ~€80m in NPV terms. That's real value created by financing."
+        }
+      ]
+    },
+    {
+      "id": "bm19",
+      "number": 19,
+      "title": "Financing and Valuation",
+      "pdfPageStart": 521,
+      "pdfPageEnd": 558,
+      "part": "V — Dividend Policy and Capital Structure",
+      "difficulty": 3,
+      "sessions": [
+        {
+          "id": "bm19-s01",
+          "sessionNumber": 1,
+          "title": "WACC vs. APV: Two Ways to Value a Leveraged Business",
+          "focusPages": { "pdf": "521–558" },
+          "learningObjectives": [
+            "Understand when to use WACC-based DCF vs. Adjusted Present Value (APV)",
+            "Calculate APV: value the unlevered firm, then add PV of financing side effects",
+            "Identify the financing side effects in APV: tax shields, issue costs, subsidized financing",
+            "Apply the Miles-Ezzell and Modigliani-Miller approaches to discounting tax shields",
+            "Use the capital cash flow method as a third alternative to WACC and APV",
+            "Understand how changing capital structure during the forecast period affects the choice of method"
+          ],
+          "keyConcepts": [
+            "WACC DCF: discount FCFs at WACC (blended cost of capital including tax shield)",
+            "APV: V_L = V_U + PV(side effects); separates business value from financing value",
+            "APV is preferred when capital structure changes (e.g. in LBOs, debt is repaid over time)",
+            "PV of tax shield in APV: discount at Rd if debt is fixed; at Ra if debt is rebalanced",
+            "Flows to equity (FTE): discount levered equity cash flows at cost of equity — rarely used in practice"
+          ],
+          "coreFormulasForLibrary": [
+            "APV = Base-Case NPV (all equity) + PV(Tax Shields) + PV(Other Financing Effects)",
+            "APV vs WACC: use WACC if constant D/V ratio; use APV if debt level is fixed or changing (e.g. LBO)",
+            "Capital Cash Flow = FCF + Tax Shield on Debt (discount at unlevered cost of capital)"
+          ],
+          "quizTopics": [
+            "Short answer: a PE firm is buying a company and plans to repay debt rapidly over 5 years. Should it use WACC or APV to value the deal? Why?",
+            "Fill-in-the-blank: unlevered firm value = €300m, annual interest = €20m, tax rate = 25%, Rd = 5%. Calculate APV (assume perpetual debt).",
+            "Multiple choice: which method explicitly separates the value of operations from the value of the financing structure?"
+          ],
+          "analystNote": "LBO models almost always use APV or an equity IRR model — not WACC DCF — because debt is paid down over time, constantly changing the capital structure. This is an advanced point that will impress interviewers. Most candidates only know WACC."
+        }
+      ]
+    },
+    {
+      "id": "bm33",
+      "number": 33,
+      "title": "Mergers",
+      "pdfPageStart": 918,
+      "pdfPageEnd": 951,
+      "part": "X — Mergers, Corporate Control, and Governance",
+      "difficulty": 3,
+      "sessions": [
+        {
+          "id": "bm33-s01",
+          "sessionNumber": 1,
+          "title": "M&A Rationale, Deal Mechanics & Valuation",
+          "focusPages": { "pdf": "918–940" },
+          "learningObjectives": [
+            "Explain the economic rationale for mergers: synergies, efficiency gains, market power, diversification",
+            "Distinguish between operating synergies (revenue + cost) and financial synergies (tax, debt capacity)",
+            "Calculate the NPV of a merger from the acquirer's perspective",
+            "Understand why diversification is not a valid merger rationale (investors can diversify themselves)",
+            "Explain the winner's curse in M&A: why acquirers systematically overpay",
+            "Distinguish between horizontal, vertical, and conglomerate mergers"
+          ],
+          "keyConcepts": [
+            "Merger NPV = Gain from merger − Premium paid = (PV_AB − PV_A − PV_B) − Premium",
+            "Synergies: cost synergies (headcount, procurement, facilities) and revenue synergies (cross-sell, market power)",
+            "Winner's curse: highest bidder in an auction is most likely to have overestimated value",
+            "Diversification fallacy: no value created by merging two unrelated businesses (investors do it cheaper)",
+            "Horizontal: same industry; Vertical: buyer-supplier; Conglomerate: unrelated industries"
+          ],
+          "coreFormulasForLibrary": [
+            "Merger NPV to Acquirer = Synergies − Acquisition Premium",
+            "Acquisition Premium = (Deal Price − Pre-Announcement Stock Price) / Pre-Announcement Price × 100%",
+            "Combined Value: V_AB = V_A + V_B + Synergies (the deal only makes sense if V_AB > V_A + V_B)"
+          ],
+          "quizTopics": [
+            "Fill-in-the-blank: Company A is worth €500m, Company B is €200m. Synergies estimated at €80m. A acquires B for €250m. What is the NPV of the deal for A's shareholders?",
+            "Multiple choice: a CEO proposes acquiring an unrelated company to diversify earnings. Why does this destroy value?",
+            "Short answer: explain three reasons why acquirers systematically overpay in M&A"
+          ],
+          "analystNote": "M&A is the end-game of everything learned in this curriculum. Every deal has a financial model testing whether synergies exceed the premium. In PE, the 'synergy' is the financial engineering (leverage + operational improvement). This is the chapter that brings it all together."
+        },
+        {
+          "id": "bm33-s02",
+          "sessionNumber": 2,
+          "title": "Deal Structure, LBOs & Takeover Defenses",
+          "focusPages": { "pdf": "940–951" },
+          "learningObjectives": [
+            "Distinguish between cash deals and stock deals: implications for risk sharing and tax",
+            "Understand why stock deals signal acquirer believes its stock is overvalued",
+            "Explain the mechanics of a leveraged buyout (LBO): structure, financing, value creation drivers",
+            "Calculate LBO returns: entry multiple, exit multiple, leverage paydown, and operational improvement",
+            "Identify the three value creation drivers in PE: multiple expansion, leverage (debt paydown), and EBITDA growth",
+            "Describe common takeover defenses: poison pills, staggered boards, white knight, pac-man defense"
+          ],
+          "keyConcepts": [
+            "Cash deal: acquirer bears all risk; target shareholders exit cleanly",
+            "Stock deal: target shareholders share in upside and downside of combined entity",
+            "LBO structure: high leverage amplifies equity returns but increases bankruptcy risk",
+            "LBO returns: driven by (1) paying down debt, (2) EBITDA growth, (3) multiple expansion",
+            "PE value creation: buy at 6x EBITDA, improve operations, sell at 8x EBITDA with lower debt",
+            "Poison pill: existing shareholders can buy new shares at discount, diluting hostile acquirer"
+          ],
+          "coreFormulasForLibrary": [
+            "LBO Equity Return (MOIC) = Exit Equity Value / Entry Equity Value",
+            "LBO IRR: solve for r where Entry Equity = Exit Equity / (1+r)^n",
+            "LBO Value Creation = EBITDA Growth Effect + Multiple Expansion Effect + Debt Paydown Effect",
+            "Entry Equity = Enterprise Value − Total Debt at acquisition",
+            "Exit Equity = Exit EV (exit multiple × exit EBITDA) − Remaining Debt at exit"
+          ],
+          "quizTopics": [
+            "Fill-in-the-blank: LBO target bought at 7x €50m EBITDA = €350m EV, financed 65% debt. 5 years later EBITDA = €70m, sold at 8x, debt reduced to €100m. Calculate MOIC and approximate IRR.",
+            "Multiple choice: why do stock deals typically get a lower premium than cash deals?",
+            "Short answer: walk through the three main drivers of value creation in a PE buyout"
+          ],
+          "analystNote": "This is the session that connects every previous chapter. LBOs use NPV (Ch2-3), WACC/APV (Ch9/19), capital structure (Ch17-18), and M&A rationale (Ch33-s01). If you can model an LBO, you understand corporate finance. This is the final boss."
+        }
+      ]
+    }
+  ]
+}

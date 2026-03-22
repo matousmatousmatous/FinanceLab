@@ -1,0 +1,25 @@
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
+
+# Data files (local dev only — use Supabase in production)
+progress.json
+library.json
+srs.json
+textbooks.json
+config.json
+
+# Uploaded PDFs (local dev only — use Supabase Storage in production)
+uploads/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*

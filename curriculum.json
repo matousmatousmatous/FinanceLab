@@ -1,0 +1,854 @@
+{
+  "meta": {
+    "textbook": "Financial Accounting, 11th Global Edition (IFRS)",
+    "authors": "Harrison, Horngren, Thomas, Tietz, Suwardy",
+    "publisher": "Pearson",
+    "year": 2018,
+    "pdfPageOffset": 36,
+    "totalChapters": 12,
+    "description": "Chapter-by-chapter curriculum for FinanceLab. PDF page = book page + 36. Each session is ~30 min. Chapters marked difficulty: 1 (easy) to 3 (hard)."
+  },
+  "chapters": [
+    {
+      "id": "ch01",
+      "number": 1,
+      "title": "Conceptual Framework and Financial Statements",
+      "bookPageStart": 1,
+      "bookPageEnd": 57,
+      "pdfPageStart": 37,
+      "pdfPageEnd": 93,
+      "spotlightCompany": "Alibaba Group",
+      "difficulty": 1,
+      "sessions": [
+        {
+          "id": "ch01-s01",
+          "sessionNumber": 1,
+          "title": "The Language of Business & the IFRS Framework",
+          "focusPages": { "book": "1–21", "pdf": "37–57" },
+          "learningObjectives": [
+            "Explain why accounting is called the 'language of business' and who uses financial reports",
+            "Distinguish between financial accounting and management accounting",
+            "Identify the four main forms of business organization (proprietorship, partnership, company, LLP)",
+            "Describe the IFRS Conceptual Framework: qualitative characteristics (relevance, faithful representation, comparability, verifiability, timeliness, understandability)",
+            "State the key accounting assumptions: going concern, accrual basis, monetary unit, time period",
+            "Explain the role of IASB and why global accounting standards matter"
+          ],
+          "keyConcepts": [
+            "Financial accounting vs. management accounting",
+            "IFRS vs. GAAP — why IFRS matters for European/global companies",
+            "Qualitative characteristics of useful financial information",
+            "Going concern assumption",
+            "Accrual basis of accounting",
+            "The accounting equation: Assets = Liabilities + Equity"
+          ],
+          "coreFormulasForLibrary": [
+            "Assets = Liabilities + Equity (the fundamental accounting equation)",
+            "Equity = Assets − Liabilities",
+            "Net Income = Revenues − Expenses"
+          ],
+          "quizTopics": [
+            "Multiple choice: identify which qualitative characteristic applies in a given scenario",
+            "Short answer: explain the difference between financial and management accounting",
+            "Short answer: why does the going concern assumption matter for how we value assets?"
+          ],
+          "analystNote": "Every PE/IB interview starts with the accounting equation. Know it cold and be able to explain what happens to equity when each line item changes."
+        },
+        {
+          "id": "ch01-s02",
+          "sessionNumber": 2,
+          "title": "The Four Financial Statements & How They Connect",
+          "focusPages": { "book": "14–57", "pdf": "50–93" },
+          "learningObjectives": [
+            "Identify and describe the four financial statements: Income Statement, Statement of Changes in Equity, Balance Sheet (Statement of Financial Position), Statement of Cash Flows",
+            "Explain what each statement shows and the time period it covers (period vs. point in time)",
+            "Trace how the statements link: net income flows into equity; ending cash on SCF ties to balance sheet cash",
+            "Read a simple set of financial statements for a real company (Alibaba)",
+            "Understand the role of ethics and the IESBA Code of Ethics in accounting"
+          ],
+          "keyConcepts": [
+            "Income Statement: revenues, expenses, net income/loss — covers a period",
+            "Statement of Changes in Equity: opening equity + net income − dividends = closing equity",
+            "Balance Sheet: snapshot at a point in time — assets, liabilities, equity",
+            "Statement of Cash Flows: operating, investing, financing activities",
+            "The articulation of the four statements (how they link together)",
+            "Retained earnings as the link between income statement and balance sheet"
+          ],
+          "coreFormulasForLibrary": [
+            "Ending Retained Earnings = Beginning Retained Earnings + Net Income − Dividends",
+            "Current Ratio = Current Assets / Current Liabilities",
+            "The four financial statements: IS → SCE → BS → SCF (order of preparation)"
+          ],
+          "quizTopics": [
+            "Fill-in-the-blank: given revenue and expense figures, complete a simple income statement and trace net income to the equity statement",
+            "Multiple choice: which statement would you look at to assess a company's liquidity?",
+            "Short answer: explain in your own words how the four statements are interconnected"
+          ],
+          "analystNote": "Interviewers will ask you to 'walk me through the financial statements.' Practice narrating all four in under 90 seconds, explaining how they connect."
+        }
+      ]
+    },
+    {
+      "id": "ch02",
+      "number": 2,
+      "title": "Recording Business Transactions",
+      "bookPageStart": 58,
+      "bookPageEnd": 128,
+      "pdfPageStart": 94,
+      "pdfPageEnd": 164,
+      "spotlightCompany": "Daimler AG",
+      "difficulty": 2,
+      "sessions": [
+        {
+          "id": "ch02-s01",
+          "sessionNumber": 1,
+          "title": "The Accounting System: Accounts, Debits & Credits",
+          "focusPages": { "book": "58–82", "pdf": "94–118" },
+          "learningObjectives": [
+            "Define a business transaction and explain what makes an event recordable",
+            "Identify assets, liabilities, and equity accounts and their normal balances",
+            "Explain the T-account structure and the rules of debit and credit (DEAD CLIC mnemonic)",
+            "Understand double-entry accounting: every transaction affects at least two accounts",
+            "Journalize basic transactions using proper journal entry format",
+            "Post journal entries to T-accounts (the ledger)"
+          ],
+          "keyConcepts": [
+            "Chart of accounts",
+            "T-account: left side = debit, right side = credit",
+            "Normal balances: Assets & Expenses debit; Liabilities, Equity & Revenue credit",
+            "Double-entry bookkeeping: debits always equal credits",
+            "Journal entry format: date, accounts debited/credited, amounts",
+            "Posting: transferring journal entries to the ledger"
+          ],
+          "coreFormulasForLibrary": [
+            "Debit = Left side of T-account; Credit = Right side of T-account",
+            "Normal balance rule: Assets/Expenses → Debit normal; Liabilities/Equity/Revenue → Credit normal",
+            "Double-entry rule: Total Debits = Total Credits for every transaction"
+          ],
+          "quizTopics": [
+            "Multiple choice: which accounts are debited/credited in a given transaction?",
+            "Fill-in-the-blank: complete a journal entry for a purchase of equipment on credit",
+            "Short answer: explain why double-entry accounting matters for the integrity of financial statements"
+          ],
+          "analystNote": "You won't be journalizing in PE, but understanding debits/credits lets you instantly see how any transaction hits all three statements — a skill analysts use daily."
+        },
+        {
+          "id": "ch02-s02",
+          "sessionNumber": 2,
+          "title": "Trial Balance & Analyzing Transactions",
+          "focusPages": { "book": "83–128", "pdf": "119–164" },
+          "learningObjectives": [
+            "Construct a trial balance and explain its purpose",
+            "Identify and correct basic accounting errors using the trial balance",
+            "Analyze a series of transactions using only T-accounts (without formal journal entries)",
+            "Understand account formats and the chart of accounts structure",
+            "Read and interpret a simple ledger to reconstruct what happened in a period"
+          ],
+          "keyConcepts": [
+            "Trial balance: list of all accounts with debit/credit balances — must balance",
+            "Limitations of the trial balance (doesn't catch all errors)",
+            "Transposition errors vs. slide errors",
+            "The normal balance of each account type",
+            "Using T-accounts to analyze the flow of money through a business"
+          ],
+          "coreFormulasForLibrary": [
+            "Trial Balance check: Sum of all Debit balances = Sum of all Credit balances",
+            "To find a missing figure: plug the account balance using the accounting equation"
+          ],
+          "quizTopics": [
+            "Fill-in-the-blank financial statement: given a set of T-accounts, construct the trial balance",
+            "Multiple choice: identify which error would NOT be caught by a trial balance",
+            "Short answer: walk through three transactions for a startup company using T-accounts"
+          ],
+          "analystNote": "Trial balance skills translate directly to building 3-statement models — you're essentially making sure your model 'balances' just like a trial balance does."
+        }
+      ]
+    },
+    {
+      "id": "ch03",
+      "number": 3,
+      "title": "Accrual Accounting",
+      "bookPageStart": 129,
+      "bookPageEnd": 206,
+      "pdfPageStart": 165,
+      "pdfPageEnd": 242,
+      "spotlightCompany": "Richemont",
+      "difficulty": 2,
+      "sessions": [
+        {
+          "id": "ch03-s01",
+          "sessionNumber": 1,
+          "title": "Accrual vs. Cash Basis & Adjusting Entries",
+          "focusPages": { "book": "129–155", "pdf": "165–191" },
+          "learningObjectives": [
+            "Explain the difference between accrual accounting and cash-basis accounting with real examples",
+            "Apply the revenue recognition principle (IFRS 15): revenue recognized when performance obligation satisfied",
+            "Apply the expense recognition/matching principle: expenses matched to the revenues they generate",
+            "Identify the four categories of adjusting entries: prepaid expenses, unearned revenues, accrued expenses, accrued revenues",
+            "Prepare adjusting journal entries for each category",
+            "Explain why Richemont could have high profits but declining cash (accruals vs. cash)"
+          ],
+          "keyConcepts": [
+            "Accrual basis: record revenue when earned, expenses when incurred — regardless of cash",
+            "Revenue recognition principle (IFRS 15)",
+            "Matching principle (expense recognition)",
+            "Prepaid expenses: asset that gets expensed over time (e.g. prepaid rent)",
+            "Unearned revenues: liability until service is delivered",
+            "Accrued expenses: expense incurred but not yet paid (e.g. wages payable)",
+            "Accrued revenues: revenue earned but not yet received (e.g. interest receivable)"
+          ],
+          "coreFormulasForLibrary": [
+            "Adjusting entry for prepaid: Dr. Expense / Cr. Prepaid Asset",
+            "Adjusting entry for unearned revenue: Dr. Unearned Revenue / Cr. Revenue",
+            "Adjusting entry for accrued expense: Dr. Expense / Cr. Payable",
+            "Adjusting entry for accrued revenue: Dr. Receivable / Cr. Revenue"
+          ],
+          "quizTopics": [
+            "Multiple choice: classify each scenario into one of the four adjusting entry types",
+            "Fill-in-the-blank: complete the adjusting entry for a company that received 12-month rent in advance",
+            "Short answer: explain why a company can show a profit but run out of cash"
+          ],
+          "analystNote": "Accruals are why EBITDA and cash flow differ. In LBO models, changes in working capital (accruals) are a major driver of free cash flow. Understanding this is fundamental."
+        },
+        {
+          "id": "ch03-s02",
+          "sessionNumber": 2,
+          "title": "Adjusted Trial Balance, Closing Entries & Financial Statements",
+          "focusPages": { "book": "152–206", "pdf": "188–242" },
+          "learningObjectives": [
+            "Prepare an adjusted trial balance after recording all adjusting entries",
+            "Prepare financial statements directly from the adjusted trial balance",
+            "Understand closing entries: why temporary accounts (revenues, expenses, dividends) are closed to retained earnings",
+            "Distinguish between temporary accounts (closed each period) and permanent accounts (carried forward)",
+            "Compute and interpret the current ratio as a measure of short-term liquidity"
+          ],
+          "keyConcepts": [
+            "Adjusted trial balance: trial balance after all adjusting entries posted",
+            "The accounting cycle: journal → post → adjust → financial statements → close",
+            "Closing entries: zero out income statement accounts, transfer net income to retained earnings",
+            "Temporary accounts: revenues, expenses, dividends",
+            "Permanent accounts: assets, liabilities, equity (carry forward)",
+            "Current ratio = Current Assets / Current Liabilities"
+          ],
+          "coreFormulasForLibrary": [
+            "Current Ratio = Current Assets / Current Liabilities (measures short-term liquidity)",
+            "Post-closing retained earnings = Pre-closing RE + Net Income − Dividends",
+            "Accounting cycle order: Analyze → Journalize → Post → Adjust → Financial Statements → Close"
+          ],
+          "quizTopics": [
+            "Fill-in-the-blank: given an adjusted trial balance, prepare the income statement and balance sheet",
+            "Multiple choice: which accounts appear on the post-closing trial balance?",
+            "Short answer: why do we close temporary accounts at year-end?"
+          ],
+          "analystNote": "The accounting cycle is the foundation of every financial model. When your model 'closes' each period and retained earnings rolls forward, this is exactly what's happening."
+        }
+      ]
+    },
+    {
+      "id": "ch04",
+      "number": 4,
+      "title": "Presentation of Financial Statements",
+      "bookPageStart": 207,
+      "bookPageEnd": 252,
+      "pdfPageStart": 243,
+      "pdfPageEnd": 288,
+      "spotlightCompany": "BASF",
+      "difficulty": 1,
+      "sessions": [
+        {
+          "id": "ch04-s01",
+          "sessionNumber": 1,
+          "title": "Reading Annual Reports & IFRS Presentation Standards",
+          "focusPages": { "book": "207–252", "pdf": "243–288" },
+          "learningObjectives": [
+            "Describe the structure of a corporate annual report and what each section contains",
+            "Understand IAS 1 presentation requirements: fair presentation, going concern, accrual basis, materiality",
+            "Read and interpret a Statement of Financial Position (Balance Sheet) under IFRS — current/non-current classification",
+            "Read and interpret a Statement of Comprehensive Income: profit or loss + other comprehensive income",
+            "Understand the Statement of Changes in Equity and what moves through it",
+            "Identify key disclosure requirements: notes to accounts, accounting policies, contingencies",
+            "Calculate and interpret the current ratio from a real balance sheet"
+          ],
+          "keyConcepts": [
+            "IAS 1: Presentation of Financial Statements",
+            "Fair presentation and compliance with IFRS",
+            "Materiality: only material items need separate disclosure",
+            "Current vs. non-current classification on the balance sheet",
+            "Other Comprehensive Income (OCI): items that bypass the income statement",
+            "Notes to accounts: accounting policies, estimates, contingencies",
+            "Comparative information: two years presented side by side"
+          ],
+          "coreFormulasForLibrary": [
+            "Total Comprehensive Income = Profit or Loss + Other Comprehensive Income (OCI)",
+            "Working Capital = Current Assets − Current Liabilities",
+            "Current Ratio = Current Assets / Current Liabilities"
+          ],
+          "quizTopics": [
+            "Multiple choice: classify items as current vs. non-current on the balance sheet",
+            "Short answer: what is the difference between profit for the period and total comprehensive income?",
+            "Fill-in-the-blank: given line items, construct a simplified IFRS Statement of Financial Position"
+          ],
+          "analystNote": "When you receive a CIM (Confidential Information Memorandum) in PE, you'll be reading IFRS financial statements in exactly this format. Speed and accuracy in reading these is a core skill."
+        }
+      ]
+    },
+    {
+      "id": "ch05",
+      "number": 5,
+      "title": "Internal Control, Cash, and Receivables",
+      "bookPageStart": 253,
+      "bookPageEnd": 327,
+      "pdfPageStart": 289,
+      "pdfPageEnd": 363,
+      "spotlightCompany": "LEGO",
+      "difficulty": 2,
+      "sessions": [
+        {
+          "id": "ch05-s01",
+          "sessionNumber": 1,
+          "title": "Internal Controls, Cash Management & Bank Reconciliation",
+          "focusPages": { "book": "253–285", "pdf": "289–321" },
+          "learningObjectives": [
+            "Define internal control and explain its five components (COSO framework: control environment, risk assessment, control activities, information/communication, monitoring)",
+            "Describe the Sarbanes-Oxley Act (SOX) and its impact on internal controls",
+            "Explain the key cash control procedures: segregation of duties, authorization, reconciliation",
+            "Prepare a bank reconciliation: reconcile book balance to bank balance",
+            "Understand petty cash funds and their control"
+          ],
+          "keyConcepts": [
+            "Internal control: safeguard assets, ensure accurate records, promote efficiency, ensure compliance",
+            "Segregation of duties: authorization, custody, recordkeeping separated",
+            "Bank reconciliation: timing differences (outstanding checks, deposits in transit) vs. errors",
+            "Adjusted book balance = Adjusted bank balance (after reconciliation)",
+            "SOX Section 302 (CEO/CFO certification) and Section 404 (internal control report)"
+          ],
+          "coreFormulasForLibrary": [
+            "Bank Reconciliation: Bank Balance + Deposits in Transit − Outstanding Checks ± Bank Errors = Adjusted Bank Balance",
+            "Book Balance + Credit memos − Debit memos ± Book Errors = Adjusted Book Balance",
+            "Adjusted Bank Balance must equal Adjusted Book Balance"
+          ],
+          "quizTopics": [
+            "Fill-in-the-blank: complete a bank reconciliation given bank statement and book balance data",
+            "Multiple choice: identify which internal control procedure is violated in a given scenario",
+            "Short answer: why is segregation of duties the most important internal control?"
+          ],
+          "analystNote": "Due diligence in PE heavily focuses on internal controls. Weak controls = restatement risk = valuation haircut. Know what good controls look like."
+        },
+        {
+          "id": "ch05-s02",
+          "sessionNumber": 2,
+          "title": "Accounts Receivable, Bad Debts & Notes Receivable",
+          "focusPages": { "book": "285–327", "pdf": "321–363" },
+          "learningObjectives": [
+            "Record sales on credit and account for accounts receivable",
+            "Apply the allowance method for uncollectible accounts (bad debt expense)",
+            "Calculate bad debt expense using the percentage-of-sales method and the aging-of-receivables method",
+            "Understand the direct write-off method and why IFRS prefers the allowance method",
+            "Account for notes receivable: recording, interest accrual, collection or dishonor",
+            "Calculate and interpret Days Sales Outstanding (DSO) / Receivables Turnover"
+          ],
+          "keyConcepts": [
+            "Accounts receivable: amounts owed by customers for goods/services delivered",
+            "Allowance for doubtful accounts (contra-asset): estimated uncollectibles",
+            "Bad debt expense: income statement charge for expected uncollectibles",
+            "Net realizable value of receivables = Gross AR − Allowance",
+            "Aging schedule: categorizes AR by how long overdue",
+            "Notes receivable: formal written promise to pay, earns interest"
+          ],
+          "coreFormulasForLibrary": [
+            "Net Realizable Value of AR = Gross Accounts Receivable − Allowance for Doubtful Accounts",
+            "Days Sales Outstanding (DSO) = (Accounts Receivable / Revenue) × 365",
+            "Receivables Turnover = Revenue / Average Accounts Receivable",
+            "Interest on note = Principal × Annual Rate × (Time / 12 or Time / 365)"
+          ],
+          "quizTopics": [
+            "Fill-in-the-blank: calculate allowance for doubtful accounts using an aging schedule",
+            "Multiple choice: what is the journal entry when a previously written-off account is collected?",
+            "Short answer: explain the difference between bad debt expense and the allowance for doubtful accounts"
+          ],
+          "analystNote": "DSO is a key working capital metric in PE due diligence. Rising DSO means customers are taking longer to pay — potential sign of revenue quality issues or customer financial stress."
+        }
+      ]
+    },
+    {
+      "id": "ch06",
+      "number": 6,
+      "title": "Inventory and Merchandising Operations",
+      "bookPageStart": 328,
+      "bookPageEnd": 388,
+      "pdfPageStart": 364,
+      "pdfPageEnd": 424,
+      "spotlightCompany": "Fast Retailing (UNIQLO)",
+      "difficulty": 2,
+      "sessions": [
+        {
+          "id": "ch06-s01",
+          "sessionNumber": 1,
+          "title": "Inventory Accounting: FIFO, Weighted Average & Lower of Cost",
+          "focusPages": { "book": "328–388", "pdf": "364–424" },
+          "learningObjectives": [
+            "Distinguish between a merchandising company and a service company; understand the cost of goods sold (COGS) calculation",
+            "Explain the two inventory systems: perpetual vs. periodic",
+            "Apply the three inventory costing methods under IFRS: FIFO and Weighted Average (LIFO not permitted under IFRS)",
+            "Calculate ending inventory and COGS under each method",
+            "Apply the lower of cost and net realizable value (LCNRV) rule for inventory write-downs",
+            "Calculate gross profit margin and inventory turnover"
+          ],
+          "keyConcepts": [
+            "COGS = Beginning Inventory + Purchases − Ending Inventory",
+            "Gross profit = Revenue − COGS",
+            "FIFO: first goods in are first goods out; ending inventory = most recent costs",
+            "Weighted average cost: total cost / total units",
+            "LCNRV: inventory written down if NRV < cost (IAS 2)",
+            "Inventory turnover: how many times inventory is sold and replaced per year",
+            "Days in inventory: average number of days to sell inventory"
+          ],
+          "coreFormulasForLibrary": [
+            "COGS = Beginning Inventory + Purchases − Ending Inventory",
+            "Gross Profit = Revenue − COGS",
+            "Gross Profit Margin = Gross Profit / Revenue × 100%",
+            "Inventory Turnover = COGS / Average Inventory",
+            "Days in Inventory = 365 / Inventory Turnover",
+            "Weighted Average Cost per unit = Total Cost of Goods Available / Total Units Available"
+          ],
+          "quizTopics": [
+            "Fill-in-the-blank: given purchase data, calculate ending inventory and COGS under FIFO and weighted average",
+            "Multiple choice: under IFRS, which inventory methods are permitted?",
+            "Short answer: how does choosing FIFO vs. weighted average affect the income statement and balance sheet in a period of rising prices?"
+          ],
+          "analystNote": "Gross margin analysis is the first thing analysts do with a company. Knowing how inventory method choice affects COGS (and thus margin) is a common interview topic."
+        }
+      ]
+    },
+    {
+      "id": "ch07",
+      "number": 7,
+      "title": "PPE and Intangibles",
+      "bookPageStart": 389,
+      "bookPageEnd": 448,
+      "pdfPageStart": 425,
+      "pdfPageEnd": 484,
+      "spotlightCompany": "Airbus Group",
+      "difficulty": 2,
+      "sessions": [
+        {
+          "id": "ch07-s01",
+          "sessionNumber": 1,
+          "title": "Property, Plant & Equipment: Recognition, Depreciation & Disposal",
+          "focusPages": { "book": "389–430", "pdf": "425–466" },
+          "learningObjectives": [
+            "Apply the recognition criteria for PPE (IAS 16): probable future economic benefits, reliable measurement of cost",
+            "Determine the cost of PPE: purchase price + all costs to bring asset to working condition",
+            "Calculate depreciation using straight-line, units-of-production, and double-declining balance methods",
+            "Explain the concept of residual value and useful life",
+            "Record the disposal of PPE: calculate gain or loss on disposal",
+            "Understand the revaluation model as an alternative to cost model (IFRS only)",
+            "Account for impairment of PPE (IAS 36)"
+          ],
+          "keyConcepts": [
+            "PPE cost: purchase price + installation + delivery + legal fees to acquire",
+            "Straight-line depreciation: equal charge each year",
+            "Double-declining balance (DDB): accelerated depreciation front-loads charges",
+            "Units-of-production: depreciation based on actual usage",
+            "Carrying amount = Cost − Accumulated Depreciation",
+            "Gain/loss on disposal = Proceeds − Carrying Amount",
+            "Impairment: carrying amount > recoverable amount → write down"
+          ],
+          "coreFormulasForLibrary": [
+            "Straight-Line Depreciation = (Cost − Residual Value) / Useful Life",
+            "DDB Depreciation = Carrying Amount × (2 / Useful Life)",
+            "Units-of-Production Depreciation = (Cost − Residual Value) / Total Expected Units × Units Produced",
+            "Carrying Amount = Cost − Accumulated Depreciation",
+            "Gain or Loss on Disposal = Sale Proceeds − Carrying Amount at Disposal"
+          ],
+          "quizTopics": [
+            "Fill-in-the-blank: calculate depreciation for 3 years under straight-line and DDB for a given asset",
+            "Multiple choice: what is the journal entry to record sale of equipment at a loss?",
+            "Short answer: explain how depreciation method choice affects operating income and tax in the early years of an asset's life"
+          ],
+          "analystNote": "D&A is added back to get EBITDA in every financial model. Understanding what drives D&A (useful life assumptions, method) is essential for building accurate projections."
+        },
+        {
+          "id": "ch07-s02",
+          "sessionNumber": 2,
+          "title": "Intangible Assets, R&D & Long-Term Asset Analysis",
+          "focusPages": { "book": "418–448", "pdf": "454–484" },
+          "learningObjectives": [
+            "Identify types of intangible assets: patents, trademarks, copyrights, franchises, goodwill",
+            "Distinguish finite-life intangibles (amortized) from indefinite-life intangibles (not amortized, tested for impairment)",
+            "Account for internally generated vs. acquired intangibles (IFRS: most internally generated not capitalized)",
+            "Understand IAS 38 rules for R&D: research phase expensed, development phase may be capitalized",
+            "Calculate and interpret the asset turnover ratio and return on assets (ROA)"
+          ],
+          "keyConcepts": [
+            "Goodwill: excess of purchase price over fair value of net identifiable assets; only arises on acquisition",
+            "Goodwill is not amortized under IFRS — tested annually for impairment",
+            "Finite-life intangibles: amortized over useful life (like PPE depreciation)",
+            "IAS 38: R&D — research expensed always; development capitalized if meets 6 criteria",
+            "Asset turnover = Revenue / Average Total Assets (efficiency metric)",
+            "Return on Assets (ROA) = Net Income / Average Total Assets"
+          ],
+          "coreFormulasForLibrary": [
+            "Goodwill = Acquisition Price − Fair Value of Net Identifiable Assets Acquired",
+            "Asset Turnover = Revenue / Average Total Assets",
+            "Return on Assets (ROA) = Net Income / Average Total Assets",
+            "Amortization of finite-life intangible = Cost / Useful Life (straight-line typical)"
+          ],
+          "quizTopics": [
+            "Multiple choice: under IAS 38, which R&D costs can be capitalized?",
+            "Short answer: company A acquires company B for €500m. B's net identifiable assets are worth €380m. Calculate goodwill.",
+            "Fill-in-the-blank: given an asset schedule, calculate total D&A and ending carrying values"
+          ],
+          "analystNote": "Goodwill is huge in M&A. When a PE fund acquires a company, almost all the premium over book value creates goodwill. Annual impairment testing can lead to write-downs that destroy earnings."
+        }
+      ]
+    },
+    {
+      "id": "ch08",
+      "number": 8,
+      "title": "Investments and International Operations",
+      "bookPageStart": 449,
+      "bookPageEnd": 502,
+      "pdfPageStart": 485,
+      "pdfPageEnd": 538,
+      "spotlightCompany": "Vivendi",
+      "difficulty": 3,
+      "sessions": [
+        {
+          "id": "ch08-s01",
+          "sessionNumber": 1,
+          "title": "Financial Asset Classification & Intercorporate Investments",
+          "focusPages": { "book": "449–502", "pdf": "485–538" },
+          "learningObjectives": [
+            "Classify investments under IFRS 9: amortised cost, FVOCI, FVTPL (fair value through profit or loss)",
+            "Account for held-to-maturity (amortised cost) debt investments",
+            "Account for available-for-sale (FVOCI) equity investments: unrealized gains/losses go to OCI",
+            "Account for trading securities (FVTPL): unrealized gains/losses on income statement",
+            "Understand the equity method for significant influence investments (20–50% ownership)",
+            "Understand consolidation: when and why subsidiaries are consolidated (>50% control)",
+            "Explain goodwill and non-controlling interest in consolidated statements",
+            "Account for foreign currency transactions: transaction gains/losses on income statement"
+          ],
+          "keyConcepts": [
+            "IFRS 9 classification: based on business model and cash flow characteristics",
+            "Equity method: investor records share of investee's net income as investment income",
+            "Consolidation: parent + subsidiary presented as single economic entity",
+            "Non-controlling interest (NCI): the portion of equity not owned by parent",
+            "Goodwill on consolidation: purchase price minus fair value of net assets acquired",
+            "Foreign currency transaction risk: payables/receivables denominated in foreign currency"
+          ],
+          "coreFormulasForLibrary": [
+            "Equity Method: Investment income = Ownership % × Investee's Net Income",
+            "Equity Method: Investment carrying value = Cost + Share of Net Income − Dividends received",
+            "Consolidated Goodwill = Purchase Price − (Fair Value of Net Assets × Ownership%)",
+            "FX Transaction Gain/Loss = Change in exchange rate × Foreign currency amount"
+          ],
+          "quizTopics": [
+            "Multiple choice: company owns 30% of investee — which accounting method applies?",
+            "Short answer: explain the difference between the equity method and consolidation",
+            "Fill-in-the-blank: calculate equity method investment carrying value after one year"
+          ],
+          "analystNote": "Consolidation is directly relevant to M&A. When a company acquires >50%, it consolidates — understanding what goes on the balance sheet and where NCI sits is tested in every technical interview."
+        }
+      ]
+    },
+    {
+      "id": "ch09",
+      "number": 9,
+      "title": "Liabilities",
+      "bookPageStart": 503,
+      "bookPageEnd": 567,
+      "pdfPageStart": 539,
+      "pdfPageEnd": 603,
+      "spotlightCompany": "Jardine Matheson Holdings",
+      "difficulty": 3,
+      "sessions": [
+        {
+          "id": "ch09-s01",
+          "sessionNumber": 1,
+          "title": "Current Liabilities & Bond Financing",
+          "focusPages": { "book": "503–545", "pdf": "539–581" },
+          "learningObjectives": [
+            "Identify and classify current liabilities: accounts payable, accrued liabilities, unearned revenues, short-term debt",
+            "Account for contingent liabilities under IAS 37: provision, disclosure, or ignore based on probability",
+            "Explain bonds payable: face value, coupon rate, market rate, issuance at par / discount / premium",
+            "Calculate issue price of a bond using present value concepts",
+            "Amortize bond discount/premium using the straight-line method and effective interest method",
+            "Record bond interest expense and carrying value over the life of the bond"
+          ],
+          "keyConcepts": [
+            "Current liabilities: due within one year or operating cycle",
+            "Contingent liability: record if probable and estimable; disclose if possible; ignore if remote",
+            "Bond payable: formal debt instrument with face value and periodic coupon payments",
+            "Bond issued at discount: market rate > coupon rate; carrying value < face value",
+            "Bond issued at premium: market rate < coupon rate; carrying value > face value",
+            "Effective interest method: interest expense = carrying value × market rate"
+          ],
+          "coreFormulasForLibrary": [
+            "Bond Issue Price = PV of coupons (annuity) + PV of face value (lump sum) at market rate",
+            "Interest Expense (effective method) = Carrying Value of Bond × Market Interest Rate",
+            "Carrying Value of Bond = Face Value − Unamortized Discount (or + Unamortized Premium)",
+            "Days Payable Outstanding (DPO) = (Accounts Payable / COGS) × 365"
+          ],
+          "quizTopics": [
+            "Fill-in-the-blank: calculate bond carrying value and interest expense in year 1 (discount scenario)",
+            "Multiple choice: a bond with face value €1,000 and coupon 5% is issued when market rate is 6% — issued at par, discount, or premium?",
+            "Short answer: explain how issuing bonds at a discount affects the income statement vs. issuing at par"
+          ],
+          "analystNote": "Bonds and debt are the core of LBO financing. Understanding how interest expense is calculated, how carrying value moves, and what covenants attach to debt is critical for LBO modeling."
+        },
+        {
+          "id": "ch09-s02",
+          "sessionNumber": 2,
+          "title": "Leases, Long-Term Debt & Leverage Analysis",
+          "focusPages": { "book": "530–567", "pdf": "566–603" },
+          "learningObjectives": [
+            "Distinguish between finance leases and operating leases under IFRS 16",
+            "Understand that IFRS 16 brings most leases onto the balance sheet (right-of-use asset + lease liability)",
+            "Record finance lease: initial recognition, depreciation of ROU asset, interest on lease liability",
+            "Explain convertible bonds and notes: features and conversion accounting",
+            "Calculate and interpret key leverage ratios: debt-to-equity, debt-to-assets, interest coverage",
+            "Understand off-balance-sheet financing and why analysts adjust for it"
+          ],
+          "keyConcepts": [
+            "IFRS 16: all leases > 12 months → Right-of-Use asset + Lease Liability on balance sheet",
+            "Finance lease: front-loads expenses (interest + depreciation) vs. operating lease (straight-line rent)",
+            "Leverage: use of debt to amplify returns (and risk)",
+            "Interest coverage ratio: EBIT / Interest Expense — measures ability to service debt",
+            "Debt/EBITDA: most common leverage metric in leveraged finance and PE"
+          ],
+          "coreFormulasForLibrary": [
+            "Debt-to-Equity Ratio = Total Debt / Total Equity",
+            "Debt-to-Assets Ratio = Total Debt / Total Assets",
+            "Interest Coverage Ratio = EBIT / Interest Expense (must be > 1.5–2x to be safe)",
+            "Net Debt = Total Debt − Cash and Cash Equivalents",
+            "Debt / EBITDA = Net Debt / EBITDA (key leverage metric in PE; typical LBO target: 4–6x)"
+          ],
+          "quizTopics": [
+            "Multiple choice: under IFRS 16, how does a 5-year lease affect the balance sheet at inception?",
+            "Short answer: a company has EBIT of €50m and interest expense of €20m. Is this coverage ratio concerning?",
+            "Fill-in-the-blank: calculate debt/equity and interest coverage from a given balance sheet and income statement"
+          ],
+          "analystNote": "Debt/EBITDA is the single most important leverage metric in PE. LBOs are typically structured at 4–6x Debt/EBITDA. Know this ratio cold and be able to calculate it from financial statements instantly."
+        }
+      ]
+    },
+    {
+      "id": "ch10",
+      "number": 10,
+      "title": "Shareholders' Equity",
+      "bookPageStart": 568,
+      "bookPageEnd": 630,
+      "pdfPageStart": 604,
+      "pdfPageEnd": 666,
+      "spotlightCompany": "L'Occitane",
+      "difficulty": 2,
+      "sessions": [
+        {
+          "id": "ch10-s01",
+          "sessionNumber": 1,
+          "title": "Share Capital, Retained Earnings & Equity Transactions",
+          "focusPages": { "book": "568–630", "pdf": "604–666" },
+          "learningObjectives": [
+            "Understand the components of shareholders' equity: share capital (ordinary and preference), share premium, retained earnings, OCI reserves, treasury shares",
+            "Account for the issuance of ordinary shares at par and above par",
+            "Account for preference shares: cumulative vs. non-cumulative dividends",
+            "Record cash dividends and share dividends; explain their effect on equity",
+            "Account for share buybacks (treasury shares): cost method",
+            "Understand IPOs and why companies go public (relevant context: L'Occitane Hong Kong IPO)",
+            "Calculate earnings per share (EPS) — basic and diluted",
+            "Calculate return on equity (ROE) and explain the DuPont decomposition"
+          ],
+          "keyConcepts": [
+            "Authorised vs. issued vs. outstanding shares",
+            "Share premium: amount received above par value",
+            "Retained earnings: cumulative undistributed profits",
+            "Treasury shares: repurchased by the company — reduce equity (contra-equity)",
+            "Cash dividend: reduces both retained earnings and cash",
+            "Share dividend: transfers from retained earnings to share capital — no cash outflow",
+            "EPS = Net Income attributable to ordinary shareholders / Weighted Average Shares Outstanding"
+          ],
+          "coreFormulasForLibrary": [
+            "Basic EPS = Net Income (after preference dividends) / Weighted Average Ordinary Shares",
+            "Return on Equity (ROE) = Net Income / Average Shareholders' Equity",
+            "DuPont ROE = Net Profit Margin × Asset Turnover × Equity Multiplier",
+            "Equity Multiplier = Total Assets / Total Equity (= 1 + Debt/Equity)",
+            "Book Value per Share = Total Shareholders' Equity / Shares Outstanding"
+          ],
+          "quizTopics": [
+            "Fill-in-the-blank: given share issuance and dividend data, reconstruct the statement of changes in equity",
+            "Multiple choice: how does a share buyback affect EPS?",
+            "Short answer: explain the DuPont decomposition of ROE and what each component tells you"
+          ],
+          "analystNote": "ROE and the DuPont breakdown are common interview topics. A company can have high ROE purely from leverage (equity multiplier) rather than operational excellence — analysts need to distinguish these drivers."
+        }
+      ]
+    },
+    {
+      "id": "ch11",
+      "number": 11,
+      "title": "Cash Flows",
+      "bookPageStart": 631,
+      "bookPageEnd": 701,
+      "pdfPageStart": 667,
+      "pdfPageEnd": 737,
+      "spotlightCompany": "Singtel",
+      "difficulty": 3,
+      "sessions": [
+        {
+          "id": "ch11-s01",
+          "sessionNumber": 1,
+          "title": "Statement of Cash Flows: Operating Activities",
+          "focusPages": { "book": "631–665", "pdf": "667–701" },
+          "learningObjectives": [
+            "Explain the purpose of the cash flow statement and why it differs from the income statement",
+            "Distinguish the three sections: operating, investing, financing activities",
+            "Prepare the operating section using the indirect method: start with net income and adjust for non-cash items and working capital changes",
+            "Identify non-cash adjustments: add back D&A, add back impairments, adjust for gains/losses on asset sales",
+            "Understand working capital changes: increase in AR = use of cash; increase in AP = source of cash",
+            "Explain free cash flow (FCF) and why it matters more than net income to analysts"
+          ],
+          "keyConcepts": [
+            "Indirect method: Net Income → adjust for non-cash items → adjust for WC changes = Cash from Operations",
+            "D&A is added back (non-cash expense that reduced income but didn't use cash)",
+            "Gains on asset sales are subtracted (included in net income but cash inflow goes to investing section)",
+            "Increase in current assets (AR, inventory) = use of cash",
+            "Increase in current liabilities (AP, accrued liabilities) = source of cash",
+            "Free Cash Flow (FCF) = Cash from Operations − Capital Expenditures"
+          ],
+          "coreFormulasForLibrary": [
+            "Cash from Operations (indirect) = Net Income + D&A + Impairments − Gains on Sales ± Changes in Working Capital",
+            "Free Cash Flow (FCF) = Cash from Operations − Capital Expenditures (CapEx)",
+            "Change in Working Capital = Change in Current Assets − Change in Current Liabilities",
+            "Cash Conversion Cycle = DSO + Days in Inventory − DPO"
+          ],
+          "quizTopics": [
+            "Fill-in-the-blank: given an income statement and balance sheet changes, prepare the operating section of the cash flow statement using the indirect method",
+            "Multiple choice: depreciation expense increases — what is the effect on cash from operations?",
+            "Short answer: a company has net income of €100m but FCF of −€20m. What are three possible reasons?"
+          ],
+          "analystNote": "FCF is the foundation of DCF valuation. Every single valuation model you will ever build starts here. Mastering the cash flow statement is non-negotiable for any IB/PE analyst."
+        },
+        {
+          "id": "ch11-s02",
+          "sessionNumber": 2,
+          "title": "Investing & Financing Cash Flows + Full SCF Construction",
+          "focusPages": { "book": "660–701", "pdf": "696–737" },
+          "learningObjectives": [
+            "Identify cash flows from investing activities: purchase/sale of PPE, acquisitions, investments",
+            "Identify cash flows from financing activities: debt issuance/repayment, share issuance/buyback, dividends paid",
+            "Prepare a complete statement of cash flows from scratch using the indirect method",
+            "Reconcile beginning and ending cash: Operating + Investing + Financing = Change in Cash",
+            "Analyze a cash flow statement to assess quality of earnings and capital allocation decisions",
+            "Interpret cash flow patterns: growth vs. mature vs. distressed company profiles"
+          ],
+          "keyConcepts": [
+            "Investing outflows: CapEx, acquisitions, loans made to others",
+            "Investing inflows: proceeds from asset sales, acquisitions proceeds, loan repayments received",
+            "Financing inflows: new debt, share issuance",
+            "Financing outflows: debt repayment, share buybacks, dividends",
+            "Net change in cash = Operating + Investing + Financing",
+            "Quality of earnings: is operating cash flow consistently higher than net income?"
+          ],
+          "coreFormulasForLibrary": [
+            "Cash Flow Statement Equation: Cash from Operations + Cash from Investing + Cash from Financing = Net Change in Cash",
+            "Ending Cash = Beginning Cash + Net Change in Cash",
+            "CapEx (from SCF) = Ending PPE − Beginning PPE + Depreciation (or read directly from investing section)",
+            "Cash Return on Assets = Cash from Operations / Average Total Assets"
+          ],
+          "quizTopics": [
+            "Fill-in-the-blank: given all three sections' line items, complete a full cash flow statement and verify it reconciles",
+            "Multiple choice: a company has positive net income but large negative operating cash flow — what does this likely indicate?",
+            "Short answer: describe the cash flow profile you would expect from a high-growth tech startup vs. a mature utility company"
+          ],
+          "analystNote": "Being able to build the SCF from scratch (given only a P&L and two balance sheets) is a classic interview test in IB. Practice this until you can do it in under 10 minutes."
+        }
+      ]
+    },
+    {
+      "id": "ch12",
+      "number": 12,
+      "title": "Financial Statement Analysis",
+      "bookPageStart": 702,
+      "bookPageEnd": 765,
+      "pdfPageStart": 738,
+      "pdfPageEnd": 800,
+      "spotlightCompany": "Nestlé",
+      "difficulty": 2,
+      "sessions": [
+        {
+          "id": "ch12-s01",
+          "sessionNumber": 1,
+          "title": "Ratio Analysis: Profitability, Efficiency & Liquidity",
+          "focusPages": { "book": "702–735", "pdf": "738–771" },
+          "learningObjectives": [
+            "Perform horizontal analysis (trend analysis) and vertical analysis (common-size statements)",
+            "Calculate and interpret profitability ratios: gross margin, operating margin, net margin, ROA, ROE",
+            "Calculate and interpret efficiency ratios: asset turnover, inventory turnover, receivables turnover, payables turnover",
+            "Calculate and interpret liquidity ratios: current ratio, quick ratio, cash ratio",
+            "Apply the DuPont framework to decompose ROE into its three drivers"
+          ],
+          "keyConcepts": [
+            "Horizontal analysis: % change year over year",
+            "Vertical analysis: each line as % of revenue (income statement) or total assets (balance sheet)",
+            "Gross margin = Gross Profit / Revenue",
+            "Operating margin = EBIT / Revenue",
+            "EBITDA margin = EBITDA / Revenue (most used in PE/IB)",
+            "Quick ratio = (Cash + Short-term investments + AR) / Current Liabilities",
+            "Cash Conversion Cycle = DSO + DIO − DPO"
+          ],
+          "coreFormulasForLibrary": [
+            "Gross Margin = Gross Profit / Revenue",
+            "EBITDA = Net Income + Interest + Taxes + Depreciation + Amortization",
+            "EBITDA Margin = EBITDA / Revenue",
+            "Operating Margin (EBIT Margin) = EBIT / Revenue",
+            "Quick Ratio = (Cash + Marketable Securities + Accounts Receivable) / Current Liabilities",
+            "Cash Conversion Cycle (CCC) = DSO + Days Inventory Outstanding − DPO",
+            "DuPont ROE = (Net Income / Revenue) × (Revenue / Assets) × (Assets / Equity)"
+          ],
+          "quizTopics": [
+            "Fill-in-the-blank: given Nestlé's financials, calculate all major profitability and efficiency ratios",
+            "Multiple choice: which ratio would best indicate a company is collecting receivables more slowly than last year?",
+            "Short answer: two companies have the same ROE. Company A achieves it through high margins; Company B through high leverage. Which is preferable and why?"
+          ],
+          "analystNote": "Ratio analysis is the first thing you do in a deal. Know these ratios by heart and — critically — know what drives each one up or down and what it means for the business."
+        },
+        {
+          "id": "ch12-s02",
+          "sessionNumber": 2,
+          "title": "Solvency, Valuation Multiples & Comprehensive Analysis",
+          "focusPages": { "book": "735–765", "pdf": "771–800" },
+          "learningObjectives": [
+            "Calculate and interpret solvency ratios: debt-to-equity, debt-to-assets, times interest earned",
+            "Understand the Price/Earnings (P/E) ratio as a market-based valuation metric",
+            "Understand Enterprise Value (EV) and EV/EBITDA as the key PE/IB valuation multiple",
+            "Perform a complete financial analysis of Nestlé: horizontal, vertical, ratio analysis, and interpretation",
+            "Identify red flags in financial statements: aggressive revenue recognition, channel stuffing, unusual accruals, declining FCF despite rising earnings",
+            "Understand earnings management and its detection"
+          ],
+          "keyConcepts": [
+            "Enterprise Value (EV) = Market Cap + Net Debt + Minority Interest + Preferred Stock",
+            "EV/EBITDA: the most commonly used valuation multiple in M&A and PE",
+            "P/E ratio = Share Price / EPS",
+            "Times interest earned (Interest coverage) = EBIT / Interest Expense",
+            "Earnings quality: sustainable earnings vs. one-time items",
+            "Red flags: DSO rising, inventory rising faster than revenue, big gap between net income and FCF"
+          ],
+          "coreFormulasForLibrary": [
+            "Enterprise Value (EV) = Market Capitalization + Net Debt + Preferred Stock + Minority Interest",
+            "EV / EBITDA (most common deal multiple in PE and M&A)",
+            "P/E Ratio = Share Price / Earnings Per Share",
+            "Times Interest Earned = EBIT / Interest Expense",
+            "Net Debt = Total Debt (short-term + long-term) − Cash and Cash Equivalents",
+            "Equity Value = Enterprise Value − Net Debt − Preferred Stock − Minority Interest"
+          ],
+          "quizTopics": [
+            "Fill-in-the-blank: calculate EV, EV/EBITDA, and P/E from a given set of financial data",
+            "Multiple choice: a company's DSO increased from 30 to 55 days while revenue grew 10% — what is the most likely concern?",
+            "Short answer: walk through a complete financial health assessment of a hypothetical company using horizontal analysis, three key ratios, and one red flag check"
+          ],
+          "analystNote": "EV/EBITDA is the language of deals. In every IB pitch deck and every PE investment committee memo, the deal is framed as 'we are buying at X times EBITDA.' This is where accounting connects directly to valuation."
+        }
+      ]
+    }
+  ]
+}

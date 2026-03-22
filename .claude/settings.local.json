@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm test:*)",
+      "Bash(node -e \":*)",
+      "Bash(node --check /Users/mac/FinanceLab/app.js)",
+      "Bash(node --check /Users/mac/FinanceLab/server.js)",
+      "Bash(ls /Users/mac/Downloads/*.pdf)",
+      "Bash(brew install:*)",
+      "Read(//opt/homebrew/bin/**)",
+      "Read(//usr/local/bin/**)",
+      "Bash(node -e \"const p = require\\(''pdf-parse''\\); console.log\\(typeof p, typeof p.default\\);\")",
+      "Bash(node -e \"const p = require\\(''pdf-parse''\\); console.log\\(Object.keys\\(p\\)\\);\")",
+      "Bash(node -e \"console.log\\(require\\(''pdf-parse/package.json''\\).name, require\\(''pdf-parse/package.json''\\).version\\)\")",
+      "Bash(node -e \"const d=JSON.parse\\(require\\(''''fs''''\\).readFileSync\\(''''/dev/stdin'''',''''utf8''''\\)\\); console.log\\(d.name, d.version, d.main\\)\")",
+      "Bash(npm --prefix /Users/mac/FinanceLab install @supabase/supabase-js)",
+      "Bash(ls /Users/mac/FinanceLab/.env*)",
+      "Bash(ls /Users/mac/FinanceLab/*.html /Users/mac/FinanceLab/*.js)",
+      "Bash(convert --version)"
+    ]
+  }
+}
