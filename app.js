@@ -1040,7 +1040,9 @@ async function startCurriculumSession(chapter, session, curriculum) {
   // Determine which PDF path to use (Brealey vs Harrison)
   const curriculumId = session.id;
   const isBrealey = curriculumId.startsWith('bm');
-  const hasPdf = isBrealey ? state.config?.brealeyPdfPath : state.config?.pdfPath;
+  const hasPdf = state.config?.supabaseEnabled
+    ? (isBrealey ? (state.config?.brealeyStoragePath || true) : (state.config?.harrisonStoragePath || true))
+    : (isBrealey ? state.config?.brealeyPdfPath : state.config?.pdfPath);
 
   // Extract PDF text for this session's focus pages
   let chapterText = null;

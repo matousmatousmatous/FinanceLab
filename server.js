@@ -1025,8 +1025,15 @@ app.get('/api/curriculum', (req, res) => {
 // ─── Config ───────────────────────────────────────────────────────────────────
 
 app.get('/api/config', (req, res) => {
-  try { res.json({ ...readConfig(), supabaseEnabled: isSupabase() }); }
-  catch (err) { res.status(500).json({ error: err.message }); }
+  try {
+    const config = readConfig();
+    // When Supabase is enabled, default storage paths are always assumed present
+    if (isSupabase()) {
+      if (!config.harrisonStoragePath) config.harrisonStoragePath = 'pdfs/harrison.pdf';
+      if (!config.brealeyStoragePath)  config.brealeyStoragePath  = 'pdfs/brealey.pdf';
+    }
+    res.json({ ...config, supabaseEnabled: isSupabase() });
+  } catch (err) { res.status(500).json({ error: err.message }); }
 });
 
 app.post('/api/config', (req, res) => {
