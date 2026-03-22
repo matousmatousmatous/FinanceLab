@@ -88,8 +88,12 @@ function loadPreGeneratedLesson(sessionId) {
   if (!fs.existsSync(filePath)) return null;
   const raw = fs.readFileSync(filePath, 'utf8');
   const lines = raw.split('\n');
-  const titleLine = lines.find(l => l.startsWith('# '));
-  const title = titleLine ? titleLine.replace(/^# /, '').trim() : sessionId;
+
+  // Extract title from first # heading
+  const titleIdx = lines.findIndex(l => l.startsWith('# '));
+  const title = titleIdx !== -1 ? lines[titleIdx].replace(/^# /, '').trim() : sessionId;
+
+  // Extract key takeaways from ## Key Takeaways section
   const tkIdx = lines.findIndex(l => l.trim() === '## Key Takeaways');
   const keyTakeaways = [];
   if (tkIdx !== -1) {
@@ -99,7 +103,17 @@ function loadPreGeneratedLesson(sessionId) {
       else if (line.startsWith('## ')) break;
     }
   }
-  return { title, content: raw, keyTakeaways };
+
+  // Strip the # title line (rendered separately) and the ## Key Takeaways section
+  // (rendered separately by the client) from the content body
+  const bodyLines = lines.filter((_, i) => {
+    if (i === titleIdx) return false;            // drop the # title
+    if (tkIdx !== -1 && i >= tkIdx) return false; // drop Key Takeaways section
+    return true;
+  });
+  const content = bodyLines.join('\n').trimStart();
+
+  return { title, content, keyTakeaways };
 }
 
 function readCurriculum() {
