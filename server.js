@@ -82,6 +82,7 @@ function writeSRS(data) {
 }
 
 const LESSONS_DIR = process.env.LESSONS_DIR || path.join(__dirname, 'lessons');
+const QUIZZES_DIR = process.env.QUIZZES_DIR || path.join(__dirname, 'quizzes');
 
 function loadPreGeneratedLesson(sessionId) {
   const filePath = path.join(LESSONS_DIR, `${sessionId}.md`);
@@ -565,6 +566,18 @@ Return ONLY valid JSON:
   }
 });
 
+// ─── Pre-generated Quiz ───────────────────────────────────────────────────────
+
+app.get('/api/quiz/chapter/:chapterId', (req, res) => {
+  try {
+    const { chapterId } = req.params; // e.g. "ch01"
+    const filePath = path.join(QUIZZES_DIR, `${chapterId}_quizzes.json`);
+    if (!fs.existsSync(filePath)) return res.status(404).json({ error: `No quiz found for ${chapterId}` });
+    const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    res.json(data);
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
 // ─── Learn (two-pass: outline → lesson) ──────────────────────────────────────
 
 const OUTLINE_SYSTEM = `You are a curriculum designer preparing a lesson outline for a finance student targeting PE/IB/M&A roles. You will be given textbook chapter text and a list of learning objectives. Your job is to produce a structured lesson plan — not the lesson itself. Be precise and concrete. Every example you list must come directly from the provided chapter text. Do not invent examples or companies not present in the text.`;
@@ -777,66 +790,133 @@ Return ONLY valid JSON:
 
 // ─── Quiz Grade ───────────────────────────────────────────────────────────────
 
+/**
+ * Parse a financial statement value string into a number.
+ * Handles: "1,200" → 1200, "(50)" → -50, "40.0%" → 40.0
+ */
+function parseFinancialValue(str) {
+  if (str === null || str === undefined || str === '') return null;
+  const s = str.toString().trim()
+    .replace(/,/g, '')
+    .replace(/\(/g, '-')
+    .replace(/\)/g, '')
+    .replace(/%$/, '');
+  const n = parseFloat(s);
+  return isNaN(n) ? null : n;
+}
+
+function fibValuesMatch(userStr, correctStr) {
+  const u = parseFinancialValue(userStr);
+  const c = parseFinancialValue(correctStr);
+  if (u === null || c === null) {
+    return (userStr || '').trim().toLowerCase() === (correctStr || '').trim().toLowerCase();
+  }
+  if (c === 0) return Math.abs(u) < 0.5;
+  return Math.abs(u - c) <= Math.max(2, Math.abs(c) * 0.02);
+}
+
 app.post('/api/quiz/grade', async (req, res) => {
   try {
-    const { topicId, topicTitle, quiz, answers, chapterId, sessionId } = req.body;
+    const { topicId, topicTitle, quiz, answers, chapterId, sessionId, difficulty } = req.body;
     const progress = readProgress();
 
-    // ── Step 1: Grade MC instantly ────────────────────────────────────────────
-    const mcResults = [];
-    const aiQuestions = [];
+    // ── Step 1: Engine-grade MCQ + FIB; collect open questions for AI ─────────
+    const engineResults = [];
+    const openQuestions = [];
 
     quiz.questions.forEach(q => {
       const answer = answers[q.id];
-      if (q.type === 'multiple_choice') {
-        const correct = answer === q.correct_index;
-        mcResults.push({ id: q.id, type: 'multiple_choice', correct, score: correct ? 1.0 : 0.0, feedback: q.explanation || '' });
-      } else if (q.type === 'short_answer') {
-        aiQuestions.push({ id: q.id, type: 'short_answer', question: q.question, model_answer: q.model_answer, student_answer: answer || '(no answer)' });
+
+      // MCQ — engine graded (supports both 'multiple_choice' and 'mcq' types)
+      if (q.type === 'multiple_choice' || q.type === 'mcq') {
+        const correctIdx = q.correct_index !== undefined ? q.correct_index : q.correct;
+        const correct = answer === correctIdx;
+        engineResults.push({
+          id: q.id, type: 'multiple_choice', correct,
+          score: correct ? 1.0 : 0.0,
+          feedback: q.explanation || '',
+          correct_index: correctIdx,
+        });
+
+      // Open/short-answer — Claude graded
+      } else if (q.type === 'short_answer' || q.type === 'open') {
+        openQuestions.push({
+          id: q.id, type: 'short_answer',
+          question: q.question,
+          model_answer: q.model_answer,
+          rubric: q.rubric || null,
+          student_answer: answer || '(no answer)',
+        });
+
+      // Fill-in-blank — engine graded
       } else if (q.type === 'fill_in_blank') {
         const cellAnswers = answer || {};
-        aiQuestions.push({
-          id: q.id, type: 'fill_in_blank', title: q.title,
-          rows: q.table.rows.filter(r => r.blank).map(r => ({
-            label: r.label, correct_value: r.answer, student_value: cellAnswers[r.label] || '',
-          })),
+        // Support both old table.rows format and new direct rows format
+        const rows = q.rows || (q.table && q.table.rows) || [];
+        const blankRows = rows.filter(r => r.blank);
+        const cellResults = blankRows.map(r => {
+          const userValue = cellAnswers[r.label] || '';
+          const correctValue = r.answer || '';
+          const correct = fibValuesMatch(userValue, correctValue);
+          return { label: r.label, correct, userValue, correctValue, feedback: correct ? '' : `Expected ${correctValue}` };
+        });
+        const correctCount = cellResults.filter(cr => cr.correct).length;
+        const score = blankRows.length > 0 ? correctCount / blankRows.length : 0;
+        engineResults.push({
+          id: q.id, type: 'fill_in_blank',
+          score, cellResults,
+          feedback: `${correctCount} of ${blankRows.length} cells correct.`,
         });
       }
     });
 
-    // ── Step 2: AI grades SA + FIB only ──────────────────────────────────────
-    const system = `${PERSONA}\n\n${buildProgressSummary(progress)}`;
-    const user = `Grade these ${aiQuestions.length} question(s) for "${topicTitle}". Be fair but demanding.
+    // ── Step 2: Claude grades open questions only ─────────────────────────────
+    let aiResults = [];
+    let weakSpots = [];
+    let nextStepAdvice = '';
 
-${JSON.stringify(aiQuestions, null, 2)}
+    if (openQuestions.length > 0) {
+      const system = `${PERSONA}\n\n${buildProgressSummary(progress)}`;
+      const user = `Grade these ${openQuestions.length} written answer(s) for "${topicTitle}". Be fair but demanding.
+
+${JSON.stringify(openQuestions, null, 2)}
 
 Rules:
-- short_answer: score 0.0–1.0. 0.8+ requires covering key points with precision.
-- fill_in_blank: check each row (allow ±2 rounding). Score = correct_count / total_rows.
+- score 0.0–1.0. 0.8+ requires covering key points with precision.
+- Use the rubric field (if present) to guide scoring.
 
 Return ONLY valid JSON:
 {
   "aiResults": [
-    { "id": 3, "type": "short_answer", "score": 0.0, "feedback": "string" },
-    { "id": 4, "type": "fill_in_blank", "score": 0.0, "feedback": "string",
-      "cellResults": [{ "label": "string", "correct": true, "userValue": "string", "correctValue": "string", "feedback": "" }] }
+    { "id": "string", "type": "short_answer", "score": 0.0, "feedback": "string" }
   ],
   "weakSpots": ["string"],
   "nextStepAdvice": "string"
 }`;
 
-    const raw = await callClaude(system, user, 1000);
-    const aiData = extractJSON(raw);
+      const raw = await callClaude(system, user, 1000);
+      const aiData = extractJSON(raw);
+      aiResults = aiData.aiResults || [];
+      weakSpots = aiData.weakSpots || [];
+      nextStepAdvice = aiData.nextStepAdvice || '';
+    }
 
     // ── Step 3: Merge + score ─────────────────────────────────────────────────
-    const allResults = [...mcResults, ...(aiData.aiResults || [])].sort((a, b) => a.id - b.id);
+    const allResults = [...engineResults, ...aiResults].sort((a, b) => {
+      // Sort by original question order
+      const aIdx = quiz.questions.findIndex(q => String(q.id) === String(a.id));
+      const bIdx = quiz.questions.findIndex(q => String(q.id) === String(b.id));
+      return aIdx - bIdx;
+    });
+
     let earned = 0, possible = 0;
     allResults.forEach(r => {
-      const w = r.type === 'multiple_choice' ? 1 : 2;
-      earned += (r.score || 0) * w; possible += w;
+      const w = (r.type === 'multiple_choice') ? 1 : 2;
+      earned += (r.score || 0) * w;
+      possible += w;
     });
     const totalScore = possible > 0 ? Math.round((earned / possible) * 100) : 0;
-    const result = { results: allResults, totalScore, weakSpots: aiData.weakSpots || [], nextStepAdvice: aiData.nextStepAdvice || '' };
+    const result = { results: allResults, totalScore, weakSpots, nextStepAdvice };
 
     // ── Step 4: Persist ───────────────────────────────────────────────────────
     if (!progress.topics) progress.topics = [];
@@ -862,12 +942,20 @@ Return ONLY valid JSON:
     // ── Curriculum session progress ──────────────────────────────────────────
     if (sessionId) {
       if (!progress.sessions) progress.sessions = {};
+      const prev = progress.sessions[sessionId] || {};
+      const now = new Date().toISOString();
+      // Track per-difficulty scores
+      const difficulties = prev.difficulties || {};
+      if (difficulty) {
+        difficulties[difficulty] = { score: result.totalScore, completed: true, lastStudied: now };
+      }
       progress.sessions[sessionId] = {
-        ...(progress.sessions[sessionId] || {}),
+        ...prev,
         completed: true,
         quizScore: result.totalScore,
         weakSpots: result.weakSpots || [],
-        lastStudied: new Date().toISOString(),
+        lastStudied: now,
+        difficulties,
       };
 
       // Auto-populate library with coreFormulasForLibrary from this session

@@ -1,0 +1,332 @@
+{
+  "chapter": 1,
+  "title": "The Accounting Framework & Financial Statements",
+  "quizzes": [
+    {
+      "difficulty": "easy",
+      "label": "Foundations",
+      "questions": [
+        {
+          "id": "ch01_e_01",
+          "type": "mcq",
+          "question": "Which financial statement captures a company's financial position at a single point in time?",
+          "options": [
+            "Income Statement",
+            "Statement of Cash Flows",
+            "Balance Sheet",
+            "Statement of Changes in Equity"
+          ],
+          "correct": 2,
+          "explanation": "The Balance Sheet (BS) is a snapshot — it shows what the company owns (assets), owes (liabilities), and the residual belonging to shareholders (equity) at one specific date, typically the last day of the fiscal year. The Income Statement and SCF both cover a period of time, not a point."
+        },
+        {
+          "id": "ch01_e_02",
+          "type": "mcq",
+          "question": "The accounting equation must always hold. If a company has assets of $500 and liabilities of $180, what is equity?",
+          "options": [
+            "$680",
+            "$320",
+            "$180",
+            "$500"
+          ],
+          "correct": 1,
+          "explanation": "Equity = Assets − Liabilities = $500 − $180 = $320. This follows directly from the fundamental accounting equation: Assets = Liabilities + Equity, rearranged as Equity = Assets − Liabilities. This identity always holds because every transaction preserves it via double-entry bookkeeping."
+        },
+        {
+          "id": "ch01_e_03",
+          "type": "mcq",
+          "question": "Under accrual accounting, when is revenue recognized?",
+          "options": [
+            "When cash is received from the customer",
+            "When the goods or services are delivered to the customer",
+            "When the invoice is sent to the customer",
+            "When the customer places the order"
+          ],
+          "correct": 1,
+          "explanation": "Under the revenue recognition principle (IFRS), revenue is recognized when it is earned — i.e., when goods are delivered or services rendered and the risks and rewards of ownership have transferred. Cash receipt is irrelevant for timing; a credit sale earns revenue at delivery but collects cash later."
+        },
+        {
+          "id": "ch01_e_04",
+          "type": "mcq",
+          "question": "Which of the following is the correct double-entry rule?",
+          "options": [
+            "Increases in assets are credits; increases in liabilities are debits",
+            "Increases in assets are debits; increases in liabilities are credits",
+            "Increases in revenues are debits; increases in expenses are credits",
+            "Increases in equity are debits; increases in assets are credits"
+          ],
+          "correct": 1,
+          "explanation": "Assets and expenses sit on the debit (left) side — increases are debits, decreases are credits. Liabilities, equity, and revenues sit on the credit (right) side — increases are credits, decreases are debits. This flows from the accounting equation: assets = liabilities + equity."
+        },
+        {
+          "id": "ch01_e_05",
+          "type": "mcq",
+          "question": "Which property of accounting refers to the fact that vastly different companies all report using the same structural format?",
+          "options": [
+            "Parsimonious",
+            "Standardized",
+            "Relevant",
+            "Reliable"
+          ],
+          "correct": 1,
+          "explanation": "Accounting is standardized — companies as different as a Czech brewery and a Singapore airline report under the same framework (IFRS), making comparison possible. 'Parsimonious' refers to the condensing of thousands of transactions into a few key numbers — a different but equally important property."
+        },
+        {
+          "id": "ch01_e_06",
+          "type": "open",
+          "question": "Explain the difference between the Income Statement and the Statement of Cash Flows. Why might a profitable company still run out of cash?",
+          "model_answer": "The Income Statement measures economic performance using accrual accounting — revenues are recognized when earned and expenses when matched, regardless of cash timing. The SCF measures actual cash inflows and outflows. A profitable company can run out of cash because: (1) customers have not yet paid (receivables are high), (2) inventory has been purchased but not sold, (3) the company is investing heavily in CapEx, or (4) debt is being repaid. The gap between net income and CFO is exactly what accrual accounting creates.",
+          "rubric": "Award marks for: (1) correct distinction between accrual (IS) and cash (SCF) basis, (2) at least two concrete reasons why profit ≠ cash (receivables, inventory, CapEx, debt repayment), (3) linking to the accrual principle.",
+          "explanation": "This is a foundational question in finance interviews. The answer always comes back to accruals: revenue recognized before cash arrives, costs paid before they hit the P&L, or investments that consume cash without affecting net income (CapEx). Understanding this gap is essential for building financial models."
+        },
+        {
+          "id": "ch01_e_07",
+          "type": "open",
+          "question": "What are the three criteria that must all be met for an item to be recognized as an asset under IFRS?",
+          "model_answer": "Under IFRS, an asset must: (1) result from a past event (not a future intention), (2) be controlled by the firm (not merely owned — legal ownership and control can differ), and (3) be expected to generate future economic benefits with reasonable certainty. All three must be satisfied simultaneously. This is why a signed purchase order is not an asset (no past exchange yet), why employees cannot be capitalized (no control over personnel), and why most internally developed R&D is expensed (uncertain future benefit).",
+          "rubric": "Award marks for all three criteria stated correctly. Bonus for examples of items that fail one criterion (orders, employees, internally developed intangibles).",
+          "explanation": "These three criteria directly explain some of the most important accounting choices you will encounter in deal work — particularly why internally generated goodwill and most R&D cannot be capitalized, while acquired intangibles in a PPA can."
+        },
+        {
+          "id": "ch01_e_08",
+          "type": "fill_in_blank",
+          "question": "Complete the multi-step Income Statement for a manufacturing company using the data provided.",
+          "statement_title": "Income Statement (Year Ended Dec 31)",
+          "rows": [
+            { "label": "Net Sales",                  "given": true,  "value": "1,200", "blank": false },
+            { "label": "Cost of Goods Sold (COGS)",  "given": true,  "value": "(800)", "blank": false },
+            { "label": "Gross Profit",               "given": false, "value": "400",   "blank": true,  "answer": "400" },
+            { "label": "SG&A Expenses",              "given": true,  "value": "(150)", "blank": false },
+            { "label": "EBIT (Operating Income)",    "given": false, "value": "250",   "blank": true,  "answer": "250" },
+            { "label": "Interest Expense",           "given": true,  "value": "(50)",  "blank": false },
+            { "label": "Pre-Tax Income",             "given": false, "value": "200",   "blank": true,  "answer": "200" },
+            { "label": "Income Tax (25%)",           "given": false, "value": "(50)",  "blank": true,  "answer": "(50)" },
+            { "label": "Net Income",                 "given": false, "value": "150",   "blank": true,  "answer": "150" }
+          ],
+          "explanation": "Gross Profit = 1,200 − 800 = 400. EBIT = 400 − 150 = 250. Pre-Tax Income = 250 − 50 = 200. Tax = 200 × 25% = 50. Net Income = 200 − 50 = 150. Note that EBIT is the key operational metric used in PE/IB valuation (EV/EBIT multiples) — it measures business performance before financing choices (interest) and tax regime affect the number."
+        }
+      ]
+    },
+    {
+      "difficulty": "medium",
+      "label": "Application",
+      "questions": [
+        {
+          "id": "ch01_m_01",
+          "type": "mcq",
+          "question": "A company sells goods on credit for $300. The cost of those goods was $200. Which of the following correctly describes the accounting entries at the moment of delivery?",
+          "options": [
+            "Debit Cash $300; Credit Revenue $300; Debit COGS $200; Credit Inventory $200",
+            "Debit AR $300; Credit Revenue $300; Debit COGS $200; Credit Inventory $200",
+            "Debit AR $300; Credit Revenue $300 only — COGS is recorded when cash is received",
+            "Debit Inventory $200; Credit Revenue $300; Debit AR $100"
+          ],
+          "correct": 1,
+          "explanation": "At delivery: (1) Revenue is earned → Debit AR $300 / Credit Revenue $300. (2) Cost is matched → Debit COGS $200 / Credit Inventory $200. These are two separate journal entries but happen simultaneously. No cash changes hands yet — that's the essence of accrual accounting. Option A is wrong because cash hasn't been received. Option C violates the matching principle."
+        },
+        {
+          "id": "ch01_m_02",
+          "type": "mcq",
+          "question": "A company pays $120,000 for a machine with a 10-year useful life. Under accrual accounting, what is the income statement impact in Year 1?",
+          "options": [
+            "An expense of $120,000 in Year 1",
+            "No expense — the machine is an asset",
+            "Depreciation of $12,000 in Year 1",
+            "Depreciation of $12,000 in Year 1 and a reduction in cash of $120,000"
+          ],
+          "correct": 2,
+          "explanation": "The $120,000 cash outflow is a Balance Sheet event (cash decreases, PPE asset increases). On the Income Statement, only $12,000 of depreciation ($120,000 / 10 years) is expensed in Year 1, matching the cost to the years the machine generates revenue. This is the matching principle in action. Option D is partially correct on facts but wrong in framing — the cash reduction is a Balance Sheet event, not an IS impact."
+        },
+        {
+          "id": "ch01_m_03",
+          "type": "mcq",
+          "question": "An analyst is comparing two companies — one using the 'relevance-first' approach and one using the 'reliability-first' approach. Which pairing is most accurate?",
+          "options": [
+            "Equity investor uses reliability; bank lender uses relevance",
+            "Equity investor uses relevance; bank lender uses reliability",
+            "Both equity and debt investors prioritize relevance equally",
+            "Tax authorities prioritize relevance; regulators prioritize reliability"
+          ],
+          "correct": 1,
+          "explanation": "Equity investors focus on relevance — they need forward-looking, economically meaningful numbers to estimate company value and future returns. Bank lenders and creditors focus on reliability — they care about downside risk and need verifiable, conservative numbers they can trust in a workout scenario. Tax authorities are reliability-focused (they use direct write-off, not estimates) — this is the 'begging game.' This distinction explains many accounting policy choices."
+        },
+        {
+          "id": "ch01_m_04",
+          "type": "mcq",
+          "question": "Which of the following items would NOT qualify as an asset under IFRS?",
+          "options": [
+            "A patent acquired in an acquisition",
+            "A highly skilled workforce developed through years of training",
+            "A building owned by the company and used in operations",
+            "Trade receivables from credit sales already delivered"
+          ],
+          "correct": 1,
+          "explanation": "A workforce fails the control criterion — companies cannot control their employees in the way required for asset recognition (employees can resign). The patent (acquired externally, past event, controlled, future benefit), building (owned, controlled, future benefit), and receivables (past delivery, legal right to receive cash) all meet all three criteria. This is why human capital never appears on a balance sheet despite often being a company's most valuable resource."
+        },
+        {
+          "id": "ch01_m_05",
+          "type": "mcq",
+          "question": "A PE analyst is reviewing a target company's financials. Net income has grown 20% YoY, but CFO has declined 5% YoY. What is the most likely explanation?",
+          "options": [
+            "The company is generating unusually high cash flows relative to profits",
+            "Accruals are building up — revenue or profits may be of low quality",
+            "The company has reduced its tax burden, boosting net income",
+            "Depreciation has increased significantly, reducing net income"
+          ],
+          "correct": 1,
+          "explanation": "When net income grows but CFO declines, accruals are building on the Balance Sheet — receivables or inventory growing without converting to cash, or liabilities being used to defer cash payments. This is the classic earnings quality red flag. A Cash Realization Ratio (CFO / NI) well below 1 and falling indicates profits may be partly illusory. In PE due diligence, this would trigger a full QoE analysis."
+        },
+        {
+          "id": "ch01_m_06",
+          "type": "open",
+          "question": "Explain why EBIT (Earnings Before Interest and Taxes) is such a central metric in PE and IB valuation. What does it isolate, and what are its limitations?",
+          "model_answer": "EBIT isolates the operating performance of the business before the effects of capital structure (interest) and tax jurisdiction. This makes it comparable across companies regardless of how they are financed or where they are domiciled. In LBO analysis and M&A, EV/EBIT multiples are used because the acquirer will impose their own capital structure on the target post-acquisition. Limitations: (1) EBIT is still affected by depreciation and amortization, which are influenced by asset age, accounting policy, and PPA step-ups from acquisitions — EBITDA adds these back. (2) EBIT does not capture working capital dynamics or CapEx requirements. (3) One-time items distort EBIT and must be normalized.",
+          "rubric": "Award marks for: (1) correctly explaining that EBIT removes financing (interest) and tax effects, (2) stating why this matters for cross-company comparison and acquisition modeling, (3) at least one valid limitation (D&A dependency, no CapEx, one-time items).",
+          "explanation": "EBIT is the entry point for most valuation multiples. The progression EBIT → EBITDA → Adjusted EBITDA tracks increasingly aggressive add-backs, each defensible in some contexts but also increasingly gameable. Understanding what each metric removes — and what distortions remain — is a core IB/PE skill."
+        },
+        {
+          "id": "ch01_m_07",
+          "type": "open",
+          "question": "A company receives $200,000 cash in advance for a 2-year service contract on January 1. It provides equal service each month. How is this treated at (a) January 1 and (b) December 31 of Year 1? Explain the accounting and the underlying principle.",
+          "model_answer": "(a) January 1: Debit Cash $200,000 / Credit Unearned Revenue (Liability) $200,000. No revenue recognized — the service has not yet been delivered. (b) December 31 Year 1: 12 months of the 24-month contract have been delivered. Revenue earned = $200,000 × 12/24 = $100,000. Entry: Debit Unearned Revenue $100,000 / Credit Revenue $100,000. The liability falls from $200,000 to $100,000 on the Balance Sheet. The underlying principle is revenue recognition — revenue is earned when the performance obligation is fulfilled, not when cash is received. The Balance Sheet stores the timing difference.",
+          "rubric": "Award marks for: (1) correct entry on Jan 1 (cash in, liability created), (2) correct calculation of Year 1 revenue ($100k), (3) correct Year 1 entry (liability to revenue), (4) naming the revenue recognition principle.",
+          "explanation": "Unearned revenue (deferred revenue) is a liability because the company owes service to the customer. It only converts to revenue as the service is delivered. This is a classic accrual timing question and appears frequently in both accounting exams and financial modeling."
+        },
+        {
+          "id": "ch01_m_08",
+          "type": "fill_in_blank",
+          "question": "Complete the Balance Sheet using the information provided. All values in $000s.",
+          "statement_title": "Balance Sheet as at December 31",
+          "rows": [
+            { "label": "ASSETS",                          "given": true,  "value": "",     "blank": false, "is_header": true },
+            { "label": "Cash",                            "given": true,  "value": "80",   "blank": false },
+            { "label": "Accounts Receivable",             "given": true,  "value": "120",  "blank": false },
+            { "label": "Inventory",                       "given": true,  "value": "200",  "blank": false },
+            { "label": "Total Current Assets",            "given": false, "value": "400",  "blank": true,  "answer": "400" },
+            { "label": "Property, Plant & Equipment",     "given": true,  "value": "600",  "blank": false },
+            { "label": "Total Assets",                    "given": false, "value": "1,000","blank": true,  "answer": "1,000" },
+            { "label": "LIABILITIES & EQUITY",            "given": true,  "value": "",     "blank": false, "is_header": true },
+            { "label": "Accounts Payable",                "given": true,  "value": "150",  "blank": false },
+            { "label": "Short-Term Debt",                 "given": true,  "value": "100",  "blank": false },
+            { "label": "Total Current Liabilities",       "given": false, "value": "250",  "blank": true,  "answer": "250" },
+            { "label": "Long-Term Debt",                  "given": true,  "value": "400",  "blank": false },
+            { "label": "Total Liabilities",               "given": false, "value": "650",  "blank": true,  "answer": "650" },
+            { "label": "Shareholders' Equity",            "given": false, "value": "350",  "blank": true,  "answer": "350" },
+            { "label": "Total Liabilities & Equity",      "given": false, "value": "1,000","blank": true,  "answer": "1,000" }
+          ],
+          "explanation": "Total Current Assets = 80 + 120 + 200 = 400. Total Assets = 400 + 600 = 1,000. Total Current Liabilities = 150 + 100 = 250. Total Liabilities = 250 + 400 = 650. Shareholders' Equity = 1,000 − 650 = 350 (from the accounting equation). Total L&E must equal Total Assets (1,000). Current ratio = 400/250 = 1.6x. Debt ratio = 650/1,000 = 65% — moderately leveraged."
+        }
+      ]
+    },
+    {
+      "difficulty": "hard",
+      "label": "PE/IB Application",
+      "questions": [
+        {
+          "id": "ch01_h_01",
+          "type": "mcq",
+          "question": "A company capitalizes $50m of development costs as an intangible asset rather than expensing them. Compared to a company that expenses them, which of the following is true in the year of capitalization?",
+          "options": [
+            "Higher net income, higher assets, lower equity",
+            "Higher net income, higher assets, higher equity",
+            "Same net income, same assets, same equity — only cash flow differs",
+            "Lower net income, higher assets, lower equity"
+          ],
+          "correct": 1,
+          "explanation": "Capitalizing $50m means: (1) no expense hits the P&L this year → net income is $50m × (1 − tax rate) higher, (2) the $50m sits as an asset → total assets are higher, (3) higher net income flows to retained earnings → equity is higher. Expensing would reduce net income, reduce assets (cash used), and reduce equity through lower retained earnings. This is why capitalization vs. expensing is a powerful earnings management tool — and why analysts watch R&D and software development accounting carefully."
+        },
+        {
+          "id": "ch01_h_02",
+          "type": "mcq",
+          "question": "You are analyzing a company for an LBO. The target has Net Sales of $500m, COGS of $300m, SG&A of $80m, D&A of $40m, interest expense of $25m, and a 25% tax rate. What is EBITDA?",
+          "options": [
+            "$120m",
+            "$160m",
+            "$80m",
+            "$95m"
+          ],
+          "correct": 1,
+          "explanation": "EBIT = 500 − 300 − 80 = 120m (Gross Profit 200 − SG&A 80 = 120; note D&A is embedded in either COGS or SG&A). Wait — to get EBITDA from EBIT, add back D&A: EBITDA = EBIT + D&A = 120 + 40 = $160m. Pre-tax income = 120 − 25 = 95m. Net income = 95 × 0.75 = $71.25m. In an LBO context, $160m EBITDA at a 10x entry multiple implies a $1.6bn enterprise value. The D&A add-back is essential because it represents a non-cash charge that doesn't consume cash in the period."
+        },
+        {
+          "id": "ch01_h_03",
+          "type": "mcq",
+          "question": "Two companies, Alpha and Beta, have identical businesses but Alpha uses aggressive revenue recognition (recognizes revenue before delivery is complete) while Beta uses conservative recognition. In a period of rapid growth, which statement is most accurate?",
+          "options": [
+            "Alpha will show higher revenue and higher AR relative to Beta",
+            "Alpha will show higher revenue but lower AR relative to Beta",
+            "Alpha will show the same revenue as Beta since IFRS standards are applied to both",
+            "Beta will show higher revenue because conservative accounting is more reliable"
+          ],
+          "correct": 0,
+          "explanation": "Aggressive revenue recognition means Alpha books revenue earlier — before cash arrives or before full delivery. This inflates both reported revenue (IS) and accounts receivable (BS) since those revenues haven't yet been collected. The signature of premature recognition is AR growing faster than revenue (rising DSO). Beta's more conservative approach means revenue is only recognized when truly earned, keeping DSO stable. IFRS provides judgment within principles — standards set the framework but management makes estimates."
+        },
+        {
+          "id": "ch01_h_04",
+          "type": "mcq",
+          "question": "During due diligence on an M&A target, you notice that the target's net income has grown at 15% CAGR over 5 years, but retained earnings on the Balance Sheet have only grown at 8% CAGR. What is the most likely explanation?",
+          "options": [
+            "The company has been paying significant dividends or buying back shares",
+            "The company has been writing down goodwill annually",
+            "The company has understated revenues to reduce tax",
+            "Net income and retained earnings always grow at different rates due to depreciation"
+          ],
+          "correct": 0,
+          "explanation": "Retained earnings = Prior Retained Earnings + Net Income − Dividends − Share Buybacks. If net income grows at 15% but retained earnings only at 8%, cash is leaving the equity section — most likely via dividends or buybacks. This is perfectly normal and actually positive (the company is returning capital to shareholders). The difference is the company's capital return policy. Goodwill impairment (B) would reduce net income, not cause the gap described. Option D is incorrect — dividends/buybacks are the standard explanation for this exact divergence."
+        },
+        {
+          "id": "ch01_h_05",
+          "type": "mcq",
+          "question": "A company's income statement shows net income of $100m, but its CFO is only $30m. Which combination of working capital changes would explain this gap?",
+          "options": [
+            "AR increased $40m, Inventory decreased $20m, AP increased $10m",
+            "AR increased $40m, Inventory increased $30m, AP decreased $30m",
+            "AR decreased $40m, Inventory increased $10m, AP increased $20m",
+            "AR increased $20m, Inventory increased $20m, AP increased $60m"
+          ],
+          "correct": 1,
+          "explanation": "CFO = NI + D&A adjustments − ΔCA + ΔCL (simplified). The gap between NI ($100m) and CFO ($30m) is −$70m from working capital. Option B: AR +$40m (subtract from NI), Inventory +$30m (subtract), AP −$30m (subtract) = −$100m working capital drag. Even assuming some D&A add-back gets CFO to ~$30m, this is the right direction. Rising AR (revenue not collected), rising inventory (cash tied up in stock), and falling AP (paying suppliers faster) are all cash drains — classic signs of working capital deterioration and potential earnings quality issues."
+        },
+        {
+          "id": "ch01_h_06",
+          "type": "open",
+          "question": "You are presenting an investment thesis to your PE fund's investment committee. The target company has EBITDA of $80m and you are proposing an entry at 10x EV/EBITDA ($800m enterprise value). A senior partner asks: 'Why are you using EBITDA instead of net income as your valuation base?' Give a rigorous answer.",
+          "model_answer": "EBITDA is preferred for several interconnected reasons: (1) Capital structure neutrality — EBITDA excludes interest expense, so it reflects the operating performance of the business independent of how it is financed. In an LBO we will impose our own capital structure post-acquisition, making the target's current interest expense irrelevant to our valuation. (2) Tax jurisdiction neutrality — excluding taxes allows comparison across companies in different tax regimes or with different tax histories. (3) Non-cash charge removal — adding back D&A removes the impact of historical CapEx decisions and differing depreciation policies, giving a better view of cash generation potential. (4) PPA independence — for acquisitive companies, net income is depressed by amortization of acquired intangibles from prior PPAs; EBITDA removes this accounting artifact. (5) Proxy for unlevered cash flow — EBITDA approximates operating cash flow before working capital changes and CapEx, making it the natural denominator for enterprise value multiples. Limitations to acknowledge: EBITDA ignores CapEx (which must be spent to sustain the business), working capital dynamics, and genuine economic depreciation of assets.",
+          "rubric": "Award marks for: (1) capital structure/interest exclusion (essential), (2) non-cash D&A removal, (3) at least one limitation acknowledged (CapEx, working capital), (4) connecting to the LBO context (post-acquisition capital structure will be different).",
+          "explanation": "This is a standard investment committee question. The answer needs to be both technically correct and clearly connected to the deal context — why does it matter *here*, not just in the abstract. Senior partners will probe on limitations, so acknowledging them proactively strengthens the answer."
+        },
+        {
+          "id": "ch01_h_07",
+          "type": "open",
+          "question": "Accounting is described as both a 'map' and a 'maze.' Explain this metaphor in the context of financial statement analysis for M&A due diligence. What specific features of accounting make it potentially misleading, and how do analysts defend against them?",
+          "model_answer": "As a map: standardized financial statements allow a skilled analyst to navigate a company's economics — understanding its revenue model, cost structure, asset intensity, cash generation, and capital allocation. The comparability across companies and time periods enables valuation and benchmarking. As a maze: companies have significant discretion in accounting choices — revenue recognition timing, depreciation rates, provisioning levels, capitalization vs. expensing decisions, inventory methods — and managers have incentives to make the business look more attractive (the 'dating game'). Specific features that can mislead: (1) Goodwill not amortized under IFRS can hide overpayments indefinitely until impairment, (2) Off-balance-sheet arrangements hide true leverage, (3) Aggressive revenue recognition inflates the top line without cash support, (4) Cookie jar reserves smooth earnings artificially. Defenses: (1) Quality of Earnings analysis — reconcile reported earnings to cash flows, (2) CFO/NI ratio (CRR) monitoring, (3) Analyze accounting policy footnotes for changes, (4) Compare to peer accounting policies, (5) Stress-test key assumptions (impairment test discount rates, provisioning percentages).",
+          "rubric": "Award marks for: (1) explaining both map (useful, standardized) and maze (discretionary, gameable) aspects, (2) at least two specific manipulation techniques, (3) at least two specific defenses/analytical responses.",
+          "explanation": "Prof. Novák's map/maze metaphor captures the fundamental tension in financial accounting. In M&A, the maze aspect is always present — management has prepared the financials with a sale in mind. The QoE process is essentially a systematic attempt to find your way through the maze."
+        },
+        {
+          "id": "ch01_h_08",
+          "type": "fill_in_blank",
+          "question": "A company has the following data. Complete the Income Statement and calculate key metrics used in PE/IB valuation. All values in $m.",
+          "statement_title": "Income Statement (Year Ended Dec 31, $m)",
+          "rows": [
+            { "label": "Net Sales",                         "given": true,  "value": "2,400", "blank": false },
+            { "label": "Cost of Goods Sold",                "given": true,  "value": "(1,440)","blank": false },
+            { "label": "Gross Profit",                      "given": false, "value": "960",   "blank": true,  "answer": "960" },
+            { "label": "Gross Margin %",                    "given": false, "value": "40.0%", "blank": true,  "answer": "40.0%" },
+            { "label": "SG&A (incl. D&A of $120m)",         "given": true,  "value": "(480)", "blank": false },
+            { "label": "EBIT",                              "given": false, "value": "480",   "blank": true,  "answer": "480" },
+            { "label": "EBIT Margin %",                     "given": false, "value": "20.0%", "blank": true,  "answer": "20.0%" },
+            { "label": "EBITDA (EBIT + D&A)",               "given": false, "value": "600",   "blank": true,  "answer": "600" },
+            { "label": "EBITDA Margin %",                   "given": false, "value": "25.0%", "blank": true,  "answer": "25.0%" },
+            { "label": "Interest Expense",                  "given": true,  "value": "(80)",  "blank": false },
+            { "label": "Pre-Tax Income",                    "given": false, "value": "400",   "blank": true,  "answer": "400" },
+            { "label": "Tax (25%)",                         "given": false, "value": "(100)", "blank": true,  "answer": "(100)" },
+            { "label": "Net Income",                        "given": false, "value": "300",   "blank": true,  "answer": "300" },
+            { "label": "Net Margin %",                      "given": false, "value": "12.5%", "blank": true,  "answer": "12.5%" }
+          ],
+          "explanation": "Gross Profit = 2,400 − 1,440 = 960 (40% margin). EBIT = 960 − 480 = 480 (20% margin). EBITDA = EBIT + D&A = 480 + 120 = 600 (25% margin). Pre-Tax = 480 − 80 = 400. Tax = 400 × 25% = 100. Net Income = 300 (12.5% margin). At a 10x EV/EBITDA entry, EV = $6bn. Leverage capacity at 4.5x EBITDA = $2.7bn debt. This margin structure (25% EBITDA margin) is consistent with a high-quality industrial or services business."
+        }
+      ]
+    }
+  ]
+}

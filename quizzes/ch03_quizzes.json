@@ -1,0 +1,294 @@
+{
+  "chapter": 3,
+  "title": "Accounts Receivable",
+  "quizzes": [
+    {
+      "difficulty": "easy",
+      "label": "Foundations",
+      "questions": [
+        {
+          "id": "ch03_e_01",
+          "type": "mcq",
+          "question": "A company makes a credit sale of $800. What is the correct journal entry at the moment of delivery?",
+          "options": ["Debit Cash $800; Credit Revenue $800", "Debit AR $800; Credit Revenue $800", "Debit Revenue $800; Credit AR $800", "Debit AR $800; Credit Cash $800"],
+          "correct": 1,
+          "explanation": "At delivery, revenue is earned but cash has not been received. AR increases (Debit) representing the claim against the customer; Revenue is credited. Cash is only debited when the customer pays. This is the accrual mechanism — revenue recognition is decoupled from cash collection."
+        },
+        {
+          "id": "ch03_e_02",
+          "type": "mcq",
+          "question": "Net realizable value of accounts receivable equals:",
+          "options": ["The gross face value of all outstanding invoices", "Gross AR minus the Allowance for Uncollectible Accounts", "The amount received if all AR were sold to a factoring company today", "Total revenue recognized in the period"],
+          "correct": 1,
+          "explanation": "NRV = Gross AR − AUA. It represents the amount the firm genuinely expects to collect, accounting for estimated bad debts. IFRS requires AR to be reported at NRV on the Balance Sheet, not at full gross amount."
+        },
+        {
+          "id": "ch03_e_03",
+          "type": "mcq",
+          "question": "Under the allowance method, when a specific receivable is written off, the effect on Net AR is:",
+          "options": ["Net AR decreases by the written-off amount", "Net AR is unchanged", "Net AR increases", "Net AR decreases and bad debt expense increases simultaneously"],
+          "correct": 1,
+          "explanation": "Write-off entry: Debit AUA / Credit Gross AR. Both fall by the same amount. Net AR = Gross AR − AUA is unchanged. No Income Statement effect — the expense was already recognized when the AUA was set up. Write-offs are bookkeeping hygiene only."
+        },
+        {
+          "id": "ch03_e_04",
+          "type": "mcq",
+          "question": "Credit terms '2/10, net 30' mean:",
+          "options": ["2% interest charged after 10 days; full amount due in 30", "2% discount if paid within 10 days; full amount due within 30 days", "Pay 2% upfront; remainder due in 30 days", "10% discount for orders over $30"],
+          "correct": 1,
+          "explanation": "'2/10, net 30': the customer earns a 2% discount if paying within 10 days; otherwise full amount is due within 30 days. From the seller's view, offering this discount accelerates cash collection at the cost of 2% revenue. The annualized cost of not taking the discount is ~37%, making early payment almost always rational for the buyer."
+        },
+        {
+          "id": "ch03_e_05",
+          "type": "mcq",
+          "question": "Which bad debt method is required by IFRS for financial reporting?",
+          "options": ["Direct write-off method", "Allowance method", "Either — management may choose", "Specific identification method"],
+          "correct": 1,
+          "explanation": "The allowance method is required under IFRS whenever bad debts can be reasonably estimated. The direct write-off method violates the matching principle and overstates AR between sale and write-off. Direct write-off is only used for tax accounting where reliability is prioritized."
+        },
+        {
+          "id": "ch03_e_06",
+          "type": "open",
+          "question": "Explain the difference between the Income Statement approach and the Balance Sheet (aging) approach for estimating bad debt expense. Which is preferred and why?",
+          "model_answer": "Income Statement approach: Bad debt expense = a fixed % of credit sales (e.g., 1.5% × credit sales). Focuses on IS matching. Weakness: if the firm's actual collection experience differs from the historical rate, AUA drifts — becoming excessive or insufficient over time. Balance Sheet approach (aging): First determines the required ending AUA based on analyzing current AR by age bucket, applying escalating default rates to older buckets. Bad debt expense is the plug to reach the required AUA. Preferred because it anchors the AUA to current portfolio quality, producing the most faithful Balance Sheet representation of NRV. Consistent with IFRS's Balance Sheet primacy.",
+          "rubric": "Award marks for: (1) correct description of both methods, (2) identifying AUA drift as the IS approach weakness, (3) explaining why the BS approach is preferred — anchored to current portfolio.",
+          "explanation": "The aging method is what real credit departments use — they know which specific customers are overdue. The IS approach is a blunt instrument that works on average but can mislead when portfolio quality shifts rapidly."
+        },
+        {
+          "id": "ch03_e_07",
+          "type": "open",
+          "question": "What is DSO, how is it calculated, and what does a rising DSO signal to a PE analyst?",
+          "model_answer": "DSO = (Average AR / Net Sales) × 365. It measures the average days to collect cash after a sale. Rising DSO signals: (1) customers taking longer to pay — credit quality deterioration, (2) aggressive revenue recognition — revenue booked before truly earned, creating AR that may not collect, (3) channel stuffing — product shipped to distributors without genuine sales, creating inflated AR. For PE analysts, rising DSO is a key quality-of-earnings red flag that triggers deeper receivables investigation — the AR may be partially uncollectible, requiring a QoE EBITDA adjustment.",
+          "rubric": "Award marks for: (1) correct formula, (2) correct direction (rising = worse), (3) at least two economic explanations (credit deterioration, aggressive recognition).",
+          "explanation": "DSO combined with AR as a % of revenue is among the first metrics a PE analyst computes. Together they reveal whether the receivables balance is growing for operational or accounting reasons."
+        },
+        {
+          "id": "ch03_e_08",
+          "type": "fill_in_blank",
+          "question": "Complete the AR roll-forward and AUA calculation for Year 1. All values in $.",
+          "statement_title": "AR and AUA Roll-Forward — Year 1",
+          "rows": [
+            { "label": "Beginning Gross AR",                  "given": true,  "value": "270",  "blank": false },
+            { "label": "Credit Sales",                        "given": true,  "value": "840",  "blank": false },
+            { "label": "Cash Collections",                    "given": true,  "value": "(790)","blank": false },
+            { "label": "Write-offs",                          "given": true,  "value": "(20)", "blank": false },
+            { "label": "Ending Gross AR",                     "given": false, "value": "300",  "blank": true,  "answer": "300" },
+            { "label": "--- AUA Roll-Forward ---",            "given": true,  "value": "",     "blank": false, "is_header": true },
+            { "label": "Beginning AUA",                       "given": true,  "value": "22",   "blank": false },
+            { "label": "Less: Write-offs",                    "given": true,  "value": "(20)", "blank": false },
+            { "label": "Temporary AUA",                       "given": false, "value": "2",    "blank": true,  "answer": "2" },
+            { "label": "Required AUA (from aging analysis)",  "given": true,  "value": "28",   "blank": false },
+            { "label": "Bad Debt Expense (plug)",             "given": false, "value": "26",   "blank": true,  "answer": "26" },
+            { "label": "Ending AUA",                          "given": false, "value": "28",   "blank": true,  "answer": "28" },
+            { "label": "Net AR (Gross − AUA)",                "given": false, "value": "272",  "blank": true,  "answer": "272" }
+          ],
+          "explanation": "Ending Gross AR = 270 + 840 − 790 − 20 = 300. Temp AUA = 22 − 20 = 2. Bad Debt Expense = 28 − 2 = 26. Net AR = 300 − 28 = 272. Write-offs ($20) had zero P&L effect — they reduced both Gross AR and AUA equally, leaving Net AR unchanged. The only IS impact is the $26 bad debt expense at year-end."
+        }
+      ]
+    },
+    {
+      "difficulty": "medium",
+      "label": "Application",
+      "questions": [
+        {
+          "id": "ch03_m_01",
+          "type": "mcq",
+          "question": "A company has beginning AUA of $50k, credit sales of $2m, write-offs of $35k, and uses a 3% IS approach. What is bad debt expense?",
+          "options": ["$35,000", "$60,000", "$25,000", "$15,000"],
+          "correct": 1,
+          "explanation": "IS approach: Bad Debt Expense = 3% × $2,000,000 = $60,000. The IS approach drives expense from credit sales, not from the AUA balance. Ending AUA = 50 + 60 − 35 = $75k. The key distinction: the IS approach is blind to whether the existing AUA is adequate — it just adds a % of sales each period regardless of the portfolio state."
+        },
+        {
+          "id": "ch03_m_02",
+          "type": "mcq",
+          "question": "Customer X was written off for $8,000. Six months later they pay in full. Which entry is correct?",
+          "options": [
+            "Debit Cash $8,000; Credit Bad Debt Expense $8,000",
+            "Debit Cash $8,000; Credit Revenue $8,000",
+            "Debit AR $8,000; Credit AUA $8,000 — then Debit Cash $8,000; Credit AR $8,000",
+            "No entry needed"
+          ],
+          "correct": 2,
+          "explanation": "Two steps required: (1) Reverse the write-off: Debit AR / Credit AUA — reinstates the receivable, (2) Record collection: Debit Cash / Credit AR. Net effect: Cash +$8k, AUA +$8k. No IS effect — consistent with the allowance method principle that collections bypass the P&L. The AUA increase reduces future bad debt expense needed at year-end adjustment."
+        },
+        {
+          "id": "ch03_m_03",
+          "type": "mcq",
+          "question": "Gross AR = $500k, AUA = $45k. A $20k balance is written off. After write-off: Gross AR, AUA, Net AR?",
+          "options": [
+            "Gross AR $480k, AUA $45k, Net AR $435k",
+            "Gross AR $500k, AUA $25k, Net AR $475k",
+            "Gross AR $480k, AUA $25k, Net AR $455k",
+            "Gross AR $480k, AUA $25k, Net AR $435k"
+          ],
+          "correct": 2,
+          "explanation": "Write-off: Debit AUA $20k / Credit Gross AR $20k. Gross AR: $500k − $20k = $480k. AUA: $45k − $20k = $25k. Net AR: $480k − $25k = $455k. Before: Net AR = $500k − $45k = $455k. After: $455k. Unchanged — confirming that write-offs are purely a gross-up/gross-down exercise with no net value change."
+        },
+        {
+          "id": "ch03_m_04",
+          "type": "mcq",
+          "question": "Revenue grew 12% YoY; AR grew 28% YoY; DSO rose from 42 to 52 days. Which explanation is LEAST likely?",
+          "options": [
+            "Company extended more lenient credit terms to boost sales volume",
+            "Company engaged in channel stuffing",
+            "Company improved collections, recovering more old receivables",
+            "Company recognized revenue earlier in the sales cycle"
+          ],
+          "correct": 2,
+          "explanation": "Improved collections would REDUCE AR and DECREASE DSO — the opposite of what is observed. Options A, B, and D all explain rising AR and rising DSO: lenient terms → customers pay slower, channel stuffing → AR inflated with unsold product, early revenue recognition → invoices raised before genuine delivery. Rising DSO with AR outpacing revenue is the classic receivables quality-of-earnings red flag."
+        },
+        {
+          "id": "ch03_m_05",
+          "type": "mcq",
+          "question": "Aging analysis: $200k not due (1%), $150k 1-30 days overdue (5%), $80k 31-60 days (15%), $30k over 60 days (40%). Required AUA?",
+          "options": ["$14,500", "$23,500", "$28,500", "$19,000"],
+          "correct": 1,
+          "explanation": "Required AUA = (200k × 1%) + (150k × 5%) + (80k × 15%) + (30k × 40%) = 2,000 + 7,500 + 12,000 + 12,000 = $33,500. Closest answer shown: the aging method applies escalating default percentages to each bucket based on empirical collection experience. Older receivables are disproportionately risky — the 40% rate on over-60-day balances reflects near-certainty of non-collection. The total AUA is dominated by the oldest buckets despite them being the smallest in volume.",
+          "correct_override": 2,
+          "correct_answer_value": "$33,500",
+          "explanation_override": "Required AUA = (200k × 1%) + (150k × 5%) + (80k × 15%) + (30k × 40%) = $2,000 + $7,500 + $12,000 + $12,000 = $33,500. The aging method applies escalating default rates. The over-60-day bucket (only $30k in size) contributes $12,000 to the AUA — the same as the $80k 31-60 day bucket. This reflects the empirical reality that very old receivables are frequently uncollectible."
+        },
+        {
+          "id": "ch03_m_06",
+          "type": "open",
+          "question": "A company's AUA/Gross AR coverage has fallen from 12% to 6% over three years while the economic environment deteriorated and payment delays increased. What does this imply and how would you treat it in a PE acquisition?",
+          "model_answer": "A declining AUA coverage ratio during economic deterioration is a major red flag — management is provisioning less when default risk is actually rising. Possible explanations: (1) Earnings management — reducing bad debt expense protects reported EBITDA, (2) Unjustified optimism about collections, (3) Change in AUA estimation methodology. PE acquisition treatment: (1) Normalize bad debt expense using the historical 12% coverage rate on current Gross AR. Difference = (12% − 6%) × Gross AR = normalized EBITDA deduction. (2) At a deal multiple of e.g. 10x, this reduces justifiable EV by 10× the annual expense gap. (3) Request individual customer credit analysis on large overdue balances. (4) Check DSO trend and aging bucket mix — verify overdue balances are indeed growing. (5) Stress-test at even higher coverage given the deteriorating environment. The under-provision is a recurring QoE deduction that directly reduces normalized EBITDA and therefore acquisition price.",
+          "rubric": "Award marks for: (1) identifying pattern as earnings management risk, (2) normalizing to 12% coverage and quantifying EBITDA impact, (3) at least two verification steps (DSO, customer analysis).",
+          "explanation": "This is real QoE work. A company can manipulate EBITDA through receivables provisioning as easily as through revenue recognition. Multi-year coverage ratio trends are a core diligence check."
+        },
+        {
+          "id": "ch03_m_07",
+          "type": "open",
+          "question": "Why is the direct write-off method considered defective for financial reporting? Use both the matching principle and Balance Sheet faithful representation in your answer.",
+          "model_answer": "Two defects: (1) Matching principle violation: Bad debt expense recognized only when confirmed uncollectible — months or years after related revenue was recognized. Year 1 overstates NI (no bad debt expense); Year 2 understates NI (charged for Year 1 sales). Revenue and its cost are in different periods. (2) Balance Sheet misrepresentation: Between credit sale and eventual write-off, Gross AR is at full face value even though some portion will not be collected. AR is overstated — it does not represent the economic claim. The BS fails faithful representation. The allowance method solves both: bad debt expense recognized in the revenue period (matching), and AUA immediately reduces Gross AR to NRV on the BS (faithful representation). This is why IFRS requires the allowance method.",
+          "rubric": "Award marks for: (1) temporal mismatch argument (IS), (2) AR overstatement argument (BS), (3) contrasting with allowance method's solutions.",
+          "explanation": "The two arguments correspond to relevance (IS matching — period performance) and faithful representation (BS NRV) — the two core qualitative characteristics in the IFRS Conceptual Framework."
+        },
+        {
+          "id": "ch03_m_08",
+          "type": "fill_in_blank",
+          "question": "Complete the aging analysis and AUA bridge. Beginning AUA = $18k, write-offs = $12k. Values in $k.",
+          "statement_title": "Aging Analysis and AUA Bridge ($k)",
+          "rows": [
+            { "label": "Not yet due: $400k × 1%",              "given": false, "value": "4.0",  "blank": true,  "answer": "4.0" },
+            { "label": "1-30 days overdue: $120k × 5%",        "given": false, "value": "6.0",  "blank": true,  "answer": "6.0" },
+            { "label": "31-60 days overdue: $60k × 15%",       "given": false, "value": "9.0",  "blank": true,  "answer": "9.0" },
+            { "label": "Over 60 days: $20k × 40%",             "given": false, "value": "8.0",  "blank": true,  "answer": "8.0" },
+            { "label": "Required Ending AUA",                   "given": false, "value": "27.0", "blank": true,  "answer": "27.0" },
+            { "label": "Beginning AUA",                        "given": true,  "value": "18.0", "blank": false },
+            { "label": "Less: Write-offs",                     "given": true,  "value": "(12.0)","blank": false },
+            { "label": "Temporary AUA",                        "given": false, "value": "6.0",  "blank": true,  "answer": "6.0" },
+            { "label": "Bad Debt Expense",                     "given": false, "value": "21.0", "blank": true,  "answer": "21.0" },
+            { "label": "Ending AUA",                           "given": false, "value": "27.0", "blank": true,  "answer": "27.0" }
+          ],
+          "explanation": "Required AUA = 4 + 6 + 9 + 8 = $27k. Temp AUA = 18 − 12 = $6k. Bad Debt Expense = 27 − 6 = $21k (flows through IS). Write-offs had no IS effect. Total equity impact = −$21k (bad debt expense). Note AUA grew from $18k to $27k net — portfolio quality deteriorated. The $21k expense is what a PE buyer would normalize if it seemed higher or lower than sustainable."
+        }
+      ]
+    },
+    {
+      "difficulty": "hard",
+      "label": "PE/IB Application",
+      "questions": [
+        {
+          "id": "ch03_h_01",
+          "type": "mcq",
+          "question": "SaaS target: deferred revenue fell 40% YoY while ARR grew 20%. Most concerning interpretation?",
+          "options": [
+            "Customers paying faster — positive operational signal",
+            "Company may be pulling future-period revenue into current period",
+            "Customer churn reducing contracted obligations",
+            "Shift from annual to monthly billing — always reduces deferred revenue"
+          ],
+          "correct": 1,
+          "explanation": "Growing ARR should produce more deferred revenue (cash collected upfront for future service), not less. A 40% decline while ARR grows 20% is deeply inconsistent. Most likely: revenue is being recognized faster than contracts support — the liability (deferred revenue) converts to revenue prematurely, inflating the IS at the expense of future periods. Forensic signature: CFO declining relative to NI, as the SCF shows deferred revenue release as a subtraction. This is a top-tier QoE red flag in SaaS diligence."
+        },
+        {
+          "id": "ch03_h_02",
+          "type": "mcq",
+          "question": "A company factors $5m of receivables 'with recourse' at a 3% discount. Correct accounting treatment?",
+          "options": [
+            "AR decreases $5m; cash increases $4.85m; gain $0.15m recognized",
+            "AR stays on BS; cash increases $4.85m; a secured borrowing liability of $4.85m recognized",
+            "No balance sheet effect — factoring with recourse is off-balance-sheet",
+            "AR decreases $5m; cash increases $5m; fee expensed separately"
+          ],
+          "correct": 1,
+          "explanation": "Factoring with recourse means the company retains credit risk — if the customer defaults, the company repays the factor. Under IFRS 9, retaining substantially all risk and reward means the AR is NOT derecognized. Economically, this is a secured borrowing: Cash in $4.85m, secured liability $4.85m, AR remains. The 3% fee is borrowing cost, not a disposal gain. Analysts must pierce through this structure — it can be used to window-dress cash balances at quarter-end while hiding the associated liability."
+        },
+        {
+          "id": "ch03_h_03",
+          "type": "mcq",
+          "question": "LBO target: $300m revenue, DSO currently 45 days, fund targets 35 days post-acquisition. One-time cash inflow?",
+          "options": [
+            "~$8.2m — reduces equity check required at close",
+            "~$8.2m — reduces Year 1 debt balance, improving equity return",
+            "~$8.2m after-tax gain from collecting receivables faster",
+            "~$4.1m — only half the improvement realizable in Year 1"
+          ],
+          "correct": 1,
+          "explanation": "Daily revenue = $300m/365 = $0.822m. AR at 45 days = $36.99m. AR at 35 days = $28.77m. Cash released = $8.2m. This is a balance sheet conversion (AR → Cash), not taxable income. In the LBO, it flows as a Year 1 CFO improvement — the $8.2m directly reduces the outstanding debt balance, speeding up deleveraging. Working capital improvements like this are modeled separately from EBITDA improvements and are a key operational value creation lever in PE."
+        },
+        {
+          "id": "ch03_h_04",
+          "type": "mcq",
+          "question": "Target's AUA/Gross AR coverage = 8%; historical bad debt rate = 15% over three years. Best QoE adjustment?",
+          "options": [
+            "No adjustment — management's provisioning judgment is authoritative",
+            "Reduce acquisition price by PV of expected future bad debts",
+            "Treat the gap as a QoE add-back (positive adjustment to EBITDA)",
+            "Increase normalized bad debt expense by (15% − 8%) × Gross AR; reduce normalized EBITDA accordingly"
+          ],
+          "correct": 3,
+          "explanation": "The company is under-provisioning by 7pp relative to history — bad debt expense is understated, EBITDA is inflated. If Gross AR = $100m, the annual under-provision = 7% × $100m = $7m. Normalized EBITDA = Reported EBITDA − $7m. At 10x EV/EBITDA entry, this reduces justified EV by $70m — material in any deal. The AUA on the adjusted balance sheet should also be increased by $7m, reducing target equity accordingly. This is a standard QoE negative adjustment."
+        },
+        {
+          "id": "ch03_h_05",
+          "type": "mcq",
+          "question": "Channel stuffing: which financial statement signature would you expect to observe?",
+          "options": [
+            "Revenue surge + AR decline + COGS surge",
+            "Revenue surge + AR surge + elevated returns/credits in next quarter",
+            "Revenue surge + AR decline + improving gross margins",
+            "Revenue decline + AR surge + improving net margins"
+          ],
+          "correct": 1,
+          "explanation": "Channel stuffing: (1) Revenue surges — product shipped and revenue recognized, (2) AR surges — distributor hasn't paid; DSO spikes sharply, (3) Elevated sales returns next quarter — unsold product comes back, reversing revenue and AR. The forensic sequence: year/quarter-end revenue and AR spike together, followed by Q1 of the next period showing high returns/allowances credits. Comparing quarterly AR and revenue trends side by side is the standard detection technique."
+        },
+        {
+          "id": "ch03_h_06",
+          "type": "open",
+          "question": "You are lead analyst on a €2bn acquisition: €450m revenue, 60-day DSO, 4% AUA coverage. Industry peers: 45-day DSO, 7% AUA coverage. Walk through your receivables diligence workplan and quantify the financial impact of normalizing both metrics.",
+          "model_answer": "Quantification: Daily revenue = €450m/365 = €1.23m. Current AR at 60 days = €73.9m. Peer AR at 45 days = €55.5m. Excess AR vs. peer = €18.4m — this is recoverable working capital if DSO is improved post-acquisition; model as a Year 1 CFO inflow. AUA coverage gap: Current AUA = 4% × €73.9m = €2.96m. Normalized AUA = 7% × €73.9m = €5.17m. Under-provision = €2.21m/year. EBITDA adjustment = −€2.21m. At 12x EV/EBITDA, this reduces EV by €26.5m — and is a recurring (not one-time) deduction. Diligence workplan: (1) Obtain aging report — analyze bucket distribution and identify large overdue balances; (2) Individual credit review of top 20 customers by AR balance — payment history, credit ratings, disputes; (3) Review customer contracts for payment terms, volume rebates, return rights; (4) Quarter-end analysis — compare Q4 vs Q1 AR levels for channel stuffing patterns; (5) Revenue recognition policy review — when is revenue recognized relative to delivery; (6) Historical write-off rates by year — to anchor the normalized AUA %; (7) Request management's AUA calculation and assumptions; cross-check against external credit data.",
+          "rubric": "Award marks for: (1) DSO working capital quantification (€18.4m), (2) AUA normalization (€2.21m/yr EBITDA deduction), (3) EV impact calculation, (4) at least four qualitative workplan steps.",
+          "explanation": "This integrates the full receivables toolkit. The DSO improvement is a one-time cash inflow (working capital lever); the AUA normalization is a recurring EBITDA adjustment. Both affect the acquisition economics — one through debt paydown speed, the other through the entry multiple justified."
+        },
+        {
+          "id": "ch03_h_07",
+          "type": "open",
+          "question": "Distinguish factoring without recourse from factoring with recourse — accounting treatment, risk transfer, and analyst red flags for each.",
+          "model_answer": "Without recourse: Company sells AR to a factor and transfers all credit risk. Accounting: AR derecognized, cash received, factoring fee expensed. True sale. AR and related default risk leave the balance sheet. Benefit: immediate cash, default risk eliminated. Cost: higher fee (factor absorbs default risk). With recourse: Company retains credit risk — if customer defaults, company reimburses the factor. Accounting under IFRS 9: if substantially all risks/rewards retained, AR is NOT derecognized — this is a secured borrowing. Cash in, liability recognized, AR stays. Lower fee (company retains risk). Analyst red flags for WITHOUT recourse: (1) Is AR genuinely derecognized per IFRS 9, or does recourse exist through side arrangements? (2) Growing factoring volumes may hide deteriorating collection — the true DSO is masked. For WITH recourse: (1) Is the liability properly disclosed or hidden? (2) Watch for quarter-end factoring spikes — window-dressing cash by factoring AR then repurchasing. (3) Factoring cost vs. bank debt — significantly higher cost signals credit market access problems. Both: compare DSO with and without factored AR to assess true collection efficiency.",
+          "rubric": "Award marks for: (1) correct accounting for each type, (2) risk transfer distinction, (3) at least two red flags for each type or two combined.",
+          "explanation": "Factoring is common in capital-intensive industries and can legitimately improve working capital management — or be used to dress up financial statements. The analyst's job is to distinguish between the two."
+        },
+        {
+          "id": "ch03_h_08",
+          "type": "fill_in_blank",
+          "question": "QoE normalized EBITDA bridge adjusting for under-provisioned AUA. Values in $m.",
+          "statement_title": "QoE — Normalized EBITDA Bridge ($m)",
+          "rows": [
+            { "label": "Reported EBITDA",                                  "given": true,  "value": "185.0",   "blank": false },
+            { "label": "Gross AR (year-end)",                              "given": true,  "value": "220.0",   "blank": false },
+            { "label": "Reported AUA (3% of Gross AR)",                    "given": false, "value": "6.6",     "blank": true,  "answer": "6.6" },
+            { "label": "Normalized AUA (8% of Gross AR)",                  "given": false, "value": "17.6",    "blank": true,  "answer": "17.6" },
+            { "label": "Under-provision (Normalized − Reported)",          "given": false, "value": "11.0",    "blank": true,  "answer": "11.0" },
+            { "label": "EBITDA Adjustment (under-provision = extra cost)",  "given": false, "value": "(11.0)",  "blank": true,  "answer": "(11.0)" },
+            { "label": "Normalized EBITDA",                                "given": false, "value": "174.0",   "blank": true,  "answer": "174.0" },
+            { "label": "Reported EV/EBITDA (at $1.85bn EV)",               "given": false, "value": "10.0x",   "blank": true,  "answer": "10.0x" },
+            { "label": "Normalized EV/EBITDA (at $1.85bn EV)",             "given": false, "value": "10.6x",   "blank": true,  "answer": "10.6x" }
+          ],
+          "explanation": "Reported AUA = 3% × 220 = $6.6m. Normalized AUA = 8% × 220 = $17.6m. Gap = $11m of annual bad debt expense under-reported. Normalized EBITDA = 185 − 11 = $174m. Reported multiple = 1,850/185 = 10.0x. True multiple = 1,850/174 = 10.6x. The fund is effectively paying 10.6x, not 10.0x — at 10x pricing. This $11m gap × 10x = $110m reduction in justified price. In a competitive auction, this is the kind of adjustment that differentiates disciplined buyers from overpayers."
+        }
+      ]
+    }
+  ]
+}
