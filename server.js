@@ -947,7 +947,7 @@ Return ONLY valid JSON:
       // Track per-difficulty scores
       const difficulties = prev.difficulties || {};
       if (difficulty) {
-        difficulties[difficulty] = { score: result.totalScore, completed: true, lastStudied: now };
+        difficulties[difficulty] = { score: result.totalScore, completed: true, lastStudied: now, gradingResults: result, answers };
       }
       progress.sessions[sessionId] = {
         ...prev,
