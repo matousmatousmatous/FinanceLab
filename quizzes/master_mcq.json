@@ -1,0 +1,918 @@
+{
+  "quiz_id": "master_mcq",
+  "title": "FinanceLab — Master MCQ Bank (100 Questions)",
+  "subtitle": "All Chapters · PE/IB/M&A Focus",
+  "instructions": "100 multiple-choice questions spanning all course concepts. Each question has exactly one correct answer. Explanations are shown after answering.",
+  "questions": [
+
+    {
+      "id": "mcq_001",
+      "chapter": 1,
+      "topic": "Accounting Framework",
+      "question": "Which two properties does accounting possess that make it useful for comparing companies across industries and geographies?",
+      "options": ["Relevant and reliable", "Parsimonious and standardized", "Timely and comparable", "Conservative and verifiable"],
+      "correct": 1,
+      "explanation": "Accounting is parsimonious — it condenses thousands of transactions into a small number of meaningful aggregates — and standardized — all companies follow the same structural framework (IFRS), making cross-company comparison possible. Relevance and reliability are qualities of good information within the framework, not properties of accounting as a system."
+    },
+    {
+      "id": "mcq_002",
+      "chapter": 1,
+      "topic": "Accounting Framework",
+      "question": "The fundamental accounting equation is best stated as:",
+      "options": ["Revenue − Expenses = Net Income", "Assets = Liabilities + Equity", "Cash In − Cash Out = Net Cash Flow", "Assets − Equity = Revenue"],
+      "correct": 1,
+      "explanation": "Assets = Liabilities + Equity is the accounting equation. Every transaction preserves this identity via double-entry bookkeeping. It means every asset is financed either by debt (liabilities) or by the owners' own capital (equity). This identity never breaks — if it does, there is a recording error."
+    },
+    {
+      "id": "mcq_003",
+      "chapter": 1,
+      "topic": "Financial Statements",
+      "question": "Which financial statement shows a company's economic performance over a period of time?",
+      "options": ["Balance Sheet", "Statement of Cash Flows", "Income Statement", "Statement of Changes in Equity"],
+      "correct": 2,
+      "explanation": "The Income Statement (also called Profit & Loss or P&L) covers a period — e.g., 'Year Ended December 31.' It shows revenues earned and expenses matched to that period under accrual accounting. The Balance Sheet is a point-in-time snapshot. The SCF covers a period but measures cash movements, not economic performance."
+    },
+    {
+      "id": "mcq_004",
+      "chapter": 1,
+      "topic": "Asset Recognition",
+      "question": "Which of the following does NOT meet IFRS criteria for asset recognition?",
+      "options": ["A patent acquired in an M&A transaction", "A highly trained workforce", "A machine owned and used in production", "Trade receivables from a completed credit sale"],
+      "correct": 1,
+      "explanation": "A workforce fails the control criterion — employees cannot be 'controlled' in the IFRS sense because they can resign. All three IFRS criteria must be met: (1) result from a past event, (2) controlled by the firm, (3) expected future economic benefits. Acquired patents, owned machines, and receivables from completed sales all satisfy all three criteria."
+    },
+    {
+      "id": "mcq_005",
+      "chapter": 1,
+      "topic": "Double Entry",
+      "question": "A company buys inventory on credit for $500. Which entry correctly records this?",
+      "options": ["Debit Inventory $500; Credit Cash $500", "Debit Cash $500; Credit Inventory $500", "Debit Inventory $500; Credit Accounts Payable $500", "Debit Accounts Payable $500; Credit Inventory $500"],
+      "correct": 2,
+      "explanation": "Buying on credit: the asset Inventory increases (Debit $500) and the liability Accounts Payable increases (Credit $500). No cash moves. The accounting equation is preserved: Assets +$500, Liabilities +$500, Equity unchanged."
+    },
+    {
+      "id": "mcq_006",
+      "chapter": 1,
+      "topic": "Revenue Recognition",
+      "question": "Under IFRS 15, revenue is recognized when:",
+      "options": ["Cash is received from the customer", "An invoice is sent to the customer", "The performance obligation is satisfied (goods/services delivered)", "The customer signs a contract"],
+      "correct": 2,
+      "explanation": "IFRS 15 establishes a five-step model. Revenue is recognized when (or as) the performance obligation is satisfied — i.e., when control of goods or services transfers to the customer. Contract signing and invoicing are preliminary steps. Cash receipt is irrelevant to timing under accrual accounting."
+    },
+    {
+      "id": "mcq_007",
+      "chapter": 1,
+      "topic": "Matching Principle",
+      "question": "A company pays $60,000 for a 3-year insurance policy on January 1. How much expense is recognized in Year 1?",
+      "options": ["$60,000", "$20,000", "$0 — insurance is an asset", "$30,000"],
+      "correct": 1,
+      "explanation": "The matching principle requires expenses to be matched to the periods they benefit. $60,000 / 3 years = $20,000 per year. At payment: Debit Prepaid Insurance $60,000 / Credit Cash $60,000. Each year: Debit Insurance Expense $20,000 / Credit Prepaid Insurance $20,000. The remaining $40,000 sits as a current asset (prepaid expense) on the Balance Sheet after Year 1."
+    },
+    {
+      "id": "mcq_008",
+      "chapter": 1,
+      "topic": "EBIT & Income Statement",
+      "question": "EBIT is best defined as:",
+      "options": ["Net income plus interest and taxes", "Revenue minus COGS", "Operating income before the effects of financing and taxation", "Cash flow from operations plus depreciation"],
+      "correct": 2,
+      "explanation": "EBIT (Earnings Before Interest and Taxes) = Gross Profit − SG&A = Net Sales − COGS − SG&A. It measures the operating performance of the business independent of capital structure (no interest) and tax jurisdiction (no taxes). This makes it the primary cross-company comparison metric in valuation (EV/EBIT multiples)."
+    },
+    {
+      "id": "mcq_009",
+      "chapter": 1,
+      "topic": "EBITDA",
+      "question": "EBITDA is calculated as:",
+      "options": ["Net Income + Depreciation + Amortization", "EBIT + Depreciation + Amortization", "Revenue − COGS − SG&A + Interest", "Operating Cash Flow + CapEx"],
+      "correct": 1,
+      "explanation": "EBITDA = EBIT + Depreciation + Amortization. Starting from EBIT and adding back D&A removes non-cash charges, giving a rough proxy for operating cash generation before working capital and CapEx. It is capital structure neutral (no interest), tax neutral (no taxes), and accounting policy neutral (no D&A). The standard LBO and M&A valuation denominator."
+    },
+    {
+      "id": "mcq_010",
+      "chapter": 1,
+      "topic": "Accruals vs Cash",
+      "question": "A company reports net income of $200m but CFO of only $80m. What does this gap most likely indicate?",
+      "options": ["The company has high debt and interest expense", "Accruals are building — receivables or inventory are growing faster than cash collections", "Depreciation is too high, reducing net income", "The company paid large dividends"],
+      "correct": 1,
+      "explanation": "CFO < Net Income by a large margin signals that accruals are accumulating — revenue is being recognized before cash is received (rising AR), or inventory is being built (cash spent but not yet expensed). This is the primary earnings quality metric: the Cash Realization Ratio (CFO/NI). A CRR well below 1.0 and falling is a red flag in PE/IB due diligence."
+    },
+
+    {
+      "id": "mcq_011",
+      "chapter": 2,
+      "topic": "Inventory — FIFO/LIFO",
+      "question": "During a period of rising prices, which inventory method produces the LOWEST reported gross profit?",
+      "options": ["FIFO", "Average Cost", "LIFO", "Specific Identification"],
+      "correct": 2,
+      "explanation": "LIFO matches the most recent (most expensive) costs to revenues, producing the highest COGS and therefore the lowest gross profit during inflation. FIFO uses the oldest (cheapest) costs → lowest COGS → highest gross profit. Average Cost falls between them. This is Novák's 2×2 bias table: LIFO is most conservative on the IS but most distorted on the BS."
+    },
+    {
+      "id": "mcq_012",
+      "chapter": 2,
+      "topic": "Inventory — FIFO/LIFO",
+      "question": "During rising prices, FIFO produces which of the following outcomes relative to LIFO?",
+      "options": ["Higher COGS, lower ending inventory, lower gross profit", "Lower COGS, higher ending inventory, higher gross profit", "Same COGS, same ending inventory, same gross profit", "Lower COGS, lower ending inventory, higher gross profit"],
+      "correct": 1,
+      "explanation": "FIFO: cheap old units sold first → lower COGS → higher gross profit. The newer expensive units remain in ending inventory → higher inventory balance on the BS. Summary during inflation: FIFO overstates gross profit (IS distortion) but accurately values inventory (BS OK). LIFO: the reverse — accurate gross profit, stale inventory values."
+    },
+    {
+      "id": "mcq_013",
+      "chapter": 2,
+      "topic": "Inventory — IFRS",
+      "question": "Which inventory costing method is NOT permitted under IFRS?",
+      "options": ["FIFO", "Weighted Average Cost", "LIFO", "Specific Identification"],
+      "correct": 2,
+      "explanation": "IAS 2 prohibits LIFO because it produces Balance Sheet inventory values that bear little relationship to current cost — violating IFRS's principle that the Balance Sheet should represent a faithful picture of assets. FIFO and Weighted Average Cost are both permitted under IFRS. US GAAP allows LIFO (subject to the conformity rule)."
+    },
+    {
+      "id": "mcq_014",
+      "chapter": 2,
+      "topic": "LIFO Reserve",
+      "question": "The LIFO reserve represents:",
+      "options": ["The amount of inventory written down to NRV", "The cumulative difference between FIFO and LIFO inventory values", "The excess of LIFO COGS over average cost COGS", "A cash reserve held for inventory replenishment"],
+      "correct": 1,
+      "explanation": "LIFO Reserve = IvFIFO − IvLIFO. It represents the hidden value locked in the Balance Sheet because LIFO retains old cheap prices in inventory. US GAAP requires its disclosure in footnotes. To convert a LIFO firm to FIFO for comparison: add the reserve to inventory (BS) and subtract it from COGS (IS). Equity adjustment = LIFO reserve × (1 − tax rate)."
+    },
+    {
+      "id": "mcq_015",
+      "chapter": 2,
+      "topic": "LIFO Liquidation",
+      "question": "LIFO liquidation occurs when:",
+      "options": ["A LIFO company switches to FIFO", "Inventory quantities fall below prior-year levels, forcing old cheap layers into COGS", "Prices fall and LIFO inventory is written down to NRV", "A company liquidates its entire inventory in bankruptcy"],
+      "correct": 1,
+      "explanation": "When a LIFO company lets inventory decline below normal levels, it must sell units from older (cheaper) LIFO layers. This temporarily lowers COGS (cheap historical cost vs. high current revenues), inflating gross profit. The signal: inventory falls while revenues hold, gross margin improves unexpectedly. This is a one-time accounting gain, not a real improvement. Flag in QoE analysis."
+    },
+    {
+      "id": "mcq_016",
+      "chapter": 2,
+      "topic": "Lower of Cost and NRV",
+      "question": "Under IAS 2, inventory must be reported at:",
+      "options": ["Historical cost", "Fair market value", "Lower of cost and net realizable value", "Higher of cost and replacement cost"],
+      "correct": 2,
+      "explanation": "IAS 2 requires the lower of cost and NRV. NRV = estimated selling price less costs to complete and sell. If market prices fall or inventory becomes obsolete, it must be written down to NRV. The write-down is expensed through COGS. Under IFRS (unlike US GAAP), write-downs can be reversed if conditions change, but only back up to original cost."
+    },
+    {
+      "id": "mcq_017",
+      "chapter": 2,
+      "topic": "Manufacturing Inventory",
+      "question": "Which is the correct order of manufacturing inventory flow?",
+      "options": ["Finished Goods → WIP → Raw Materials → COGS", "Raw Materials → WIP → Finished Goods → COGS", "WIP → Raw Materials → Finished Goods → COGS", "Raw Materials → Finished Goods → WIP → COGS"],
+      "correct": 1,
+      "explanation": "The cost flow in manufacturing follows: Raw Materials (purchased inputs) → Work-In-Progress (materials + labor + overhead in production) → Finished Goods (completed units, ready for sale) → COGS (expensed when goods are delivered to customer). At every stage except COGS, costs sit on the Balance Sheet as an asset."
+    },
+    {
+      "id": "mcq_018",
+      "chapter": 2,
+      "topic": "Inventory — Formulas",
+      "question": "A company has beginning inventory of $100, purchases of $400, and ending inventory of $150. What is COGS?",
+      "options": ["$450", "$350", "$500", "$250"],
+      "correct": 1,
+      "explanation": "COGS = Beginning Inventory + Purchases − Ending Inventory = 100 + 400 − 150 = $350. This is the cost-of-goods-sold model. It also shows why overstatement of ending inventory directly understates COGS — the most common form of inventory manipulation."
+    },
+    {
+      "id": "mcq_019",
+      "chapter": 2,
+      "topic": "Inventory Turnover",
+      "question": "Inventory Turnover is calculated as:",
+      "options": ["Revenue / Average Inventory", "COGS / Average Inventory", "Average Inventory / COGS × 365", "Net Income / Inventory"],
+      "correct": 1,
+      "explanation": "Inventory Turnover = COGS / Average Inventory. Using COGS (not revenue) is correct because inventory is carried at cost. Inventory Days = 365 / Turnover = Average Inventory / COGS × 365. Lower inventory days = faster turns = less cash tied up in stock = better working capital management."
+    },
+    {
+      "id": "mcq_020",
+      "chapter": 2,
+      "topic": "Inventory — LBO Context",
+      "question": "In an LBO model, why does the inventory costing method matter for deal structuring?",
+      "options": ["It affects the depreciation schedule", "It determines reported COGS and therefore EBITDA, which is the entry multiple denominator", "It only affects the Balance Sheet, not enterprise value", "It determines how much goodwill is recognized post-acquisition"],
+      "correct": 1,
+      "explanation": "EBITDA = Revenue − COGS − SG&A + D&A. If COGS is understated (e.g., via LIFO liquidation), EBITDA is inflated — at a 10x multiple, every $1m of artificial COGS reduction inflates enterprise value by $10m. QoE analysis normalizes inventory costing effects. Post-acquisition, if switching from LIFO to FIFO, there is a balance sheet step-up and a deferred tax liability to model."
+    },
+
+    {
+      "id": "mcq_021",
+      "chapter": 3,
+      "topic": "Accounts Receivable",
+      "question": "Net Accounts Receivable on the Balance Sheet is calculated as:",
+      "options": ["Gross AR + Allowance for Uncollectible Accounts", "Gross AR − Allowance for Uncollectible Accounts", "Cash collected from customers", "Credit Sales − Returns"],
+      "correct": 1,
+      "explanation": "Net AR = Gross AR − AUA (Allowance for Uncollectible Accounts). The AUA is a contra-asset account that reduces the gross receivable to its expected realizable value. This is the net realizable value principle applied to receivables — the Balance Sheet shows what the company actually expects to collect, not the full invoice amount."
+    },
+    {
+      "id": "mcq_022",
+      "chapter": 3,
+      "topic": "Allowance Method",
+      "question": "Under the allowance method, when a specific receivable is identified as uncollectible and written off, what is the effect on Net AR?",
+      "options": ["Net AR decreases by the written-off amount", "Net AR is unchanged", "Net AR increases because the bad debt expense was already recognized", "Gross AR is unchanged but AUA increases"],
+      "correct": 1,
+      "explanation": "Write-off entry: Debit AUA / Credit Gross AR. Both AUA and Gross AR decrease by the same amount → Net AR (Gross AR − AUA) is UNCHANGED. The expense was already recognized when the AUA was initially created. This is the key distinction from the direct write-off method, where the write-off hits the P&L immediately."
+    },
+    {
+      "id": "mcq_023",
+      "chapter": 3,
+      "topic": "Allowance Method vs Direct Write-Off",
+      "question": "Why does IFRS prefer the allowance method over the direct write-off method?",
+      "options": ["The allowance method is simpler to implement", "The allowance method matches expected bad debt expense to the period of the related sale", "The direct write-off method overstates receivables", "Both methods are equally acceptable under IFRS"],
+      "correct": 1,
+      "explanation": "The allowance method applies the matching principle — bad debt expense is estimated and recognized in the same period as the revenue it relates to. The direct write-off method only recognizes the expense when a specific debt is confirmed uncollectible, which may be much later, violating matching. Additionally, the BS-approach (aging) reflects the current expected loss on the balance sheet, which is more reliable."
+    },
+    {
+      "id": "mcq_024",
+      "chapter": 3,
+      "topic": "DSO",
+      "question": "Days Sales Outstanding (DSO) is calculated as:",
+      "options": ["Revenue / Gross AR", "Net AR / (Revenue / 365)", "COGS / Net AR × 365", "Gross AR / Revenue"],
+      "correct": 1,
+      "explanation": "DSO = Net AR / (Revenue / 365) = Net AR × 365 / Revenue. It measures the average number of days it takes to collect from customers. A rising DSO signals: (1) customers are taking longer to pay, (2) potentially aggressive revenue recognition (recognizing revenue before it's truly earned → AR builds up), (3) channel stuffing. In PE, rising DSO while revenue grows is a red flag."
+    },
+    {
+      "id": "mcq_025",
+      "chapter": 3,
+      "topic": "Aging of Receivables",
+      "question": "The aging-of-receivables method is described as a Balance Sheet approach because:",
+      "options": ["It uses the Balance Sheet to derive COGS", "It estimates the allowance needed to represent AR at net realizable value on the BS date", "It measures the age of the company's assets", "It calculates the balance of each customer's account"],
+      "correct": 1,
+      "explanation": "The aging method focuses on ensuring the Balance Sheet value of AR is correct — it asks 'what AUA balance is needed today so that Net AR reflects what we will actually collect?' This contrasts with the IS approach (% of credit sales), which focuses on the income statement charge. Under IFRS, the BS approach (aging) is preferred because it directly targets the balance sheet representation."
+    },
+    {
+      "id": "mcq_026",
+      "chapter": 3,
+      "topic": "Receivables — Dating Game",
+      "question": "A company's CFO is under pressure to meet earnings targets. Which receivables-related action would inflate reported revenues in the current period?",
+      "options": ["Tightening credit terms to reduce default risk", "Recognizing revenue on goods shipped to customers before the return period has expired", "Increasing the allowance for uncollectible accounts", "Accelerating cash collection from existing receivables"],
+      "correct": 1,
+      "explanation": "Recognizing revenue before the return window closes is a form of premature revenue recognition — the performance obligation is not fully satisfied if the customer can still return the goods. This inflates current-period revenue and AR. Classic channel stuffing pattern: revenue spikes at quarter-end, then reverses via returns in Q1 of the next year. AR/Revenue ratio rises. DSO increases. This is the 'dating game' applied to receivables."
+    },
+    {
+      "id": "mcq_027",
+      "chapter": 3,
+      "topic": "AUA as Earnings Tool",
+      "question": "A company systematically sets its Allowance for Uncollectible Accounts lower than its historical bad debt experience would justify. The most likely effect is:",
+      "options": ["Lower bad debt expense and higher net income in the current period", "Higher bad debt expense and lower net income in the current period", "No effect on net income — AUA is a Balance Sheet item only", "Lower revenue and lower net income"],
+      "correct": 0,
+      "explanation": "Bad Debt Expense = Required AUA Balance − Existing AUA Balance. If the required AUA is set too low, the bad debt expense recognized is too low → net income is overstated. AR is also overstated at net value. This is a classic earnings management tool: underprovisioning in good years, then taking large write-offs in bad years (cookie jar reversal). AUA/Gross AR is the coverage ratio to monitor."
+    },
+    {
+      "id": "mcq_028",
+      "chapter": 3,
+      "topic": "Receivables Recovery",
+      "question": "A customer who was previously written off pays their debt. The correct accounting treatment is:",
+      "options": ["Credit Revenue, Debit Cash", "Debit AUA, Credit AR, then Debit Cash, Credit AR", "Reverse the write-off (Debit AR, Credit AUA), then record the cash collection", "No entry required as the receivable was already written off"],
+      "correct": 2,
+      "explanation": "Recovery requires two entries: (1) Reverse the write-off: Debit AR / Credit AUA (restores both accounts). (2) Record collection: Debit Cash / Credit AR. The two-step process is important because the first step restores the AR before it is collected, preserving the integrity of the AR and AUA balances. The net effect: Cash increases, AUA increases (unexpected recovery is good news for the provision)."
+    },
+    {
+      "id": "mcq_029",
+      "chapter": 3,
+      "topic": "Credit Terms",
+      "question": "Credit terms of '2/10 net 30' mean:",
+      "options": ["2% discount if paid within 30 days; full amount due in 10 days", "2% discount if paid within 10 days; full amount due in 30 days", "Net payment due in 2 days; 10% penalty if paid in 30 days", "2% interest charge if payment exceeds 10 days; due in 30 days"],
+      "correct": 1,
+      "explanation": "'2/10 net 30': 2% discount if paid within 10 days; full invoice amount due within 30 days. The annualized cost of NOT taking the discount = (2/98) × (365/20) ≈ 37%. This is why financially healthy companies almost always take the early payment discount — it's implicitly a very high-cost form of short-term credit if declined."
+    },
+    {
+      "id": "mcq_030",
+      "chapter": 3,
+      "topic": "Receivables — NRV",
+      "question": "Net Realizable Value of receivables is reduced by which two items?",
+      "options": ["Interest expense and taxes", "Allowance for uncollectible accounts and sales returns/allowances", "Inventory write-downs and depreciation", "AP and accrued liabilities"],
+      "correct": 1,
+      "explanation": "Net AR = Gross AR − AUA − Sales Returns Allowance. Both bad debts (some customers won't pay) and sales returns (some goods will come back) reduce the amount the company actually expects to collect. This is the NRV principle applied to receivables. In PE due diligence, both components must be scrutinized — understating either overstates net AR and net income."
+    },
+
+    {
+      "id": "mcq_031",
+      "chapter": 4,
+      "topic": "Cash Flow — Structure",
+      "question": "Which section of the Statement of Cash Flows contains capital expenditures (CapEx)?",
+      "options": ["Cash Flow from Operations (CFO)", "Cash Flow from Investing (CFI)", "Cash Flow from Financing (CFF)", "CapEx is a non-cash item and does not appear on the SCF"],
+      "correct": 1,
+      "explanation": "CapEx — purchases of property, plant, and equipment — is a Cash Flow from Investing (CFI) activity. CFI covers long-term asset investments: CapEx, acquisitions of businesses, purchases/sales of financial investments. CFO covers day-to-day operating activities. CFF covers debt and equity financing. CapEx is a real cash outflow, but a non-cash expense in the period (depreciation is the IS charge)."
+    },
+    {
+      "id": "mcq_032",
+      "chapter": 4,
+      "topic": "Cash Flow — Indirect Method",
+      "question": "Under the indirect method, why is depreciation added back to net income when computing CFO?",
+      "options": ["Depreciation is a cash payment to the government", "Depreciation was subtracted to arrive at net income but involves no cash outflow", "Depreciation reduces taxes, freeing up cash", "Depreciation is a financing activity"],
+      "correct": 1,
+      "explanation": "The indirect method starts with net income and adjusts for non-cash items. Depreciation was subtracted as an expense when computing net income, but it involves no cash outflow in the current period (the cash was paid when the asset was purchased). Adding it back converts from accrual-based net income to cash basis. Depreciation is a non-cash charge — the most common adjustment in CFO."
+    },
+    {
+      "id": "mcq_033",
+      "chapter": 4,
+      "topic": "Cash Flow — Working Capital",
+      "question": "During a period of rapid growth, accounts receivable increases by $50m. What is the effect on CFO (indirect method)?",
+      "options": ["CFO increases by $50m", "CFO decreases by $50m", "No effect on CFO — AR is a Balance Sheet item", "CFO increases by $50m but decreases by the tax effect"],
+      "correct": 1,
+      "explanation": "An increase in AR means revenue was recognized on the IS but cash has NOT yet been collected. In the indirect method: subtract increases in current operating assets. CFO = Net Income − ΔCOA + ΔCOL + Non-cash items. ΔAR = +$50m → CFO decreases by $50m. This is the accrual timing gap: revenue in NI, no cash in CFO. Rising AR is the classic earnings quality warning sign."
+    },
+    {
+      "id": "mcq_034",
+      "chapter": 4,
+      "topic": "Cash Flow — Working Capital",
+      "question": "An increase in Accounts Payable has which effect on CFO?",
+      "options": ["Decreases CFO — the company is spending more on supplies", "Increases CFO — the company is delaying cash payment to suppliers", "No effect — AP is a liability, not an operating item", "Decreases CFO and decreases net income simultaneously"],
+      "correct": 1,
+      "explanation": "Increasing AP means expenses have been recognized (reducing NI) but cash has NOT yet been paid to suppliers. In the indirect method: add increases in current operating liabilities. The company is effectively using supplier credit as free short-term financing — delaying cash outflows. This is the 'accounts payable is free financing' principle, and maximizing DPO (within supplier relationship limits) is a working capital best practice."
+    },
+    {
+      "id": "mcq_035",
+      "chapter": 4,
+      "topic": "Free Cash Flow",
+      "question": "Free Cash Flow (FCF) is most commonly calculated as:",
+      "options": ["Net Income + Depreciation", "CFO − CapEx", "EBITDA − Taxes", "Revenue − All Cash Expenses"],
+      "correct": 1,
+      "explanation": "FCF = CFO − CapEx. It represents the cash the business generates after maintaining its asset base — the amount available to pay debt, make acquisitions, pay dividends, or buy back shares. In LBO analysis, FCF drives debt repayment. A company with high EBITDA but high CapEx requirements may have very little FCF — EBITDA overstates cash generation for capital-intensive businesses."
+    },
+    {
+      "id": "mcq_036",
+      "chapter": 4,
+      "topic": "CFO vs Net Income",
+      "question": "A mature, profitable company that pays dividends is best described as which BCG matrix category?",
+      "options": ["Question Mark: high CFI outflows, low CFO", "Star: high CFO, high CFI outflows, some CFF", "Cash Cow: high CFO, low CFI, negative CFF (dividends/buybacks)", "Dog: low CFO, low CFI, positive CFF"],
+      "correct": 2,
+      "explanation": "Cash Cows are mature, market-leading businesses with high operating cash generation (high CFO), modest reinvestment needs (low CFI), and use excess cash for dividends and buybacks (negative CFF). Stars have high CFO but also high CFI reinvestment (growth). Question Marks consume cash (low CFO, high CFI). Dogs have poor performance across all sections."
+    },
+    {
+      "id": "mcq_037",
+      "chapter": 4,
+      "topic": "Cash Flow — Ratios",
+      "question": "The Cash Realization Ratio (CRR) is defined as:",
+      "options": ["FCF / EBITDA", "CFO / Net Income", "Net Income / Revenue", "Cash / Current Liabilities"],
+      "correct": 1,
+      "explanation": "CRR = CFO / Net Income. A CRR close to 1.0 indicates high-quality earnings — the company is converting its reported profits into actual cash at roughly the expected rate. CRR consistently below 1.0, especially if trending downward, suggests accruals are building and earnings quality is deteriorating. CRR > 1.0 can indicate conservative revenue recognition or aggressive D&A."
+    },
+    {
+      "id": "mcq_038",
+      "chapter": 4,
+      "topic": "IFRS vs US GAAP — SCF",
+      "question": "Under IFRS, interest paid can be classified under which section(s) of the SCF?",
+      "options": ["CFO only", "CFF only", "Either CFO or CFF — IFRS allows a choice", "CFI only"],
+      "correct": 2,
+      "explanation": "IFRS gives companies a choice: interest paid can be classified as CFO (because it is part of operations) or CFF (because it is a financing cost). Under US GAAP, interest paid must be CFO. This means IFRS companies that classify interest as CFF will report higher CFO than they would under US GAAP — an important caveat when comparing cross-border SCF data."
+    },
+    {
+      "id": "mcq_039",
+      "chapter": 4,
+      "topic": "Cash Flow — Timing Discrepancies",
+      "question": "A gain on sale of an asset appears in net income but is removed in CFO under the indirect method. Why?",
+      "options": ["Gains are never taxable and thus should not affect CFO", "The gain is a non-cash item similar to depreciation", "The actual cash from the sale is reported in CFI, not CFO, to avoid double counting", "Gains are financing activities"],
+      "correct": 2,
+      "explanation": "When an asset is sold, the full cash proceeds appear in CFI (investing activity). The gain (sale price minus book value) is already included in net income. If not removed from CFO, the gain would be counted twice — once in net income (CFO) and once as cash in CFI. Therefore, gains are subtracted in CFO and losses are added back in CFO. The full cash amount goes to CFI."
+    },
+    {
+      "id": "mcq_040",
+      "chapter": 4,
+      "topic": "CapEx",
+      "question": "In an LBO model, why is CapEx split into maintenance CapEx and growth CapEx?",
+      "options": ["Only growth CapEx is tax deductible", "Maintenance CapEx is the minimum required to sustain operations and should be treated as a quasi-fixed cost; growth CapEx is discretionary", "Maintenance CapEx goes in CFO; growth CapEx goes in CFI", "IFRS requires separate disclosure of each type"],
+      "correct": 1,
+      "explanation": "Maintenance CapEx sustains the existing asset base — it is a necessary cost of doing business and should be deducted from EBITDA to get true sustainable cash flow. Growth CapEx funds expansion and is discretionary. In a distressed scenario, growth CapEx can be deferred but maintenance CapEx cannot. LBO models stress-test FCF by sensitizing maintenance CapEx estimates. EBITDA − Maintenance CapEx approximates 'owner earnings.'"
+    },
+
+    {
+      "id": "mcq_041",
+      "chapter": 5,
+      "topic": "Financial Ratios — Efficiency",
+      "question": "Days Payable Outstanding (DPO) is calculated as:",
+      "options": ["Revenue / AP × 365", "AP / (COGS / 365)", "COGS / AP", "AP / Revenue × 365"],
+      "correct": 1,
+      "explanation": "DPO = AP / (COGS / 365) = AP × 365 / COGS. It measures how many days on average the company takes to pay its suppliers. Higher DPO = more free supplier financing = lower working capital needs. In the CCC: CCC = DSO + Inventory Days − DPO. Lengthening DPO (within limits) is a key lever to improve working capital and increase FCF."
+    },
+    {
+      "id": "mcq_042",
+      "chapter": 5,
+      "topic": "Cash Conversion Cycle",
+      "question": "The Cash Conversion Cycle (CCC) formula is:",
+      "options": ["DSO + DPO − Inventory Days", "Inventory Days + DSO − DPO", "DSO − DPO − Inventory Days", "Inventory Days − DSO + DPO"],
+      "correct": 1,
+      "explanation": "CCC = Inventory Days + DSO − DPO. It measures how long (in days) cash is tied up in the operating cycle: from paying for inventory, through the production and sales process, until cash is collected from customers, minus the free time given by suppliers (DPO). Negative CCC (e.g., Amazon) means the company collects from customers before paying suppliers — an extraordinary working capital position."
+    },
+    {
+      "id": "mcq_043",
+      "chapter": 5,
+      "topic": "Financial Ratios — Profitability",
+      "question": "Return on Equity (ROE) is calculated as:",
+      "options": ["Net Income / Total Assets", "EBIT / Equity", "Net Income / Average Shareholders' Equity", "Operating Income / Revenue"],
+      "correct": 2,
+      "explanation": "ROE = Net Income / Average Shareholders' Equity. It measures how much profit is generated for each unit of equity capital. ROE can be decomposed via DuPont into: Net Margin × Asset Turnover × Leverage. A high ROE can reflect genuine profitability or simply high leverage (financial engineering) — the DuPont breakdown reveals which."
+    },
+    {
+      "id": "mcq_044",
+      "chapter": 5,
+      "topic": "DuPont Analysis",
+      "question": "DuPont analysis decomposes ROE into three drivers. Which is the correct decomposition?",
+      "options": ["Gross Margin × Inventory Turnover × Debt Ratio", "Net Profit Margin × Asset Turnover × Equity Multiplier (Assets/Equity)", "EBITDA Margin × Revenue Growth × Leverage", "ROA × Operating Leverage × Financial Leverage"],
+      "correct": 1,
+      "explanation": "DuPont: ROE = (NI/Revenue) × (Revenue/Assets) × (Assets/Equity) = Net Margin × Asset Turnover × Leverage. The three drivers identify the source of ROE: (1) profitability per unit of sales, (2) efficiency of asset utilization, (3) use of financial leverage. A company can have high ROE due to genuine operating excellence or merely high leverage — DuPont distinguishes these."
+    },
+    {
+      "id": "mcq_045",
+      "chapter": 5,
+      "topic": "Liquidity Ratios",
+      "question": "The Quick Ratio (Acid-Test Ratio) differs from the Current Ratio because it:",
+      "options": ["Uses EBIT instead of net income", "Excludes inventory from current assets", "Includes long-term debt in the denominator", "Uses market values instead of book values"],
+      "correct": 1,
+      "explanation": "Quick Ratio = (Cash + Short-term Investments + Net Receivables) / Current Liabilities = (Current Assets − Inventory) / Current Liabilities. Inventory is excluded because it is less liquid — it cannot be converted to cash immediately if liabilities come due. The quick ratio is a more conservative measure of short-term liquidity. A current ratio of 2.0 can hide illiquidity if most current assets are slow-moving inventory."
+    },
+    {
+      "id": "mcq_046",
+      "chapter": 5,
+      "topic": "Solvency Ratios",
+      "question": "The Times Interest Earned (TIE) ratio is calculated as:",
+      "options": ["Net Income / Interest Expense", "EBIT / Interest Expense", "CFO / Interest Expense", "EBITDA / (Interest + Principal)"],
+      "correct": 1,
+      "explanation": "TIE = EBIT / Interest Expense. It measures how many times operating income covers the interest obligation. A TIE of 3x means EBIT would have to fall by 67% before the company cannot cover interest from operations. In leveraged transactions, lenders typically require minimum TIE covenants. Note: lenders sometimes prefer EBITDA / Interest (more generous) or CFO / Debt Service (stricter, includes principal)."
+    },
+    {
+      "id": "mcq_047",
+      "chapter": 5,
+      "topic": "Operating Leverage",
+      "question": "Company Kappa has COGS = $70m and SG&A = $20m on sales of $100m. Company Lambda has COGS = $80m and SG&A = $10m on sales of $100m. Both have EBIT = $10m. If sales fall 10%, which company suffers more?",
+      "options": ["Kappa, because it has higher SG&A (more fixed costs)", "Lambda, because it has higher COGS (more variable costs)", "Kappa, because it has lower COGS", "Both suffer equally because EBIT is identical"],
+      "correct": 0,
+      "explanation": "Kappa has higher SG&A ($20m) — SG&A is typically fixed or semi-fixed. Lambda has higher COGS ($80m) — COGS tends to be more variable. In a revenue decline, Kappa's fixed SG&A does not fall proportionally, crushing margins faster. This is operating leverage: high fixed costs amplify both upside and downside. Lambda's higher variable COGS falls with revenue, providing natural margin protection. High operating leverage is a risk flag in PE downside scenarios."
+    },
+    {
+      "id": "mcq_048",
+      "chapter": 5,
+      "topic": "Common-Size Analysis",
+      "question": "In a common-size Income Statement, all items are expressed as a percentage of:",
+      "options": ["Total Assets", "Net Income", "Net Sales", "EBITDA"],
+      "correct": 2,
+      "explanation": "In a common-size IS, each line item is divided by Net Sales (= 100%). This removes the effect of absolute size differences, allowing comparison of cost structure and margin profiles across companies of different sizes, or across time periods. Gross margin %, EBIT margin %, and net margin % are all common-size metrics."
+    },
+    {
+      "id": "mcq_049",
+      "chapter": 5,
+      "topic": "Earnings Quality",
+      "question": "Which of the following is NOT typically considered an earnings quality red flag?",
+      "options": ["Revenue growing faster than cash collected (rising DSO)", "Stable gross margins with proportional inventory growth", "Frequent changes to accounting policies or estimates", "Audit qualifications or management turnover"],
+      "correct": 1,
+      "explanation": "Stable gross margins with proportional inventory growth is consistent with healthy operations — inventory growing in line with business growth is normal. Red flags include: AR growing faster than revenue (DSO rising), accounting policy changes that boost earnings, management turnover (especially CFOs), auditor concerns, COGS/revenue ratio improving without operational explanation, and large year-end transactions."
+    },
+    {
+      "id": "mcq_050",
+      "chapter": 5,
+      "topic": "Working Capital — LBO",
+      "question": "In an LBO model, working capital is typically treated as:",
+      "options": ["A one-time cash inflow at entry", "A recurring component of CFO — increases absorb cash, decreases release cash", "A component of CFI since it relates to long-term asset management", "Irrelevant — only EBITDA matters for debt sizing"],
+      "correct": 1,
+      "explanation": "Working capital (NWC = Current Operating Assets − Current Operating Liabilities) is a recurring component of CFO. NWC typically grows with revenue — each incremental dollar of revenue requires incremental investment in receivables and inventory, partially funded by AP. In LBO models: ΔNWC is subtracted from EBITDA in the FCF build. Improving NWC (reducing DSO, inventory days; extending DPO) is a value creation lever the PE fund can directly control post-acquisition."
+    },
+
+    {
+      "id": "mcq_051",
+      "chapter": 6,
+      "topic": "Minority Interest",
+      "question": "Minority Interest (Non-Controlling Interest) appears on the consolidated Balance Sheet in:",
+      "options": ["Current Liabilities", "Long-Term Liabilities", "Equity (between liabilities and majority equity)", "As a deduction from Goodwill"],
+      "correct": 2,
+      "explanation": "Under IFRS (IAS 27), Minority Interest (Non-Controlling Interest) is presented within Equity on the consolidated Balance Sheet — it is the portion of the subsidiary's net assets not owned by the parent. It is not a liability because it represents co-investors' equity stake, not an obligation to repay. In the equity value bridge: Equity Value = Enterprise Value − Net Debt − Minority Interest."
+    },
+    {
+      "id": "mcq_052",
+      "chapter": 6,
+      "topic": "Minority Interest",
+      "question": "Under the consolidation with minority interest approach, the parent reports:",
+      "options": ["Only its proportional share of the subsidiary's assets and liabilities", "100% of the subsidiary's assets and liabilities, plus MI in equity", "The subsidiary's equity at fair value only", "Nothing — the subsidiary files separately"],
+      "correct": 1,
+      "explanation": "Full consolidation (IFRS IAS 27 for >50% ownership): the parent reports 100% of the subsidiary's assets and liabilities on its balance sheet, regardless of ownership percentage. The minority's share of net assets is then shown as Non-Controlling Interest within equity. This reflects the economic reality that the parent controls (not just co-owns) the subsidiary."
+    },
+    {
+      "id": "mcq_053",
+      "chapter": 6,
+      "topic": "Minority Interest — No Premium",
+      "question": "MajorCo acquires 75% of SubCo for $450m when SubCo's net assets (BV) = $600m. There is no acquisition premium. What is the Minority Interest?",
+      "options": ["$450m", "$150m", "$50m", "$600m"],
+      "correct": 1,
+      "explanation": "No-premium case: MI = 25% × BV(NA) = 25% × $600m = $150m. The purchase price = 75% × $600m = $450m = fair value. No goodwill arises. On the consolidated BS: cash −$450m, identifiable assets +$600m, liabilities assumed, MI +$150m (in equity). The minority's $150m co-investment is recognized as their proportional share of book value."
+    },
+    {
+      "id": "mcq_054",
+      "chapter": 6,
+      "topic": "Goodwill — With MI",
+      "question": "Under the book value MI approach, goodwill is calculated as:",
+      "options": ["Purchase price paid by majority only minus 100% of revalued net assets", "Purchase price + BV(MI) minus revalued net assets", "Purchase price minus book value of assets acquired", "100% of purchase price minus book value of net assets"],
+      "correct": 1,
+      "explanation": "Under Book Value MI approach: Gw = (Purchase Price + BV(MI)) − Revalued(NA). The majority paid its acquisition price; the minority is included at their share of book value (not market value). Goodwill is the residual. Under the Market Value MI approach: MI is included at fair value (implying the minority also paid a premium), yielding higher goodwill and higher MI."
+    },
+    {
+      "id": "mcq_055",
+      "chapter": 6,
+      "topic": "Equity Value Bridge",
+      "question": "The equity value bridge from Enterprise Value is: Equity Value =",
+      "options": ["EV + Net Debt − Minority Interest", "EV − Net Debt − Minority Interest + Cash", "EV − Net Debt − Minority Interest", "EV + Cash − Debt"],
+      "correct": 2,
+      "explanation": "Equity Value = Enterprise Value − Net Debt − Minority Interest. Net Debt = Debt − Cash. Minority Interest is deducted because EV reflects the value of all consolidated operations (including the minority-owned portion), but equity holders of the parent don't own that portion. Other deductions include pension deficits, earn-outs, and similar claims. This bridge is used in every DCF and comparable company analysis."
+    },
+    {
+      "id": "mcq_056",
+      "chapter": 6,
+      "topic": "Minority Interest — Valuation",
+      "question": "In computing ROE for a group with minority interests, how is MI typically treated?",
+      "options": ["Excluded from equity — only parent shareholders' equity is used", "Treated as debt in the denominator", "Included in equity — consolidated NI and equity including MI are used", "Deducted from net income in the numerator"],
+      "correct": 2,
+      "explanation": "MI is typically treated as part of equity (in the denominator) and the consolidated net income attributable to all equity holders (including MI) as the numerator. This reflects the economic reality that MI represents equity co-investors. Alternative: compute ROE using only parent's NI and parent's equity — this is more relevant for the listed parent company's own shareholders."
+    },
+
+    {
+      "id": "mcq_057",
+      "chapter": 7,
+      "topic": "Goodwill",
+      "question": "Goodwill arising in an acquisition is best defined as:",
+      "options": ["The fair value of tangible assets acquired", "Purchase price minus revalued net identifiable assets", "The total purchase price paid for a subsidiary", "The excess of book value over purchase price"],
+      "correct": 1,
+      "explanation": "Goodwill = Purchase Price − Revalued Net Identifiable Assets = Purchase Price − (Revalued Assets − Assumed Liabilities). It represents the premium paid above the fair value of identifiable net assets — capturing synergies, brand value, assembled workforce, customer relationships not separately recognized, and strategic value. Under IFRS, goodwill is not amortized but tested annually for impairment."
+    },
+    {
+      "id": "mcq_058",
+      "chapter": 7,
+      "topic": "Purchase Price Allocation",
+      "question": "Purchase Price Allocation (PPA) is performed at acquisition to:",
+      "options": ["Determine the target's EBITDA for deal modeling", "Allocate the purchase price across identifiable assets (at fair value), assumed liabilities, and residual goodwill", "Calculate the tax basis of acquired assets", "Determine the minority interest value"],
+      "correct": 1,
+      "explanation": "PPA is the process of assigning the acquisition purchase price to: (1) acquired identifiable tangible assets (revalued to fair market value), (2) identified intangible assets not previously on the BS (brand names, customer relationships, technology, licenses), (3) assumed liabilities (at fair value), and (4) residual goodwill. PPA creates the D&A step-up (from asset revaluation) and intangible amortization charges that depress post-acquisition GAAP net income — why EBITDA is immune."
+    },
+    {
+      "id": "mcq_059",
+      "chapter": 7,
+      "topic": "PPA & Post-Acquisition IS",
+      "question": "Which metric is UNAFFECTED by the amortization of intangibles recognized in a PPA?",
+      "options": ["Net Income", "EBIT", "EBITDA", "Gross Profit"],
+      "correct": 2,
+      "explanation": "EBITDA = EBIT + D&A. Post-acquisition amortization of intangibles (customer relationships, technology, brand) is part of D&A, which is added back in EBITDA. Therefore EBITDA is immune to PPA amortization. This is the primary reason EBITDA became the standard valuation metric in M&A — it allows comparison of pre-acquisition and post-acquisition performance without the distortion of acquisition accounting."
+    },
+    {
+      "id": "mcq_060",
+      "chapter": 7,
+      "topic": "Goodwill Impairment",
+      "question": "Under IFRS, how is goodwill treated after an acquisition?",
+      "options": ["Amortized over a maximum of 40 years", "Not amortized; tested for impairment at least annually", "Expensed immediately in the year of acquisition", "Amortized over its useful economic life"],
+      "correct": 1,
+      "explanation": "Under IFRS (IAS 36), goodwill is not amortized — instead it is tested at least annually for impairment. If the recoverable amount of the cash-generating unit to which goodwill is allocated falls below its carrying amount, an impairment loss is recognized. This is a one-way door: impairments cannot be reversed under IFRS. Under US GAAP, large companies similarly do not amortize goodwill (post-ASC 350), though smaller companies can elect amortization."
+    },
+    {
+      "id": "mcq_061",
+      "chapter": 7,
+      "topic": "Goodwill Impairment",
+      "question": "A goodwill impairment charge is best described as:",
+      "options": ["A reliable indicator of current-period operating performance", "A retrospective acknowledgment that the acquisition was overpriced", "A positive signal that the company is being conservative", "A cash outflow that reduces FCF"],
+      "correct": 1,
+      "explanation": "Goodwill impairment occurs when the recoverable value of the acquired business falls below its carrying value (including goodwill). It is essentially the accounting system's belated recognition that the acquirer overpaid. However, it is a non-cash charge (no cash flows) and is excluded from normalized EBITDA. PE firms track impairment across their portfolio as a measure of deal quality. A serial acquirer with frequent impairments has a poor M&A track record."
+    },
+    {
+      "id": "mcq_062",
+      "chapter": 7,
+      "topic": "Off-Balance-Sheet Intangibles",
+      "question": "Under IFRS, which of the following intangibles CAN be recognized on the Balance Sheet?",
+      "options": ["Internally developed brand names", "Internally developed customer lists", "Intangible assets acquired in a business combination (M&A)", "Internally generated goodwill"],
+      "correct": 2,
+      "explanation": "IFRS prohibits recognition of internally generated goodwill, internally developed brand names, mastheads, customer lists, and similar items (IAS 38). These fail the identifiability or reliable measurement criteria. However, intangibles acquired in a business combination (M&A) CAN be recognized separately from goodwill if they meet the identifiability criterion (they are separable or arise from legal/contractual rights). This is why PPA often reveals brand values, customer relationships, and technology not on the target's standalone BS."
+    },
+    {
+      "id": "mcq_063",
+      "chapter": 7,
+      "topic": "Bargain Purchase",
+      "question": "A bargain purchase (negative goodwill) arises when:",
+      "options": ["The acquirer pays more than the fair value of net assets", "The purchase price is less than the fair value of identifiable net assets", "The target has large accumulated losses", "The minority interest exceeds the purchase price"],
+      "correct": 1,
+      "explanation": "Bargain purchase = Purchase Price < Fair Value of Net Identifiable Assets. Under IFRS 3, the acquirer first reassesses the measurement of all assets and liabilities. If negative goodwill remains after reassessment, it is recognized immediately as a gain in the Income Statement. Economically, it suggests the acquirer bought below intrinsic value (distressed seller, forced sale). It is rare and should trigger scrutiny about whether the PPA was done correctly."
+    },
+    {
+      "id": "mcq_064",
+      "chapter": 7,
+      "topic": "M&A — Synergies",
+      "question": "Which type of synergy is HARDEST to achieve and carries the highest execution risk?",
+      "options": ["Revenue synergies from cross-selling to combined customer base", "Cost synergies from eliminating duplicate back-office functions", "Financial synergies from lower cost of capital", "Procurement synergies from increased buying power"],
+      "correct": 0,
+      "explanation": "Revenue synergies require the combined company to successfully cross-sell, enter new markets, or generate demand uplift that neither company could achieve alone. They depend on customer behavior and sales execution — both outside management's full control. Cost synergies (headcount, procurement, facilities) are more mechanical and verifiable. In PE/IB modeling, conservative underwriting discounts revenue synergies heavily or excludes them. Cost synergies are modeled with higher confidence."
+    },
+    {
+      "id": "mcq_065",
+      "chapter": 7,
+      "topic": "Intercompany Eliminations",
+      "question": "Why must intercompany transactions be eliminated on consolidation?",
+      "options": ["To prevent the subsidiary from appearing profitable", "To avoid double-counting revenues and assets when the group trades with itself", "Because IFRS requires all related-party transactions to be reversed", "To eliminate the minority interest from the consolidated income statement"],
+      "correct": 1,
+      "explanation": "When BuyerCo sells to its subsidiary SubCo (or vice versa), the transaction creates revenue for one and an asset/expense for the other — but from the group's perspective, no external transaction occurred. Consolidation eliminates these: intercompany revenue vs. intercompany cost, intercompany receivables vs. payables, and unrealized profit in intercompany inventory. Failure to eliminate inflates consolidated revenue and profit."
+    },
+
+    {
+      "id": "mcq_066",
+      "chapter": "all",
+      "topic": "Cross-Chapter — Valuation",
+      "question": "Enterprise Value (EV) is best described as:",
+      "options": ["Market Capitalization", "Market Cap + Net Debt + Minority Interest + Preferred Stock", "Total Assets minus Goodwill", "EBITDA × Industry Multiple"],
+      "correct": 1,
+      "explanation": "EV = Market Capitalization + Net Debt + Minority Interest + Preferred Stock. It represents the total cost to acquire the business, independent of capital structure. Equivalently: EV = Equity Value + Net Debt + MI. EV is the correct numerator for multiples applied to capital-structure-neutral metrics like EBIT and EBITDA. Using market cap as the numerator with EBITDA as denominator would be inconsistent — market cap is equity-only, EBITDA is pre-debt."
+    },
+    {
+      "id": "mcq_067",
+      "chapter": "all",
+      "topic": "Cross-Chapter — Accruals",
+      "question": "The four types of timing discrepancy in accounting (accruals) are. Which option correctly lists all four?",
+      "options": ["Prepayments, Accruals, Provisions, Deferrals", "Cash paid before expense recognized; expense recognized before cash paid; cash received before revenue recognized; revenue recognized before cash received", "Depreciation, Amortization, Impairment, Write-off", "FIFO, LIFO, Average Cost, Specific ID"],
+      "correct": 1,
+      "explanation": "The four timing discrepancies: (1) Cash paid before expense recognized → Prepaid expense (asset, e.g., insurance). (2) Expense recognized before cash paid → Accrued liability (e.g., wages payable). (3) Cash received before revenue recognized → Deferred revenue / unearned revenue (liability, e.g., subscription). (4) Revenue recognized before cash received → Accounts receivable (asset, e.g., credit sale). All four are stored on the Balance Sheet — the BS is the buffer between cash and accrual accounting."
+    },
+    {
+      "id": "mcq_068",
+      "chapter": "all",
+      "topic": "Cross-Chapter — NWC",
+      "question": "Net Working Capital (NWC) for operating purposes is most precisely defined as:",
+      "options": ["Current Assets − Current Liabilities", "Cash + AR + Inventory − AP − Accrued Liabilities (excluding cash and short-term debt)", "Total Assets − Long-Term Liabilities", "Current Assets − Short-Term Debt"],
+      "correct": 1,
+      "explanation": "Operating NWC = Operating Current Assets − Operating Current Liabilities = (AR + Inventory + Prepaid Expenses) − (AP + Accrued Liabilities). Cash and short-term debt are excluded because: cash is separately tracked in the debt bridge, and short-term debt is a financing item (goes into Net Debt). This is the NWC definition used in LBO models, DCF working capital adjustments, and deal NWC targets."
+    },
+    {
+      "id": "mcq_069",
+      "chapter": "all",
+      "topic": "Cross-Chapter — Quality of Earnings",
+      "question": "A Quality of Earnings (QoE) analysis in M&A due diligence primarily aims to:",
+      "options": ["Verify that the target pays taxes correctly", "Assess whether reported EBITDA represents sustainable, recurring cash earnings", "Calculate the goodwill that will arise in the acquisition", "Determine the optimal capital structure post-acquisition"],
+      "correct": 1,
+      "explanation": "QoE analyzes whether reported earnings reflect the true underlying business performance. Key questions: (1) Are revenues truly earned (no premature recognition, channel stuffing)? (2) Is COGS properly measured (inventory costing, no LIFO liquidation)? (3) Are one-time items correctly identified? (4) Is D&A policy appropriate? (5) Are provisions (AUA, warranty reserves) adequate? The output is Adjusted EBITDA — the defensible, recurring earnings base for valuation and debt sizing."
+    },
+    {
+      "id": "mcq_070",
+      "chapter": "all",
+      "topic": "Cross-Chapter — Dating vs Begging",
+      "question": "'Dating game' behavior in financial reporting refers to managers who:",
+      "options": ["Manipulate financial statements to impress equity investors and boost reported earnings", "Understate earnings to minimize tax obligations", "Delay revenue recognition to smooth earnings over time", "Accelerate expense recognition to create reserves for future periods"],
+      "correct": 0,
+      "explanation": "The 'dating game' analogy (Novák): companies present themselves attractively to investors and analysts — aggressive revenue recognition, understated provisions, optimistic depreciation — to maximize reported earnings and stock price (or deal price in M&A). The 'begging game' is the opposite: conservative reporting to minimize taxable income. Understanding both motivations explains many accounting policy choices."
+    },
+    {
+      "id": "mcq_071",
+      "chapter": "all",
+      "topic": "Cross-Chapter — Balance Sheet",
+      "question": "Which of the following is a current asset?",
+      "options": ["Goodwill", "Accounts Receivable due within 12 months", "Property, Plant & Equipment", "Deferred Tax Liability"],
+      "correct": 1,
+      "explanation": "Current assets are expected to be converted to cash or consumed within 12 months: cash, marketable securities, AR, inventory, prepaid expenses. Non-current (long-term) assets include PPE, goodwill, other intangibles, long-term investments, and deferred tax assets. Deferred tax liabilities are typically non-current."
+    },
+    {
+      "id": "mcq_072",
+      "chapter": "all",
+      "topic": "Cross-Chapter — Balance Sheet",
+      "question": "Which items appear in the 'Equity' section of the Balance Sheet?",
+      "options": ["Share capital, retained earnings, accumulated other comprehensive income", "Long-term debt, share capital, retained earnings", "AP, accrued liabilities, retained earnings", "Goodwill, intangibles, share capital"],
+      "correct": 0,
+      "explanation": "Equity = Share Capital (paid-in capital from issuing shares) + Retained Earnings (cumulative NI minus dividends) + AOCI (Accumulated Other Comprehensive Income — unrealized gains/losses on certain items). Retained earnings grows each year by net income and decreases by dividends. Share capital grows by new equity issuances and decreases by buybacks."
+    },
+    {
+      "id": "mcq_073",
+      "chapter": "all",
+      "topic": "Cross-Chapter — Leverage",
+      "question": "The Debt-to-EBITDA ratio is widely used in leveraged finance because:",
+      "options": ["It measures the number of years of operating cash flow needed to repay debt", "It determines the tax shield from interest deductions", "It shows how many shares must be issued to repay debt", "It measures the ratio of fixed assets to debt"],
+      "correct": 0,
+      "explanation": "Debt/EBITDA is the primary leverage metric in leveraged buyouts and leveraged lending. It measures how many years of EBITDA (a proxy for operating cash generation) would be needed to repay all debt. Banks and PE funds set maximum leverage limits (e.g., 5.0x–6.5x in LBOs). When EBITDA falls, leverage ratios rise, potentially triggering covenant breaches. A key reason QoE adjustments to EBITDA directly affect deal debt capacity."
+    },
+    {
+      "id": "mcq_074",
+      "chapter": "all",
+      "topic": "Cross-Chapter — Depreciation",
+      "question": "Depreciation affects which financial statements?",
+      "options": ["Income Statement only", "Balance Sheet only", "Income Statement (expense), Balance Sheet (accumulated depreciation reduces PPE net), and Statement of Cash Flows (added back in CFO)", "All three statements, plus equity directly"],
+      "correct": 2,
+      "explanation": "Depreciation touches all three statements: (1) IS: Depreciation expense reduces EBIT and Net Income. (2) BS: Accumulated Depreciation (contra-asset) reduces the net PPE balance. Retained Earnings fall due to lower NI. (3) SCF: Depreciation is added back in CFO (indirect method) because it is a non-cash charge. Understanding these linkages is fundamental to three-statement financial model building."
+    },
+    {
+      "id": "mcq_075",
+      "chapter": "all",
+      "topic": "Cross-Chapter — Three Statement Model",
+      "question": "In a three-statement financial model, what connects the Income Statement to the Balance Sheet?",
+      "options": ["Revenue flows directly to Cash on the Balance Sheet", "Net Income flows into Retained Earnings within Equity on the Balance Sheet", "EBIT flows to Long-Term Debt", "Gross Profit flows to Accounts Receivable"],
+      "correct": 1,
+      "explanation": "Net Income is the key IS→BS link: it increases Retained Earnings (which is part of Equity). This is the core articulation of the three statements. Additionally: (1) Depreciation links IS to PPE (via accumulated depreciation). (2) CFO/CFI/CFF on the SCF explain the change in Cash on the BS. (3) Working capital changes in CFO correspond to AR, inventory, AP changes on the BS."
+    },
+    {
+      "id": "mcq_076",
+      "chapter": "all",
+      "topic": "Cross-Chapter — Leverage & Returns",
+      "question": "Financial leverage increases ROE. Under which condition does leverage DESTROY returns?",
+      "options": ["When interest rates are low", "When the return on assets (ROA) exceeds the after-tax cost of debt", "When ROA is lower than the after-tax cost of debt", "When the company has excess cash"],
+      "correct": 2,
+      "explanation": "Leverage creates value for equity holders when ROA > after-tax cost of debt (the company earns more on borrowed funds than it costs to borrow them). Leverage destroys value when ROA < after-tax cost of debt — each dollar of debt earns less than it costs, and the loss accrues entirely to equity. In DuPont, the equity multiplier amplifies whatever ROA is — positive or negative. This is the fundamental risk of LBO structures."
+    },
+    {
+      "id": "mcq_077",
+      "chapter": "all",
+      "topic": "Cross-Chapter — M&A Impact",
+      "question": "Post-acquisition, which of the following most directly explains why PE-backed companies show lower GAAP net income than their independent peers?",
+      "options": ["They pay more corporate tax", "Higher interest expense from acquisition debt + PPA amortization charges", "Weaker operations due to management changes", "Higher revenue recognition conservatism"],
+      "correct": 1,
+      "explanation": "Two factors: (1) LBO debt → large interest expense depresses pre-tax income. (2) PPA creates step-up in D&A (asset revaluation → higher depreciation) and amortization of identified intangibles (brand, customer relationships, technology). Both charges reduce GAAP net income significantly. EBITDA is immune to both — which is why PE reporting focuses almost exclusively on EBITDA and FCF, not net income."
+    },
+    {
+      "id": "mcq_078",
+      "chapter": "all",
+      "topic": "Cross-Chapter — Revenue Recognition",
+      "question": "A software company sells a $120,000 annual subscription license on July 1. Under IFRS 15, how much revenue is recognized in the fiscal year ending December 31?",
+      "options": ["$120,000 — full contract value at signing", "$60,000 — only the portion delivered during the period", "$0 — revenue is recognized at renewal only", "$120,000 less 25% discount for early payment"],
+      "correct": 1,
+      "explanation": "Under IFRS 15, performance obligations are satisfied over time for subscription services. July 1 to December 31 = 6 months of a 12-month contract = 50% delivered. Revenue recognized = $120,000 × 6/12 = $60,000. The remaining $60,000 sits as Deferred Revenue (liability) on the Balance Sheet. This is the same principle as the unearned revenue example — cash (or promise of cash) received, but only partially earned."
+    },
+    {
+      "id": "mcq_079",
+      "chapter": "all",
+      "topic": "Cross-Chapter — Accounting Choices",
+      "question": "An analyst notices that a target company depreciated its machinery over 5 years while peers use 10 years. What is the most likely effect on the target's reported EBITDA relative to peers?",
+      "options": ["EBITDA is lower because depreciation is higher", "EBITDA is the same — depreciation is added back in EBITDA", "EBITDA is higher because assets are written down faster", "Net income is identical because the depreciation method cancels out"],
+      "correct": 1,
+      "explanation": "EBITDA = EBIT + D&A. Depreciation is a component of D&A, which is added back. Whether the company depreciates over 5 or 10 years, the depreciation charge is fully added back in EBITDA. Therefore EBITDA is unaffected by the depreciation policy choice. However, EBIT and Net Income will be lower for the company with the shorter life (higher annual depreciation). This is another reason EBITDA is preferred for cross-company comparison."
+    },
+    {
+      "id": "mcq_080",
+      "chapter": "all",
+      "topic": "Cross-Chapter — Goodwill & Valuation",
+      "question": "A company acquires TargetCo for $1,700. TargetCo's assets have book value of $1,000 (revalued to $1,500) and liabilities of $300. What is goodwill?",
+      "options": ["$700", "$500", "$200", "$1,400"],
+      "correct": 1,
+      "explanation": "Goodwill = Purchase Price − Revalued Net Assets = 1,700 − (1,500 − 300) = 1,700 − 1,200 = $500. This is the exact Novák lecture example. The $1,200 revalued net assets already includes the step-up from $1,000 book value to $1,500 fair value. Goodwill is the additional premium above fair value — representing synergies, strategic value, and unidentifiable intangibles."
+    },
+
+    {
+      "id": "mcq_081",
+      "chapter": "all",
+      "topic": "Formulas",
+      "question": "Gross Profit Margin is calculated as:",
+      "options": ["Net Income / Revenue", "(Revenue − COGS) / Revenue", "EBIT / Revenue", "(Revenue − COGS − SG&A) / Revenue"],
+      "correct": 1,
+      "explanation": "Gross Profit Margin = Gross Profit / Revenue = (Revenue − COGS) / Revenue. It measures the percentage of each revenue dollar retained after paying direct production costs (COGS). A higher margin signals pricing power and/or cost efficiency. EBIT margin uses option D's formula. Net margin uses option A. Gross margin is the first and most fundamental profitability metric."
+    },
+    {
+      "id": "mcq_082",
+      "chapter": "all",
+      "topic": "Formulas",
+      "question": "Return on Assets (ROA) is calculated as:",
+      "options": ["Net Income / Total Equity", "EBIT / Total Assets", "Net Income / Average Total Assets", "Revenue / Average Total Assets"],
+      "correct": 2,
+      "explanation": "ROA = Net Income / Average Total Assets. It measures how efficiently a company uses all its assets (debt + equity funded) to generate profit. Alternative formulas use EBIT or EBIT(1-t) in the numerator to make it capital-structure neutral. Asset Turnover = Revenue / Average Total Assets — this is option D. Together with net margin, they decompose ROA."
+    },
+    {
+      "id": "mcq_083",
+      "chapter": "all",
+      "topic": "Formulas",
+      "question": "The Debt Ratio is:",
+      "options": ["Total Debt / EBITDA", "Total Liabilities / Total Assets", "Long-Term Debt / Equity", "Interest Expense / EBIT"],
+      "correct": 1,
+      "explanation": "Debt Ratio = Total Liabilities / Total Assets. It shows what proportion of assets is financed by liabilities (vs. equity). A debt ratio of 0.65 means 65% of assets are debt-financed. Closely related: Debt-to-Equity = Total Liabilities / Equity. TIE = EBIT / Interest. Net Leverage = Net Debt / EBITDA. All are different leverage metrics — know which denominator each uses."
+    },
+    {
+      "id": "mcq_084",
+      "chapter": "all",
+      "topic": "Formulas",
+      "question": "Receivable Turnover is calculated as:",
+      "options": ["AR / Revenue", "Revenue / Average AR", "COGS / Average AR", "Average AR / Revenue × 365"],
+      "correct": 1,
+      "explanation": "Receivable Turnover = Revenue / Average AR. It measures how many times per year the company collects its average AR balance. DSO = 365 / Receivable Turnover = Average AR × 365 / Revenue. Note: Inventory Turnover uses COGS (not revenue) in the numerator, because inventory is at cost. Receivable Turnover uses revenue because AR is at invoice value."
+    },
+    {
+      "id": "mcq_085",
+      "chapter": "all",
+      "topic": "Formulas",
+      "question": "Working Capital is defined as:",
+      "options": ["Total Assets − Total Liabilities", "Current Assets − Current Liabilities", "Current Assets / Current Liabilities", "Cash + AR − AP"],
+      "correct": 1,
+      "explanation": "Working Capital = Current Assets − Current Liabilities. It measures the buffer of liquid assets over short-term obligations. The Current Ratio (option C) is the ratio form. Positive working capital means the company can (in theory) cover all current liabilities with current assets. Very high working capital can indicate poor asset efficiency (too much cash or inventory idle); very low can signal liquidity stress."
+    },
+    {
+      "id": "mcq_086",
+      "chapter": "all",
+      "topic": "Formulas",
+      "question": "Net Income can be calculated from EBITDA using which path?",
+      "options": ["EBITDA − D&A − Interest − Taxes = Net Income", "EBITDA + Interest + Taxes − D&A = Net Income", "EBITDA − CapEx − Interest − Taxes = Net Income", "EBITDA × (1 − Tax Rate) = Net Income"],
+      "correct": 0,
+      "explanation": "EBITDA → EBIT: subtract D&A. EBIT → Pre-Tax Income: subtract Interest. Pre-Tax → Net Income: subtract Taxes. So: Net Income = EBITDA − D&A − Interest − Taxes. This is the full waterfall from the standard valuation metric to the bottom line. Each deduction matters: D&A (accounting policy), Interest (capital structure), Taxes (jurisdiction/structure)."
+    },
+    {
+      "id": "mcq_087",
+      "chapter": "all",
+      "topic": "Formulas",
+      "question": "Asset Turnover is:",
+      "options": ["Net Income / Total Assets", "Revenue / Average Total Assets", "COGS / Average Total Assets", "Equity / Total Assets"],
+      "correct": 1,
+      "explanation": "Asset Turnover = Revenue / Average Total Assets. It measures how much revenue the company generates per dollar of assets deployed. High asset turnover businesses (retailers, distributors) typically have thin margins but rapid turnover. Low asset turnover businesses (utilities, industrials) typically have higher margins. The DuPont identity: ROE = Net Margin × Asset Turnover × Leverage."
+    },
+    {
+      "id": "mcq_088",
+      "chapter": "all",
+      "topic": "Concepts",
+      "question": "The accrual principle states that:",
+      "options": ["Cash must be received before revenue can be recognized", "Transactions are recorded when the economic event occurs, regardless of when cash changes hands", "Expenses are only recognized when paid", "Revenue equals cash collected in the period"],
+      "correct": 1,
+      "explanation": "Accrual accounting recognizes revenues when earned and expenses when incurred, independent of cash timing. This creates the four timing discrepancies (prepayments, accruals, deferred revenue, receivables). Accrual NI is more relevant for valuation than cash-based income because it captures economic performance in the correct period. But it is also more subjective and gameable."
+    },
+    {
+      "id": "mcq_089",
+      "chapter": "all",
+      "topic": "Concepts",
+      "question": "Which statement about goodwill is TRUE under IFRS?",
+      "options": ["It can be recognized for internally developed brand value if reliably measured", "It is amortized over its estimated useful life of up to 20 years", "It represents only the premium paid over book value, not fair value of net assets", "It arises only in business combinations and is tested annually for impairment"],
+      "correct": 3,
+      "explanation": "Under IFRS: (1) Internally generated goodwill CANNOT be recognized (IAS 38). (2) Goodwill is NOT amortized — it is tested annually for impairment (IAS 36). (3) Goodwill = Purchase Price − Fair Value (not book value) of net identifiable assets. (4) Goodwill only arises in business combinations (IFRS 3). Option D is the only fully correct statement."
+    },
+    {
+      "id": "mcq_090",
+      "chapter": "all",
+      "topic": "Concepts",
+      "question": "Vertical analysis of financial statements refers to:",
+      "options": ["Comparing the same company across multiple years", "Expressing each line item as a percentage of a base figure in the same period", "Plotting trend lines through historical data points", "Comparing a company to industry peers"],
+      "correct": 1,
+      "explanation": "Vertical analysis = common-size analysis. Each item in a financial statement is expressed as a % of a base: on the IS, the base is Net Sales; on the BS, the base is Total Assets. This reveals structure and composition in a size-neutral way. Horizontal analysis (option A) compares a company over time — same items, different years, measuring growth rates. Both are essential tools in financial statement analysis."
+    },
+
+    {
+      "id": "mcq_091",
+      "chapter": "all",
+      "topic": "Advanced — Cross Chapter",
+      "question": "A company completes a $2bn acquisition. The PPA identifies $300m of customer relationships with a 10-year amortization life. What is the annual pre-tax income reduction from this PPA item?",
+      "options": ["$300m in Year 1 only", "$30m per year for 10 years", "$300m amortized over goodwill life", "Zero — intangibles from PPA are not amortized under IFRS"],
+      "correct": 1,
+      "explanation": "Customer relationships identified in a PPA are finite-life intangibles — amortized over their economic life. $300m / 10 years = $30m per year. This $30m annual charge: (1) reduces EBIT and pre-tax income by $30m, (2) reduces net income by $30m × (1 − tax rate), (3) does NOT reduce EBITDA (it's in D&A, which is added back). After 10 years, the intangible is fully amortized. This is the post-acquisition IS impact of PPA step-ups."
+    },
+    {
+      "id": "mcq_092",
+      "chapter": "all",
+      "topic": "Advanced — Cross Chapter",
+      "question": "A company has EBITDA of $100m, CapEx of $30m, ΔNWC of +$10m (increase), D&A of $20m, taxes of $15m, and interest of $5m. What is approximate Free Cash Flow?",
+      "options": ["$100m", "$40m", "$45m", "$70m"],
+      "correct": 2,
+      "explanation": "FCF = EBITDA − Taxes − ΔInterest − CapEx − ΔNWC = 100 − 15 − 5 − 30 − 10 = $40m. Alternatively: EBIT = EBITDA − D&A = 80. NOPAT = 80 − 15 = 65. FCF = NOPAT + D&A − CapEx − ΔNWC = 65 + 20 − 30 − 10 = $45m. The difference relates to how taxes on interest are handled. Using CFO approach: NI ≈ (80−5)×(1−tax%) + D&A adjustments − ΔNWC − CapEx ≈ $45m. Note: slight differences in FCF formula approaches are normal — answer C ($45m) is closest using the standard unlevered FCF formula."
+    },
+    {
+      "id": "mcq_093",
+      "chapter": "all",
+      "topic": "Advanced — Cross Chapter",
+      "question": "A PE fund acquires a company for 10x EV/EBITDA. During QoE, EBITDA is adjusted down by $5m due to revenue timing issues. By how much does the implied Enterprise Value fall?",
+      "options": ["$5m", "$50m", "$10m", "$500m"],
+      "correct": 1,
+      "explanation": "At 10x EV/EBITDA, each $1m of EBITDA adjustment changes Enterprise Value by $10m. A $5m downward QoE adjustment to EBITDA reduces EV by $5m × 10 = $50m. This is the 'multiple effect' — why QoE is so consequential in M&A. A $5m issue that seems small operationally has a $50m valuation impact. Large PE funds fight hard over QoE adjustments because the stakes are enormous."
+    },
+    {
+      "id": "mcq_094",
+      "chapter": "all",
+      "topic": "Advanced — Cross Chapter",
+      "question": "Which combination correctly shows the relationships between COGS, inventory, and gross profit?",
+      "options": ["COGS ↑ → Gross Profit ↑; Ending Inventory ↑ → COGS ↑", "COGS ↑ → Gross Profit ↓; Ending Inventory ↑ → COGS ↓", "COGS ↑ → Gross Profit ↑; Ending Inventory ↓ → COGS ↑", "COGS ↓ → Gross Profit ↓; Ending Inventory ↑ → COGS ↑"],
+      "correct": 1,
+      "explanation": "Two fundamental relationships: (1) Gross Profit = Revenue − COGS → higher COGS means lower gross profit (inverse relationship). (2) COGS = BI + Purchases − Ending Inventory → higher ending inventory means lower COGS (inverse relationship). Together: overstating ending inventory understates COGS, which overstates gross profit. This is the most common inventory manipulation mechanism."
+    },
+    {
+      "id": "mcq_095",
+      "chapter": "all",
+      "topic": "Advanced — Cross Chapter",
+      "question": "All else equal, if a company increases its Days Sales Outstanding from 45 to 60 days, which of the following is the correct balance sheet effect?",
+      "options": ["AR decreases; Cash increases", "AR increases; Cash decreases (cash is tied up in uncollected receivables)", "AR stays the same; liabilities increase", "AR increases and Cash increases simultaneously"],
+      "correct": 1,
+      "explanation": "Higher DSO means the company takes longer to collect from customers. For the same revenue level: AR increases (more uncollected receivables on the BS). Cash is lower than it would otherwise be (cash collection is delayed). In the SCF, an increase in AR reduces CFO. In an LBO model, a 15-day DSO increase on $365m revenue ≈ $15m of additional AR = $15m of cash absorbed by working capital."
+    },
+    {
+      "id": "mcq_096",
+      "chapter": "all",
+      "topic": "Advanced — Cross Chapter",
+      "question": "The statement 'EBITDA is a better proxy for cash flow than net income' is most defensible when:",
+      "options": ["The company has no debt and no CapEx requirements", "The company's CapEx equals its D&A and working capital is stable", "The company has high leverage and large PPA amortization charges", "The company is loss-making"],
+      "correct": 1,
+      "explanation": "EBITDA approximates cash flow well when: CapEx ≈ D&A (so adding D&A back and subtracting CapEx roughly nets out), working capital is stable (so NWC ≈ 0), and there are no major one-time items. When CapEx >> D&A (e.g., capital-intensive industries requiring heavy reinvestment), EBITDA significantly overstates sustainable cash flow. This is Buffett's critique of EBITDA — 'does management think the tooth fairy pays for CapEx?'"
+    },
+    {
+      "id": "mcq_097",
+      "chapter": "all",
+      "topic": "Advanced — Cross Chapter",
+      "question": "A company issues $500m of bonds to fund an acquisition. Which financial statements are immediately affected?",
+      "options": ["Income Statement only (interest expense)", "Balance Sheet only (cash and debt increase)", "Balance Sheet (cash up, debt up) and SCF (CFF inflow)", "All three — IS, BS, and SCF"],
+      "correct": 2,
+      "explanation": "At the moment of bond issuance: BS: Cash increases $500m, Long-Term Debt increases $500m (both sides of BS up equally — equity unchanged). SCF: +$500m in CFF (proceeds from debt issuance). IS: no immediate effect — interest expense only accrues over time. The IS will be affected in future periods as interest expense is recognized. This tests understanding of when IS impact occurs vs. immediate BS/SCF impact."
+    },
+    {
+      "id": "mcq_098",
+      "chapter": "all",
+      "topic": "Advanced — Cross Chapter",
+      "question": "Two companies have identical EBIT of $100m but Company A has Debt/EBITDA of 1x and Company B has Debt/EBITDA of 5x. If EBIT falls 20% due to an economic downturn, which company is more likely to breach interest coverage covenants?",
+      "options": ["Company A, because it has lower absolute debt", "Company B, because its high leverage means interest expense consumes most of EBIT", "Both are equally affected because EBIT falls by the same amount", "Neither — EBIT falling does not affect interest coverage if debt is fixed-rate"],
+      "correct": 1,
+      "explanation": "TIE = EBIT / Interest Expense. After 20% EBIT decline: EBIT = $80m for both. Company B's high leverage (5x Debt/EBITDA) means significantly higher interest expense — if EBITDA ≈ EBIT here, and Debt = 5 × EBITDA = $500m at, say, 7% interest = $35m interest expense. TIE for B = 80/35 = 2.3x — uncomfortably close to typical 2.0x covenant. Company A at 1x leverage: Debt = $100m, interest = $7m, TIE = 80/7 = 11.4x — no issue. This is the core risk of LBO structures in downturns."
+    },
+    {
+      "id": "mcq_099",
+      "chapter": "all",
+      "topic": "Advanced — Cross Chapter",
+      "question": "In a Discounted Cash Flow (DCF) valuation, which metric is typically used as the basis for unlevered free cash flow?",
+      "options": ["Net Income + D&A", "EBIT × (1 − Tax Rate) + D&A − CapEx − ΔNWC", "CFO − Dividends", "EBITDA − Interest − Taxes"],
+      "correct": 1,
+      "explanation": "Unlevered FCF (UFCF) = NOPAT + D&A − CapEx − ΔNWC = EBIT × (1 − t) + D&A − CapEx − ΔNWC. It is 'unlevered' because it uses EBIT (before interest) as the starting point — capital structure neutral, consistent with discounting at WACC (which implicitly includes the debt tax shield). This is the standard formula for DCF/LBO terminal value and annual FCF projections."
+    },
+    {
+      "id": "mcq_100",
+      "chapter": "all",
+      "topic": "Advanced — Cross Chapter",
+      "question": "Which of the following best summarizes the analytical relationship between all three financial statements?",
+      "options": ["The SCF is derived from the IS; the BS is derived from the SCF", "Net Income from the IS flows to Retained Earnings on the BS; the SCF explains the change in Cash on the BS by reconciling NI to actual cash flows", "The BS and IS are independent; the SCF links them via dividends only", "The IS shows what assets were purchased; the BS shows what cash was generated"],
+      "correct": 1,
+      "explanation": "The three statements articulate: (1) IS → BS: Net Income increases Retained Earnings (Equity). (2) SCF → BS: the net change in Cash per the SCF equals the change in the Cash line on the BS. (3) SCF → IS: CFO reconciles Net Income (IS) to actual cash flow (SCF) by adjusting for non-cash items and working capital changes. Understanding this articulation is the foundation of three-statement financial modeling — the core technical skill in IB/PE."
+    }
+  ]
+}

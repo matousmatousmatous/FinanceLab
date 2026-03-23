@@ -1,7 +1,7 @@
 /* FinanceLab Service Worker */
 'use strict';
 
-const CACHE = 'financelab-v3';
+const CACHE = 'financelab-v4';
 const SHELL = [
   '/',
   '/style.css',

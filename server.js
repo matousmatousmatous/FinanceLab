@@ -83,6 +83,8 @@ function writeSRS(data) {
 
 const LESSONS_DIR = process.env.LESSONS_DIR || path.join(__dirname, 'lessons');
 const QUIZZES_DIR = process.env.QUIZZES_DIR || path.join(__dirname, 'quizzes');
+const MASTER_MCQ_FILE  = path.join(__dirname, 'quizzes', 'master_mcq.json');
+const MASTER_OPEN_FILE = path.join(__dirname, 'quizzes', 'master_open.json');
 
 function loadPreGeneratedLesson(sessionId) {
   const filePath = path.join(LESSONS_DIR, `${sessionId}.md`);
@@ -1042,6 +1044,127 @@ Return ONLY valid JSON:
     console.error('[/api/quiz/grade]', err.message);
     res.status(500).json({ error: err.message });
   }
+});
+
+// ─── Master Quiz Routes ───────────────────────────────────────────────────────
+
+app.get('/api/master-quiz/questions', (req, res) => {
+  try {
+    const mcqData  = JSON.parse(fs.readFileSync(MASTER_MCQ_FILE,  'utf8'));
+    const openData = JSON.parse(fs.readFileSync(MASTER_OPEN_FILE, 'utf8'));
+    res.json({ mcq: mcqData.questions, open: openData.questions });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+app.post('/api/master-quiz/grade', async (req, res) => {
+  try {
+    const { questions, answers } = req.body;
+
+    const mcqQuestions  = questions.filter(q => q.options);
+    const openQuestions = questions.filter(q => !q.options);
+
+    // Grade MCQ questions (engine-graded)
+    const mcqResults = mcqQuestions.map(q => {
+      const userAnswer = answers[q.id];
+      const correct    = userAnswer !== undefined && userAnswer !== null && parseInt(userAnswer, 10) === q.correct;
+      return {
+        id:          q.id,
+        type:        'mcq',
+        score:       correct ? 1 : 0,
+        correct,
+        feedback:    correct ? 'Correct!' : `Incorrect. The correct answer is: ${q.options[q.correct]}`,
+        explanation: q.explanation || '',
+      };
+    });
+
+    // Grade open questions with Claude
+    let openResults = [];
+    if (openQuestions.length > 0) {
+      const openPayload = openQuestions.map(q => ({
+        id:           q.id,
+        question:     q.question,
+        model_answer: q.model_answer,
+        rubric:       q.rubric || '',
+        user_answer:  answers[q.id] || '',
+      }));
+
+      const systemPrompt = `${PERSONA}
+
+You are grading open-ended finance questions. For each question you receive, evaluate the student's answer using the model answer as a guide — not as the only acceptable answer. Credit partial understanding, good reasoning, and correct concepts even if phrased differently. Return a score from 0.0 to 1.0 and brief, constructive feedback.
+
+Respond ONLY with valid JSON in this exact format:
+{
+  "results": [
+    { "id": "open_001", "score": 0.8, "feedback": "Good answer. You covered X but missed Y." }
+  ]
+}`;
+
+      const userPrompt = `Grade these open-ended questions:\n${JSON.stringify(openPayload, null, 2)}`;
+
+      const raw    = await callClaude(systemPrompt, userPrompt, 2048);
+      const parsed = extractJSON(raw);
+
+      openResults = (parsed.results || []).map(r => {
+        const q = openQuestions.find(q => q.id === r.id);
+        return {
+          id:           r.id,
+          type:         'open',
+          score:        Math.min(1, Math.max(0, parseFloat(r.score) || 0)),
+          correct:      null,
+          feedback:     r.feedback || '',
+          explanation:  q ? (q.model_answer || '') : '',
+        };
+      });
+
+      // Fallback: if Claude didn't return a result for a question, give score 0
+      openQuestions.forEach(q => {
+        if (!openResults.find(r => r.id === q.id)) {
+          openResults.push({ id: q.id, type: 'open', score: 0, correct: null, feedback: 'Could not grade.', explanation: q.model_answer || '' });
+        }
+      });
+    }
+
+    const results = [...mcqResults, ...openResults];
+
+    // Calculate scores with weights: MCQ = 1, Open = 3
+    const mcqEarned   = mcqResults.reduce((sum, r) => sum + r.score, 0);
+    const mcqPossible = mcqResults.length;
+    const openEarned   = openResults.reduce((sum, r) => sum + r.score * 3, 0);
+    const openPossible = openResults.length * 3;
+
+    const totalEarned   = mcqEarned + openEarned;
+    const totalPossible = mcqPossible + openPossible;
+    const totalScore = totalPossible > 0 ? Math.round((totalEarned / totalPossible) * 100) : 0;
+    const mcqScore   = mcqPossible  > 0 ? Math.round((mcqEarned  / mcqPossible)  * 100) : null;
+    const openScore  = openPossible > 0 ? Math.round((openEarned / openPossible)  * 100) : null;
+
+    const attempt = {
+      id: Date.now().toString(),
+      date: new Date().toISOString(),
+      questions,
+      answers,
+      results,
+      totalScore,
+      mcqScore,
+      openScore,
+    };
+
+    const progress = readProgress();
+    progress.masterQuizHistory = [attempt, ...(progress.masterQuizHistory || [])].slice(0, 50);
+    writeProgress(progress);
+
+    res.json(attempt);
+  } catch (err) {
+    console.error('[/api/master-quiz/grade]', err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.get('/api/master-quiz/history', (req, res) => {
+  const progress = readProgress();
+  res.json(progress.masterQuizHistory || []);
 });
 
 // ─── SRS Routes ───────────────────────────────────────────────────────────────

@@ -33,6 +33,14 @@ const state = {
     results: null,
     currentIdx: 0,
   },
+  masterQuiz: {
+    screen: 'config',   // 'config' | 'session' | 'results' | 'history'
+    questions: null,    // sampled questions for current session
+    answers: {},
+    result: null,       // grading result from server
+    history: null,      // loaded history
+    allQuestions: null, // { mcq: [...], open: [...] }
+  },
 };
 
 // ─── API ──────────────────────────────────────────────────────────────────────
@@ -204,6 +212,9 @@ function render() {
   } else if (state.view === 'sandbox') {
     app.innerHTML = buildSandbox();
     attachSandboxListeners();
+  } else if (state.view === 'master-quiz') {
+    app.innerHTML = buildMasterQuiz();
+    attachMasterQuizListeners();
   } else {
     app.innerHTML = buildSession();
     attachSessionListeners();
@@ -228,10 +239,11 @@ function buildNav(activeView) {
 <nav class="app-nav">
   <span class="nav-brand" data-nav="home">◈ FinanceLab</span>
   <div class="nav-links">
-    <button class="nav-link ${activeView === 'home'     ? 'active' : ''}" data-nav="home">Curriculum${dueBadge}</button>
-    <button class="nav-link ${activeView === 'sandbox'  ? 'active' : ''}" data-nav="sandbox">Sandbox</button>
-    <button class="nav-link ${activeView === 'settings' ? 'active' : ''}" data-nav="settings">Settings</button>
-    <button class="nav-link ${activeView === 'library'  ? 'active' : ''}" data-nav="library">Library</button>
+    <button class="nav-link ${activeView === 'home'         ? 'active' : ''}" data-nav="home">Curriculum${dueBadge}</button>
+    <button class="nav-link ${activeView === 'sandbox'      ? 'active' : ''}" data-nav="sandbox">Sandbox</button>
+    <button class="nav-link ${activeView === 'master-quiz'  ? 'active' : ''}" data-nav="master-quiz">Quiz</button>
+    <button class="nav-link ${activeView === 'settings'     ? 'active' : ''}" data-nav="settings">Settings</button>
+    <button class="nav-link ${activeView === 'library'      ? 'active' : ''}" data-nav="library">Library</button>
   </div>
   <div class="nav-right">
     <span class="nav-badge">${completed}/${total} sessions</span>
@@ -256,6 +268,15 @@ function attachNavListeners() {
       state.view = view;
       if (view === 'library') {
         API.get('/api/library').then(lib => { state.library = lib; render(); }).catch(() => render());
+      } else if (view === 'master-quiz') {
+        state.masterQuiz.screen = 'config';
+        if (!state.masterQuiz.allQuestions) {
+          API.get('/api/master-quiz/questions').then(data => {
+            state.masterQuiz.allQuestions = data;
+            if (state.view === 'master-quiz') render();
+          });
+        }
+        render();
       } else {
         render();
       }
@@ -2090,6 +2111,336 @@ function formatDate(iso) {
   } catch {
     return '';
   }
+}
+
+// ─── Master Quiz ──────────────────────────────────────────────────────────────
+
+function fisherYatesShuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function buildMasterQuiz() {
+  const mq = state.masterQuiz;
+  let content = '';
+  if (mq.screen === 'config')        content = buildMasterQuizConfig();
+  else if (mq.screen === 'session')  content = buildMasterQuizSession();
+  else if (mq.screen === 'results')  content = buildMasterQuizResults();
+  else if (mq.screen === 'history')  content = buildMasterQuizHistory();
+
+  return `
+<div class="app-layout">
+  ${buildNav('master-quiz')}
+  <main class="home-main" style="max-width:800px;margin:0 auto;padding:24px 16px">
+    ${content}
+  </main>
+</div>`;
+}
+
+function buildMasterQuizConfig() {
+  const mq = state.masterQuiz;
+  if (!mq.allQuestions) {
+    return `<div style="text-align:center;padding:60px 0"><div class="spinner"></div><p style="margin-top:16px;color:var(--text-muted)">Loading questions…</p></div>`;
+  }
+  const mcqTotal  = mq.allQuestions.mcq.length;
+  const openTotal = mq.allQuestions.open.length;
+  return `
+<div class="section-header" style="margin-bottom:8px">
+  <h2 class="section-title">Master Quiz</h2>
+</div>
+<p style="color:var(--text-muted);margin-bottom:28px">${mcqTotal} MCQ questions · ${openTotal} open-ended questions across all 7 chapters</p>
+
+<div class="card" style="padding:28px;margin-bottom:20px">
+  <div style="margin-bottom:24px">
+    <label style="font-weight:600;display:block;margin-bottom:10px">MCQ Questions <span id="mq-mcq-display" style="font-weight:400;color:var(--text-muted)">10</span></label>
+    <input id="mq-mcq-count" type="range" min="0" max="50" value="10" style="width:100%" oninput="document.getElementById('mq-mcq-display').textContent=this.value">
+  </div>
+  <div style="margin-bottom:28px">
+    <label style="font-weight:600;display:block;margin-bottom:10px">Open Questions <span id="mq-open-display" style="font-weight:400;color:var(--text-muted)">3</span></label>
+    <input id="mq-open-count" type="range" min="0" max="10" value="3" style="width:100%" oninput="document.getElementById('mq-open-display').textContent=this.value">
+  </div>
+  <button id="mq-start-btn" class="btn btn-primary" style="width:100%;margin-bottom:12px">Start Quiz →</button>
+  <button id="mq-history-btn" class="btn btn-secondary" style="width:100%">Review Past Mistakes →</button>
+</div>`;
+}
+
+function buildMasterQuizSession() {
+  const mq = state.masterQuiz;
+  const questions = mq.questions || [];
+
+  const questionsHTML = questions.map((q, idx) => {
+    const num = idx + 1;
+    if (q.options) {
+      // MCQ
+      const optionsHTML = q.options.map((opt, i) => `
+        <label class="q-option">
+          <input type="radio" name="q_${q.id}" value="${i}"> ${opt}
+        </label>`).join('');
+      return `
+<div class="question-card" data-qid="${q.id}">
+  <div class="q-meta">Q${num} · Ch.${q.chapter} · ${q.topic}</div>
+  <div class="q-text">${q.question}</div>
+  <div class="q-options">${optionsHTML}</div>
+</div>`;
+    } else {
+      // Open
+      const chapters = (q.chapters || []).join(', ');
+      return `
+<div class="question-card" data-qid="${q.id}">
+  <div class="q-meta">Q${num} · Ch.${chapters} · ${q.topic}</div>
+  <div class="q-text">${q.question}</div>
+  <textarea name="q_${q.id}" rows="5" placeholder="Write your answer…" style="width:100%;margin-top:12px;resize:vertical"></textarea>
+</div>`;
+    }
+  }).join('');
+
+  return `
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+  <h2 class="section-title" style="margin:0">Quiz — ${questions.length} Questions</h2>
+  <button id="mq-back-btn" class="btn btn-secondary" style="font-size:13px">← Back</button>
+</div>
+${questionsHTML}
+<div style="margin-top:24px;text-align:center">
+  <button id="mq-submit-btn" class="btn btn-primary" style="min-width:160px">Submit Answers</button>
+</div>`;
+}
+
+function buildMasterQuizResults() {
+  const mq = state.masterQuiz;
+  const result = mq.result;
+  if (!result) return '<p>No results.</p>';
+
+  const { totalScore, mcqScore, openScore, results, questions, answers } = result;
+
+  function gradeLetter(s) {
+    if (s >= 90) return 'A';
+    if (s >= 80) return 'B';
+    if (s >= 70) return 'C';
+    if (s >= 60) return 'D';
+    return 'F';
+  }
+
+  const grade = gradeLetter(totalScore);
+  const gradeColor = totalScore >= 70 ? 'var(--success, #22c55e)' : totalScore >= 50 ? '#f59e0b' : 'var(--danger, #ef4444)';
+
+  const mcqLine  = mcqScore  !== null ? `<div style="margin-top:4px;font-size:14px;color:var(--text-muted)">MCQ: ${mcqScore}%</div>`  : '';
+  const openLine = openScore !== null ? `<div style="font-size:14px;color:var(--text-muted)">Open: ${openScore}%</div>` : '';
+
+  const breakdownHTML = results.map(r => {
+    const q = questions.find(q => q.id === r.id);
+    if (!q) return '';
+
+    if (r.type === 'mcq') {
+      const icon        = r.correct ? '✓' : '✗';
+      const iconColor   = r.correct ? 'var(--success, #22c55e)' : 'var(--danger, #ef4444)';
+      const userIdx     = answers[q.id] !== undefined ? parseInt(answers[q.id], 10) : null;
+      const userAns     = userIdx !== null && q.options[userIdx] ? q.options[userIdx] : '(no answer)';
+      const correctAns  = q.options[q.correct];
+      const wrongBlock  = !r.correct ? `<div style="margin-top:6px;font-size:13px;color:var(--text-muted)">Your answer: ${userAns}<br>Correct: <strong>${correctAns}</strong></div>` : '';
+      const explBlock   = r.explanation ? `<div style="margin-top:8px;font-size:13px;color:var(--text-muted);font-style:italic">${r.explanation}</div>` : '';
+      return `
+<div class="mq-mistake" style="${r.correct ? 'border-left-color:#22c55e' : ''}">
+  <div style="display:flex;gap:10px;align-items:flex-start">
+    <span style="font-size:18px;color:${iconColor};flex-shrink:0">${icon}</span>
+    <div>
+      <div style="font-size:13px;color:var(--text-muted)">Ch.${q.chapter} · ${q.topic}</div>
+      <div style="font-weight:500;margin-top:2px">${q.question}</div>
+      ${wrongBlock}${explBlock}
+    </div>
+  </div>
+</div>`;
+    } else {
+      // Open
+      const scoreLabel  = Math.round(r.score * 100);
+      const scorePct    = scoreLabel;
+      const barColor    = scorePct >= 70 ? '#22c55e' : scorePct >= 40 ? '#f59e0b' : '#ef4444';
+      const userAns     = answers[q.id] || '(no answer)';
+      const chapters    = (q.chapters || []).join(', ');
+      return `
+<div class="mq-mistake">
+  <div style="font-size:13px;color:var(--text-muted)">Ch.${chapters} · ${q.topic}</div>
+  <div style="font-weight:500;margin-top:2px">${q.question}</div>
+  <div style="margin-top:10px;padding:10px;background:var(--bg-secondary,#f9fafb);border-radius:6px;font-size:14px">
+    <strong>Your answer:</strong><br>${userAns}
+  </div>
+  <div style="margin-top:8px;display:flex;align-items:center;gap:10px">
+    <div style="flex:1;height:6px;background:#e5e7eb;border-radius:3px">
+      <div style="width:${scorePct}%;height:100%;background:${barColor};border-radius:3px"></div>
+    </div>
+    <span style="font-size:13px;font-weight:600;color:${barColor}">${scorePct}%</span>
+  </div>
+  <div style="margin-top:8px;font-size:14px;color:var(--text-muted)">${r.feedback}</div>
+  <details class="mq-model-answer" style="margin-top:10px">
+    <summary style="cursor:pointer;font-size:13px;font-weight:600;color:var(--text-muted)">Model Answer</summary>
+    <div style="margin-top:8px;font-size:13px;line-height:1.6;color:var(--text-secondary)">${r.explanation}</div>
+  </details>
+</div>`;
+    }
+  }).join('');
+
+  return `
+<div class="mq-score-summary" style="text-align:center;margin-bottom:24px">
+  <div style="font-size:56px;font-weight:700;color:${gradeColor}">${grade}</div>
+  <div style="font-size:28px;font-weight:600;margin-top:4px">${totalScore}%</div>
+  ${mcqLine}${openLine}
+</div>
+<div style="display:flex;gap:12px;margin-bottom:28px">
+  <button id="mq-back-btn" class="btn btn-secondary" style="flex:1">Try Again</button>
+  <button id="mq-history-btn" class="btn btn-primary" style="flex:1">Review History</button>
+</div>
+<h3 style="margin-bottom:16px">Question Breakdown</h3>
+${breakdownHTML}`;
+}
+
+function buildMasterQuizHistory() {
+  const mq = state.masterQuiz;
+  const history = mq.history || [];
+
+  if (!history.length) {
+    return `
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+  <h2 class="section-title" style="margin:0">Quiz History</h2>
+  <button id="mq-back-btn" class="btn btn-secondary">← Back</button>
+</div>
+<p style="color:var(--text-muted);text-align:center;padding:40px 0">No quiz attempts yet.</p>`;
+  }
+
+  const attemptsHTML = history.map((attempt, ai) => {
+    const mcqCount  = (attempt.questions || []).filter(q => q.options).length;
+    const openCount = (attempt.questions || []).filter(q => !q.options).length;
+    const dateStr   = new Date(attempt.date).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' });
+    const scoreColor = attempt.totalScore >= 70 ? '#22c55e' : attempt.totalScore >= 50 ? '#f59e0b' : '#ef4444';
+
+    const mistakes = (attempt.results || []).filter(r => r.type === 'mcq' ? !r.correct : r.score < 0.8);
+    const mistakesHTML = mistakes.map(r => {
+      const q = (attempt.questions || []).find(q => q.id === r.id);
+      if (!q) return '';
+      if (r.type === 'mcq') {
+        const userIdx = attempt.answers[q.id] !== undefined ? parseInt(attempt.answers[q.id], 10) : null;
+        const userAns = userIdx !== null && q.options[userIdx] ? q.options[userIdx] : '(no answer)';
+        return `
+<div class="mq-mistake" style="margin-bottom:10px">
+  <div style="font-size:12px;color:var(--text-muted)">Ch.${q.chapter} · ${q.topic} · MCQ</div>
+  <div style="font-weight:500;margin-top:2px;font-size:14px">${q.question}</div>
+  <div style="margin-top:4px;font-size:13px;color:var(--text-muted)">Your answer: ${userAns}<br>Correct: <strong>${q.options[q.correct]}</strong></div>
+  ${q.explanation ? `<div style="margin-top:4px;font-size:12px;color:var(--text-muted);font-style:italic">${q.explanation}</div>` : ''}
+</div>`;
+      } else {
+        const userAns = attempt.answers[q.id] || '(no answer)';
+        const scorePct = Math.round(r.score * 100);
+        const chapters = (q.chapters || []).join(', ');
+        return `
+<div class="mq-mistake" style="margin-bottom:10px">
+  <div style="font-size:12px;color:var(--text-muted)">Ch.${chapters} · ${q.topic} · Open (${scorePct}%)</div>
+  <div style="font-weight:500;margin-top:2px;font-size:14px">${q.question}</div>
+  <div style="margin-top:6px;font-size:13px;color:var(--text-muted)">${r.feedback}</div>
+  <details class="mq-model-answer" style="margin-top:6px">
+    <summary style="cursor:pointer;font-size:12px;font-weight:600;color:var(--text-muted)">Model Answer</summary>
+    <div style="margin-top:6px;font-size:12px;line-height:1.5;color:var(--text-secondary)">${r.explanation}</div>
+  </details>
+</div>`;
+      }
+    }).join('');
+
+    return `
+<div class="mq-attempt">
+  <div class="mq-attempt-header mq-attempt-toggle" data-idx="${ai}" style="cursor:pointer">
+    <div>
+      <div style="font-weight:600">${dateStr}</div>
+      <div style="font-size:13px;color:var(--text-muted);margin-top:2px">${mcqCount} MCQ + ${openCount} Open · ${mistakes.length} mistake${mistakes.length !== 1 ? 's' : ''}</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <span style="font-size:22px;font-weight:700;color:${scoreColor}">${attempt.totalScore}%</span>
+      <span class="mq-toggle-icon" style="color:var(--text-muted)">▸</span>
+    </div>
+  </div>
+  <div class="mq-attempt-body" id="mq-attempt-${ai}" style="display:none;padding-top:12px">
+    ${mistakes.length ? mistakesHTML : '<p style="color:var(--text-muted);font-size:14px">No mistakes — perfect score!</p>'}
+  </div>
+</div>`;
+  }).join('');
+
+  return `
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+  <h2 class="section-title" style="margin:0">Quiz History</h2>
+  <button id="mq-back-btn" class="btn btn-secondary">← Back</button>
+</div>
+${attemptsHTML}`;
+}
+
+function attachMasterQuizListeners() {
+  attachNavListeners();
+
+  // Start quiz
+  document.getElementById('mq-start-btn')?.addEventListener('click', () => {
+    const mq = state.masterQuiz;
+    if (!mq.allQuestions) return;
+    const mcqCount  = parseInt(document.getElementById('mq-mcq-count')?.value  || '10', 10);
+    const openCount = parseInt(document.getElementById('mq-open-count')?.value || '3',  10);
+    const mcqSample  = fisherYatesShuffle(mq.allQuestions.mcq).slice(0, mcqCount);
+    const openSample = fisherYatesShuffle(mq.allQuestions.open).slice(0, openCount);
+    mq.questions = [...mcqSample, ...openSample];
+    mq.answers   = {};
+    mq.result    = null;
+    mq.screen    = 'session';
+    render();
+  });
+
+  // History button (from config or results)
+  document.getElementById('mq-history-btn')?.addEventListener('click', () => {
+    const mq = state.masterQuiz;
+    setLoading(true, 'Loading history…');
+    API.get('/api/master-quiz/history').then(history => {
+      mq.history = history;
+      mq.screen  = 'history';
+      render();
+    }).catch(err => toast(err.message)).finally(() => setLoading(false));
+  });
+
+  // Submit quiz
+  document.getElementById('mq-submit-btn')?.addEventListener('click', () => {
+    const mq = state.masterQuiz;
+    const answers = {};
+    (mq.questions || []).forEach(q => {
+      if (q.options) {
+        const selected = document.querySelector(`input[name="q_${q.id}"]:checked`);
+        if (selected) answers[q.id] = parseInt(selected.value, 10);
+      } else {
+        const ta = document.querySelector(`textarea[name="q_${q.id}"]`);
+        if (ta) answers[q.id] = ta.value.trim();
+      }
+    });
+    mq.answers = answers;
+    setLoading(true, 'Grading your answers…');
+    API.post('/api/master-quiz/grade', { questions: mq.questions, answers }).then(result => {
+      mq.result = result;
+      mq.screen = 'results';
+      render();
+    }).catch(err => toast(err.message)).finally(() => setLoading(false));
+  });
+
+  // Back button (config or history)
+  document.getElementById('mq-back-btn')?.addEventListener('click', () => {
+    state.masterQuiz.screen = 'config';
+    render();
+  });
+
+  // Toggle attempt expand/collapse
+  document.querySelectorAll('.mq-attempt-toggle').forEach(el => {
+    el.addEventListener('click', () => {
+      const idx  = el.dataset.idx;
+      const body = document.getElementById(`mq-attempt-${idx}`);
+      const icon = el.querySelector('.mq-toggle-icon');
+      if (!body) return;
+      const isOpen = body.style.display !== 'none';
+      body.style.display = isOpen ? 'none' : 'block';
+      if (icon) icon.textContent = isOpen ? '▸' : '▾';
+    });
+  });
 }
 
 // ─── Boot ─────────────────────────────────────────────────────────────────────
