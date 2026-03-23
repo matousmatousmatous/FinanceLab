@@ -1102,7 +1102,6 @@ function getGrade(score) {
 async function startCurriculumSession(chapter, session, curriculum) {
   state.currentSession = { chapter, session, curriculum: curriculum || state.curriculum };
   state.currentTopic = { id: session.id, title: session.title };
-  state.phase = 'learn';
   state.session = {
     learnContent: null,
     quiz: null,
@@ -1116,6 +1115,34 @@ async function startCurriculumSession(chapter, session, curriculum) {
     outline: null,
   };
   state.view = 'session';
+
+  // If session already has completed difficulty results, restore and show results
+  const sessionProg = state.progress?.sessions?.[session.id];
+  if (sessionProg?.difficulties) {
+    const completed = Object.entries(sessionProg.difficulties)
+      .filter(([, v]) => v.completed && v.gradingResults)
+      .sort((a, b) => new Date(b[1].lastStudied) - new Date(a[1].lastStudied));
+    if (completed.length > 0) {
+      const [lastDiffKey, lastDiffVal] = completed[0];
+      state.session.quizDifficulty = lastDiffKey;
+      state.session.gradingResults = lastDiffVal.gradingResults;
+      state.session.answers = lastDiffVal.answers || {};
+      state.phase = 'results';
+      render();
+      // Load quiz questions in background so question breakdown renders
+      API.get(`/api/quiz/chapter/${chapter.id}`).then(data => {
+        state.session.quizAllData = data;
+        const sel = (data.quizzes || []).find(q => q.difficulty === lastDiffKey);
+        if (sel) {
+          state.session.quiz = { questions: sel.questions, difficulty: lastDiffKey, label: sel.label };
+          refreshSessionMain();
+        }
+      }).catch(() => {});
+      return;
+    }
+  }
+
+  state.phase = 'learn';
   render();
   startLearnPhase(state.currentTopic);
 }
@@ -1268,6 +1295,9 @@ async function handleQuizSubmit(e) {
     }
 
     state.progress = await API.get('/api/progress');
+    // Clear resume banner state now that grading is complete
+    await saveSessionState({ sessionState: null });
+    state.progress.sessionState = null;
   } catch (err) {
     toast('Failed to grade quiz: ' + err.message);
   } finally {
