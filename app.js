@@ -684,7 +684,6 @@ function attachSessionListeners() {
     }
   });
 
-  document.getElementById('next-phase-btn')?.addEventListener('click', advancePhase);
   document.getElementById('quiz-form')?.addEventListener('submit', handleQuizSubmit);
 
   // Difficulty picker buttons
@@ -747,17 +746,22 @@ function buildLearn() {
       </div>` : ''}
   </div>
 
-  <div class="difficulty-bar">
-    <span class="difficulty-bar-label">How was this reading?</span>
-    <div class="difficulty-options">
-      <button class="difficulty-btn ${state.session.difficultyRating === 'easy' ? 'selected-easy' : ''}" data-rating="easy">Too Easy</button>
-      <button class="difficulty-btn ${state.session.difficultyRating === 'ok'   ? 'selected-ok'   : ''}" data-rating="ok">Just Right</button>
-      <button class="difficulty-btn ${state.session.difficultyRating === 'hard' ? 'selected-hard' : ''}" data-rating="hard">Too Hard</button>
+  <div class="quiz-difficulty-launch">
+    <div class="quiz-difficulty-launch-label">Start Quiz</div>
+    <div class="quiz-difficulty-launch-btns">
+      <button class="diff-pick-btn diff-pick-inline diff-pick-easy" data-diff="easy">
+        <span class="diff-pick-icon">○</span>
+        <span class="diff-pick-info"><span class="diff-pick-label">Foundations</span><span class="diff-pick-desc">Core concepts</span></span>
+      </button>
+      <button class="diff-pick-btn diff-pick-inline diff-pick-medium" data-diff="medium">
+        <span class="diff-pick-icon">◑</span>
+        <span class="diff-pick-info"><span class="diff-pick-label">Application</span><span class="diff-pick-desc">Multi-step</span></span>
+      </button>
+      <button class="diff-pick-btn diff-pick-inline diff-pick-hard" data-diff="hard">
+        <span class="diff-pick-icon">●</span>
+        <span class="diff-pick-info"><span class="diff-pick-label">PE / IB</span><span class="diff-pick-desc">Interview-level</span></span>
+      </button>
     </div>
-  </div>
-
-  <div class="phase-nav">
-    <button class="btn btn-primary btn-lg" id="next-phase-btn">Choose Quiz Difficulty →</button>
   </div>
 </div>`;
 }
@@ -1166,19 +1170,15 @@ async function saveConceptsToLibrary(concepts, source) {
   }
 }
 
-async function advancePhase() {
-  if (state.phase === 'learn') {
-    state.phase = 'quiz';
-    state.session.quiz = null;
-    state.session.quizDifficulty = null;
-    state.session.answers = {};
-    refreshSessionMain();
-  }
-}
 
 async function loadQuizForDifficulty(difficulty) {
   const chapterId = state.currentSession?.chapter?.id; // e.g. "ch01"
   if (!chapterId) { toast('Cannot determine chapter for quiz.'); return; }
+
+  // Transition to quiz phase if still on learn
+  if (state.phase === 'learn') {
+    state.phase = 'quiz';
+  }
 
   setLoading(true, 'Loading quiz…');
   try {
