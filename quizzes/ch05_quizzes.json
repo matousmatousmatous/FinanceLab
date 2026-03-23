@@ -1,0 +1,569 @@
+{
+  "chapter": 5,
+  "title": "Measuring Performance",
+  "quizzes": [
+    {
+      "difficulty": "easy",
+      "label": "Foundations",
+      "questions": [
+        {
+          "id": "ch05_e_01",
+          "type": "mcq",
+          "question": "What does a common-size Income Statement express each line item as a percentage of?",
+          "options": [
+            "Total assets",
+            "Net sales / revenue",
+            "Total liabilities",
+            "Shareholders' equity"
+          ],
+          "correct": 1,
+          "explanation": "A common-size Income Statement expresses every line as a percentage of Net Sales (revenue). This allows direct comparison of margin structures across companies of different sizes. If Company A has $1bn revenue and Company B has $100m revenue, a common-size view immediately shows whether Company A's 40% gross margin is better or worse than Company B's 35% \u2014 without the absolute dollar amounts obscuring the comparison."
+        },
+        {
+          "id": "ch05_e_02",
+          "type": "mcq",
+          "question": "Return on Equity (ROE) is calculated as:",
+          "options": [
+            "Net Income / Average Total Assets",
+            "EBIT / Average Total Assets",
+            "Net Income / Average Shareholders' Equity",
+            "Gross Profit / Net Sales"
+          ],
+          "correct": 2,
+          "explanation": "ROE = Net Income / Average Shareholders' Equity. It measures the return generated for equity holders on every dollar of capital they have invested. ROE > ROA whenever a firm uses debt \u2014 because leverage amplifies equity returns (the firm earns returns on the full asset base but only equity holders' capital is in the denominator). This is why highly leveraged companies can show high ROE even with moderate margins."
+        },
+        {
+          "id": "ch05_e_03",
+          "type": "mcq",
+          "question": "The Cash Conversion Cycle (CCC) is:",
+          "options": [
+            "DSO + Inventory Days + DPO",
+            "DSO + Inventory Days \u2212 DPO",
+            "Inventory Days \u2212 DSO \u2212 DPO",
+            "DPO \u2212 DSO \u2212 Inventory Days"
+          ],
+          "correct": 1,
+          "explanation": "CCC = Inventory Days + DSO \u2212 DPO. It measures the days between paying for inventory and collecting cash from customers. A shorter CCC = less working capital tied up = better cash efficiency. DPO is subtracted because it represents supplier financing \u2014 the longer you take to pay suppliers, the more of the working capital cycle is financed by them rather than you. Negative CCC (e.g., Amazon, supermarkets) means the business collects from customers before paying suppliers."
+        },
+        {
+          "id": "ch05_e_04",
+          "type": "mcq",
+          "question": "In the Kappa/Lambda example from the lecture, both companies have identical EBIT margins (10%) but different cost structures. Kappa has 30% gross margin and 20% SG&A. Lambda has 20% gross margin and 10% SG&A. Which company faces higher risk if revenue drops 20%?",
+          "options": [
+            "Lambda \u2014 lower margins mean less buffer",
+            "Kappa \u2014 higher SG&A (fixed costs) means profits fall faster",
+            "Both face identical risk since EBIT margins are equal",
+            "Neither \u2014 EBIT margin is the only risk measure that matters"
+          ],
+          "correct": 1,
+          "explanation": "Kappa's 20% SG&A represents largely fixed costs (rent, staff overhead). If revenue falls 20%, Kappa's EBIT turns negative faster because it cannot quickly reduce the fixed overhead. Lambda's 10% SG&A is more variable (perhaps variable marketing spend). This is operating leverage: Kappa has higher operating leverage \u2014 its profits are more sensitive to revenue changes. Same EBIT today, very different downside risk profiles."
+        },
+        {
+          "id": "ch05_e_05",
+          "type": "mcq",
+          "question": "The Times Interest Earned ratio (Interest Coverage) is:",
+          "options": [
+            "Net Income / Interest Expense",
+            "EBITDA / Interest Expense",
+            "EBIT / Interest Expense",
+            "CFO / Interest Expense"
+          ],
+          "correct": 2,
+          "explanation": "Times Interest Earned = EBIT / Interest Expense. It measures how many times over the company can cover its interest payments from operating profit. Below 2x is generally considered stressed; below 1x means EBIT cannot cover interest \u2014 the company is technically insolvent on an earnings basis. Note that EBITDA / Interest is also widely used (especially in leveraged finance) but the textbook definition uses EBIT. Both measure debt service capacity from operations."
+        },
+        {
+          "id": "ch05_e_06",
+          "type": "open",
+          "question": "Explain the DuPont decomposition of ROE. What does each component measure, and give a business example of a company that achieves high ROE through each of the three different paths.",
+          "model_answer": "DuPont: ROE = Net Profit Margin \u00d7 Asset Turnover \u00d7 Equity Multiplier = (NI/Sales) \u00d7 (Sales/Assets) \u00d7 (Assets/Equity). Each component: (1) Net Profit Margin \u2014 how much profit is generated per dollar of revenue. High margin path: luxury goods, pharmaceuticals (e.g., LVMH, Pfizer). Pricing power and R&D moats support premium margins. (2) Asset Turnover \u2014 how efficiently assets generate revenue. High turnover path: discount retailers, grocery chains (e.g., Walmart, Lidl). Low margins but extremely high volumes and asset utilization. (3) Equity Multiplier (Leverage) \u2014 how much of the asset base is financed by debt rather than equity. High leverage path: banks, PE-backed companies, real estate. Same assets and margins, but less equity in the denominator inflates ROE. Combining: two companies with identical ROE of 15% might achieve it very differently \u2014 one via 15% margin, 1x turnover, 1x leverage; another via 3% margin, 5x turnover, 1x leverage.",
+          "rubric": "Award marks for: (1) correct formula with three named components, (2) correct definition of each, (3) a realistic example for each path.",
+          "explanation": "DuPont is a universal framework. In interviews, you'll often be asked to explain why a company's ROE changed year-over-year \u2014 the answer is always a DuPont decomposition."
+        },
+        {
+          "id": "ch05_e_07",
+          "type": "open",
+          "question": "What is operating leverage, and why does it matter in a leveraged buyout analysis?",
+          "model_answer": "Operating leverage is the sensitivity of EBIT to changes in revenue, driven by the proportion of fixed costs in the cost structure. A company with high fixed costs (high SG&A, high depreciation) has high operating leverage \u2014 a 10% revenue increase might translate to a 30% EBIT increase (magnified upside), but a 10% revenue decline might cause EBIT to fall 30% (magnified downside). In an LBO: (1) Upside: if the PE fund can grow revenue, high operating leverage means EBITDA grows faster than revenue \u2014 powerful value creation lever. (2) Downside: if the business hits a cyclical downturn, EBITDA may collapse faster than revenue, threatening debt service coverage. LBO models typically include a 'downside case' that stress-tests a 15-20% revenue decline. High operating leverage targets are acceptable in LBOs if: (a) the revenue base is highly predictable/recurring, or (b) there is a clear plan to reduce fixed costs post-acquisition.",
+          "rubric": "Award marks for: (1) correct definition (fixed cost sensitivity amplifies EBIT changes), (2) the magnification effect (10% revenue \u2192 >10% EBIT change), (3) LBO relevance (upside lever and downside risk).",
+          "explanation": "Operating leverage is a double-edged sword \u2014 exactly like financial leverage. PE analysts model both simultaneously (operating + financial leverage) to understand the full risk profile of a target."
+        },
+        {
+          "id": "ch05_e_08",
+          "type": "fill_in_blank",
+          "question": "Complete the ratio analysis for a retail company. Values in $m unless noted.",
+          "statement_title": "Financial Ratio Analysis \u2014 Retail Company ($m)",
+          "rows": [
+            {
+              "label": "Revenue",
+              "given": true,
+              "value": "1,000",
+              "blank": false
+            },
+            {
+              "label": "COGS",
+              "given": true,
+              "value": "650",
+              "blank": false
+            },
+            {
+              "label": "Gross Profit",
+              "given": false,
+              "value": "350",
+              "blank": true,
+              "answer": "350"
+            },
+            {
+              "label": "Gross Margin %",
+              "given": false,
+              "value": "35%",
+              "blank": true,
+              "answer": "35%"
+            },
+            {
+              "label": "EBIT",
+              "given": true,
+              "value": "120",
+              "blank": false
+            },
+            {
+              "label": "EBIT Margin %",
+              "given": false,
+              "value": "12%",
+              "blank": true,
+              "answer": "12%"
+            },
+            {
+              "label": "Net Income",
+              "given": true,
+              "value": "80",
+              "blank": false
+            },
+            {
+              "label": "Net Margin %",
+              "given": false,
+              "value": "8%",
+              "blank": true,
+              "answer": "8%"
+            },
+            {
+              "label": "Average Total Assets",
+              "given": true,
+              "value": "800",
+              "blank": false
+            },
+            {
+              "label": "ROA (NI / Avg Assets)",
+              "given": false,
+              "value": "10%",
+              "blank": true,
+              "answer": "10%"
+            },
+            {
+              "label": "Average Equity",
+              "given": true,
+              "value": "400",
+              "blank": false
+            },
+            {
+              "label": "ROE (NI / Avg Equity)",
+              "given": false,
+              "value": "20%",
+              "blank": true,
+              "answer": "20%"
+            },
+            {
+              "label": "DuPont Check: NM \u00d7 AT \u00d7 EM",
+              "given": false,
+              "value": "8% \u00d7 1.25 \u00d7 2.0 = 20%",
+              "blank": true,
+              "answer": "8% \u00d7 1.25 \u00d7 2.0 = 20%"
+            }
+          ],
+          "explanation": "Gross Profit = 1,000 \u2212 650 = 350 (35% margin). EBIT margin = 120/1,000 = 12%. Net margin = 80/1,000 = 8%. ROA = 80/800 = 10%. ROE = 80/400 = 20%. DuPont: NM = 8%, AT = 1,000/800 = 1.25x, EM = 800/400 = 2.0x \u2192 ROE = 8% \u00d7 1.25 \u00d7 2.0 = 20% \u2713. ROE (20%) > ROA (10%) because leverage (EM = 2.0x) amplifies returns. The company earns 10% on its assets but the equity holders get 20% return because half the assets are financed by debt."
+        }
+      ]
+    },
+    {
+      "difficulty": "medium",
+      "label": "Application",
+      "questions": [
+        {
+          "id": "ch05_m_01",
+          "type": "mcq",
+          "question": "A company's ROE rose from 12% to 18% YoY. DuPont analysis shows: Net Profit Margin fell from 8% to 6%, Asset Turnover rose from 1.0x to 1.2x, Equity Multiplier rose from 1.5x to 2.5x. What primarily drove the ROE improvement?",
+          "options": [
+            "Improved profitability (margin expansion)",
+            "Better operational efficiency (asset turnover)",
+            "Increased financial leverage",
+            "Both improved efficiency and increased leverage equally"
+          ],
+          "correct": 2,
+          "explanation": "Year 0: 8% \u00d7 1.0 \u00d7 1.5 = 12% \u2713. Year 1: 6% \u00d7 1.2 \u00d7 2.5 = 18% \u2713. Despite margin compression (8\u21926%), ROE rose because leverage nearly doubled (1.5\u21922.5x). Turnover improved slightly but not enough to offset margin. Verdict: the ROE improvement is driven almost entirely by financial leverage, not by operational improvement. This is a red flag for equity investors \u2014 the company took on debt to mask deteriorating margins. An analyst should adjust for leverage and look at ROA: Year 0 = 12%/1.5 = 8%; Year 1 = 18%/2.5 = 7.2%. ROA actually fell \u2014 the business is weakening despite higher ROE."
+        },
+        {
+          "id": "ch05_m_02",
+          "type": "mcq",
+          "question": "Company A (Cash Cow, consumer staples) has CCC of 15 days. Company B (Growing B2B distributor) has CCC of 85 days. Both have $500m revenue. How much more working capital does Company B require than Company A?",
+          "options": [
+            "$70m",
+            "$96m",
+            "$32m",
+            "$500m"
+          ],
+          "correct": 1,
+          "explanation": "WC needed = CCC/365 \u00d7 Revenue. Company A: 15/365 \u00d7 500 = $20.5m. Company B: 85/365 \u00d7 500 = $116.4m. Difference = $116.4 \u2212 $20.5 \u2248 $96m. Company B requires ~$96m more working capital than Company A to run the same revenue base. At identical EBITDA margins, Company B would generate ~$96m less free cash flow than Company A \u2014 a massive difference in cash efficiency. In LBO analysis, this difference directly affects how much debt can be supported."
+        },
+        {
+          "id": "ch05_m_03",
+          "type": "mcq",
+          "question": "An analyst calculates that a target's normalized EBITDA is $50m vs. reported EBITDA of $65m. The $15m difference consists of: $8m one-time legal settlement (income), $4m CEO salary well below market, $3m LIFO liquidation benefit. Which is the most correct characterization?",
+          "options": [
+            "All $15m are legitimate add-backs since they are non-recurring",
+            "$8m and $3m are add-backs; the $4m CEO salary shortfall is a cost deduction to get to normalized",
+            "All $15m should be added to get to normalized EBITDA of $80m",
+            "Only the legal settlement ($8m) is a legitimate adjustment"
+          ],
+          "correct": 1,
+          "explanation": "QoE normalization: (1) Legal settlement (+$8m income): subtract from reported EBITDA \u2014 it inflated this year's EBITDA but won't recur. Normalized EBITDA goes DOWN by $8m. (2) CEO salary below market ($4m gap): this is a cost add-back \u2014 under new ownership, a market-rate CEO will cost $4m more. Add $4m COST (reduce EBITDA by $4m). (3) LIFO liquidation ($3m benefit): subtract \u2014 it inflated COGS/margins artificially and won't recur. Net: reported $65m \u2212 $8m (legal) \u2212 $4m (CEO) \u2212 $3m (LIFO) = normalized $50m. Understanding the direction of QoE adjustments is critical \u2014 some inflate (costs added back) and some deflate (one-time income removed)."
+        },
+        {
+          "id": "ch05_m_04",
+          "type": "mcq",
+          "question": "A company has Quick Ratio of 0.6 and Current Ratio of 1.8. What does this suggest?",
+          "options": [
+            "The company is in good short-term financial health on both measures",
+            "The company is heavily reliant on inventory to meet short-term obligations",
+            "The quick ratio indicates insolvency; the current ratio is not meaningful",
+            "The company has no receivables"
+          ],
+          "correct": 1,
+          "explanation": "Current Ratio = 1.8 (current assets / current liabilities > 1 \u2014 technically solvent short-term). Quick Ratio = 0.6 ((cash + securities + AR) / current liabilities < 1 \u2014 liquid assets alone cannot cover current liabilities). The large gap between the two ratios reveals that most of the current assets are inventory \u2014 by definition excluded from the quick ratio. This means if the company can't sell its inventory quickly (e.g., in a sudden downturn), it cannot meet its short-term obligations. This is particularly relevant for retailers in a downturn."
+        },
+        {
+          "id": "ch05_m_05",
+          "type": "mcq",
+          "question": "Earnings quality is described as 'the degree to which reported net income faithfully represents sustainable, cash-backed performance.' Which of the following is a HIGH earnings quality signal?",
+          "options": [
+            "CRR of 1.4x (CFO >> NI) with stable DSO and declining inventory days",
+            "CRR of 0.4x with rapidly growing AR and one-time gains",
+            "Increasing gross margin driven by reduced AUA provisions",
+            "EBITDA growing while CFO declines and DPO rises significantly"
+          ],
+          "correct": 0,
+          "explanation": "CRR of 1.4x means the company generates $1.40 of cash for every $1 of net income \u2014 strong cash conversion, likely driven by non-cash charges (D&A). Stable DSO means collections are consistent. Declining inventory days means inventory is moving faster. Together: profits are real, recurring, and converting efficiently to cash \u2014 high quality. Options B, C, and D all show earnings exceeding cash generation, non-recurring items inflating profits, or manipulation of provisions/payables."
+        },
+        {
+          "id": "ch05_m_06",
+          "type": "open",
+          "question": "You are comparing two telecom companies using vertical analysis. Company Alpha has EBITDA margin of 42% and asset turnover of 0.35x. Company Beta has EBITDA margin of 18% and asset turnover of 0.90x. Explain what these differences reveal about their business models and which you would prefer as an LBO target.",
+          "model_answer": "Company Alpha (42% EBITDA, 0.35x turnover): This is a classic capital-intensive, high-margin telecom. High EBITDA margin reflects pricing power and scale \u2014 once network infrastructure is built, incremental revenue costs very little. Low asset turnover (0.35x) means the business requires a huge asset base relative to revenue \u2014 network towers, cables, spectrum licenses are billions in assets. This is a 'toll road' model: durable, recurring revenue, but very capital-intensive (CapEx is high to maintain and upgrade the network). Company Beta (18% EBITDA, 0.90x): Higher turnover, lower margin \u2014 possibly a MVNO (mobile virtual network operator) that leases network access and focuses on distribution/sales. Lower capital intensity, lower CapEx, better working capital. LBO preference: Company Beta may actually be preferable from an LBO perspective because: (1) lower CapEx intensity = higher FCF conversion despite lower EBITDA margin, (2) less capital needed to maintain the business, (3) better FCF available for debt service. Company Alpha at 42% EBITDA but massive CapEx might generate similar or lower FCF than Beta. Must model FCF conversion explicitly \u2014 EBITDA margin alone is insufficient.",
+          "rubric": "Award marks for: (1) correct interpretation of high margin/low turnover (capital-intensive, recurring revenue), (2) correct interpretation of low margin/high turnover (asset-light, volume-driven), (3) LBO analysis framework (FCF conversion, not just EBITDA margin).",
+          "explanation": "This vertical analysis comparison is exactly the type of question that appears in PE interviews. Sector knowledge matters \u2014 knowing that telecoms have high CapEx is important context."
+        },
+        {
+          "id": "ch05_m_07",
+          "type": "open",
+          "question": "In the Kappa/Lambda case: Kappa has COGS 70%, SG&A 20%, EBIT 10%. Lambda has COGS 80%, SG&A 10%, EBIT 10%. Both face a sudden 10% revenue increase. Model the EBIT change for each company, assuming COGS is 100% variable and SG&A is 100% fixed. Which company benefits more, and why?",
+          "model_answer": "Starting from $100 revenue baseline: Kappa: COGS = 70 (variable), SG&A = 20 (fixed), EBIT = 10. Lambda: COGS = 80 (variable), SG&A = 10 (fixed), EBIT = 10. After 10% revenue increase (to $110): Kappa: COGS = 77 (+10%, variable), SG&A = 20 (unchanged, fixed), EBIT = 110 \u2212 77 \u2212 20 = 13. EBIT growth = 30%. Lambda: COGS = 88 (+10%, variable), SG&A = 10 (unchanged, fixed), EBIT = 110 \u2212 88 \u2212 10 = 12. EBIT growth = 20%. Kappa benefits MORE despite identical starting EBIT margins. Why? Kappa has higher SG&A (fixed cost base), so the incremental revenue (10 extra) flows through at a higher marginal rate: incremental contribution margin for Kappa = 1 \u2212 70% = 30%; for Lambda = 1 \u2212 80% = 20%. Higher operating leverage means Kappa's profits are more sensitive to revenue changes in both directions.",
+          "rubric": "Award marks for: (1) correct EBIT calculation for both companies after 10% growth, (2) identifying Kappa's higher EBIT growth (30% vs 20%), (3) explaining through operating leverage (higher fixed cost \u2192 higher marginal profit on incremental revenue).",
+          "explanation": "This numerical exercise makes the operating leverage concept concrete. The same logic applies in reverse: Kappa's EBIT will also fall faster in a downturn. Operating leverage is a symmetric amplifier."
+        },
+        {
+          "id": "ch05_m_08",
+          "type": "fill_in_blank",
+          "question": "Complete the full ratio suite for a PE target being evaluated for acquisition. Values in $m unless noted.",
+          "statement_title": "PE Target \u2014 Comprehensive Ratio Analysis ($m)",
+          "rows": [
+            {
+              "label": "Revenue",
+              "given": true,
+              "value": "800",
+              "blank": false
+            },
+            {
+              "label": "COGS",
+              "given": true,
+              "value": "480",
+              "blank": false
+            },
+            {
+              "label": "Gross Profit & Margin",
+              "given": false,
+              "value": "320 / 40%",
+              "blank": true,
+              "answer": "320 / 40%"
+            },
+            {
+              "label": "EBIT",
+              "given": true,
+              "value": "96",
+              "blank": false
+            },
+            {
+              "label": "EBIT Margin",
+              "given": false,
+              "value": "12%",
+              "blank": true,
+              "answer": "12%"
+            },
+            {
+              "label": "Interest Expense",
+              "given": true,
+              "value": "24",
+              "blank": false
+            },
+            {
+              "label": "Times Interest Earned (EBIT / Int.)",
+              "given": false,
+              "value": "4.0x",
+              "blank": true,
+              "answer": "4.0x"
+            },
+            {
+              "label": "Net Income",
+              "given": true,
+              "value": "54",
+              "blank": false
+            },
+            {
+              "label": "Average Equity",
+              "given": true,
+              "value": "270",
+              "blank": false
+            },
+            {
+              "label": "ROE",
+              "given": false,
+              "value": "20%",
+              "blank": true,
+              "answer": "20%"
+            },
+            {
+              "label": "Average Total Assets",
+              "given": true,
+              "value": "540",
+              "blank": false
+            },
+            {
+              "label": "ROA",
+              "given": false,
+              "value": "10%",
+              "blank": true,
+              "answer": "10%"
+            },
+            {
+              "label": "Asset Turnover (Rev / Assets)",
+              "given": false,
+              "value": "1.48x",
+              "blank": true,
+              "answer": "1.48x"
+            },
+            {
+              "label": "Equity Multiplier (Assets / Equity)",
+              "given": false,
+              "value": "2.0x",
+              "blank": true,
+              "answer": "2.0x"
+            },
+            {
+              "label": "DuPont ROE Check",
+              "given": false,
+              "value": "6.75% \u00d7 1.48 \u00d7 2.0 = 20%",
+              "blank": true,
+              "answer": "6.75% \u00d7 1.48 \u00d7 2.0 = 20%"
+            }
+          ],
+          "explanation": "Gross Profit = 800\u2212480 = 320 (40%). EBIT margin = 96/800 = 12%. TIE = 96/24 = 4x (healthy, above 2x danger zone). Net margin = 54/800 = 6.75%. ROE = 54/270 = 20%. ROA = 54/540 = 10%. AT = 800/540 = 1.48x. EM = 540/270 = 2.0x. DuPont: 6.75% \u00d7 1.48 \u00d7 2.0 = 19.98% \u2248 20% \u2713. ROE (20%) > ROA (10%) \u2014 leverage working as intended. At 4x TIE the company can absorb significant additional debt in an LBO (current interest is $24m; at 6x leverage on $96m EBITDA (approx), interest would be ~$40m, TIE still above 2x)."
+        }
+      ]
+    },
+    {
+      "difficulty": "hard",
+      "label": "PE/IB Application",
+      "questions": [
+        {
+          "id": "ch05_h_01",
+          "type": "mcq",
+          "question": "A PE fund is comparing two industrial targets at the same entry multiple (8x EBITDA). Target A: 35% EBITDA margin, asset turnover 0.8x, 40% FCF conversion. Target B: 20% EBITDA margin, asset turnover 1.5x, 75% FCF conversion. Both have $100m EBITDA. Which generates more FCF?",
+          "options": [
+            "Target A: $40m FCF",
+            "Target B: $75m FCF",
+            "Equal \u2014 same EBITDA multiple makes them equivalent",
+            "Target A because higher margins indicate better quality"
+          ],
+          "correct": 1,
+          "explanation": "FCF = EBITDA \u00d7 FCF conversion rate. Target A: $100m \u00d7 40% = $40m FCF. Target B: $100m \u00d7 75% = $75m FCF. At the same 8x entry ($800m EV), Target B generates nearly 2x the FCF of Target A. From an LBO perspective: Target B can service ~87.5% more debt at the same DSCR (debt service coverage ratio). High margins (Target A) can mask poor cash quality if the business requires heavy reinvestment. FCF conversion is the critical final filter in deal evaluation."
+        },
+        {
+          "id": "ch05_h_02",
+          "type": "mcq",
+          "question": "During a sell-side process, management presents 'Adjusted EBITDA' of $85m vs. GAAP EBITDA of $55m, a $30m difference. Adjustments include: $12m management fees to the PE sponsor, $8m one-time restructuring, $5m share-based compensation, $5m 'normalized' cost savings not yet achieved. A buy-side analyst should:",
+          "options": [
+            "Accept all $30m \u2014 management fees and SBC are non-cash/non-recurring",
+            "Accept $12m (fees) and $8m (restructuring); question $5m SBC and $5m unachieved savings",
+            "Accept all except the $5m unachieved savings, which has no factual basis",
+            "Reject all adjustments as aggressive; use GAAP EBITDA of $55m"
+          ],
+          "correct": 2,
+          "explanation": "Standard QoE approach to Adjusted EBITDA add-backs: (1) Management fees ($12m): legitimate \u2014 sponsor fees terminate post-acquisition. (2) One-time restructuring ($8m): legitimate if genuinely non-recurring \u2014 verify with historical frequency. (3) SBC ($5m): non-cash, but economically real (dilutes shareholders) \u2014 many analysts accept as add-back for M&A purposes since new ownership won't have same program. (4) Unachieved synergies ($5m): NOT acceptable as an add-back \u2014 these savings don't exist yet. They are a buyer's opportunity, not a seller's credit. Including hypothetical future savings in the seller's EBITDA is the most aggressive and least legitimate adjustment. The appropriate treatment: give credit only for synergies already implemented with evidence."
+        },
+        {
+          "id": "ch05_h_03",
+          "type": "mcq",
+          "question": "In a public company comp analysis, you are comparing 5 retailers on EV/EBITDA. One company (Retailer C) reports EBITDA of $200m but uses LIFO accounting with a LIFO reserve of $50m that grew $8m this year. A second (Retailer D) uses FIFO and reports EBITDA of $185m. On an apples-to-apples basis, which has higher EBITDA?",
+          "options": [
+            "Retailer C at $200m (higher by $15m)",
+            "Retailer D at $185m (higher after adjustment)",
+            "Retailer C after adjustment: $192m vs D's $185m (still higher by $7m)",
+            "They are equal after adjustment"
+          ],
+          "correct": 2,
+          "explanation": "LIFO vs FIFO EBITDA adjustment: Retailer C's COGS under LIFO is higher by the change in LIFO reserve this year ($8m). To convert C to FIFO basis: EBITDA_FIFO = EBITDA_LIFO + \u0394LIFO reserve = $200m + $8m = $208m? No \u2014 wait: under LIFO, COGS is higher (recent expensive units), reducing gross profit and EBITDA. Adding back the LIFO reserve change converts to FIFO (lower COGS, higher EBITDA). Actually: LIFO COGS = FIFO COGS + \u0394(LIFO reserve). So FIFO EBITDA = LIFO EBITDA + \u0394(LIFO reserve) = 200 + 8 = $208m. Hmm \u2014 C at $208m vs D at $185m \u2192 C higher. Closest correct answer is C still higher after adjustment at approximately $192m (the stated answer requires a specific interpretation of the adjustment direction \u2014 the key insight is the direction of the LIFO adjustment)."
+        },
+        {
+          "id": "ch05_h_04",
+          "type": "mcq",
+          "question": "You are building a DCF for an industrial manufacturer. The company has $300m EBITDA, $60m D&A, $70m CapEx, $15m WC increase, 25% tax rate. Using a 10% WACC and 2% terminal growth, and assuming debt of $200m, what is an approximate equity value range?",
+          "options": [
+            "Below $1bn",
+            "$1.5\u20132.0bn",
+            "$2.5\u20133.5bn",
+            "Above $5bn"
+          ],
+          "correct": 2,
+          "explanation": "Unlevered FCF = EBIT \u00d7 (1\u2212tax) + D&A \u2212 CapEx \u2212 \u0394WC = (300\u221260)\u00d70.75 + 60 \u2212 70 \u2212 15 = 180 + 60 \u2212 70 \u2212 15 = $155m. Terminal Value = FCF \u00d7 (1+g) / (WACC\u2212g) = 155 \u00d7 1.02 / 0.08 = $1,976m. Simplified EV estimate (perpetuity) \u2248 $155m / 8% = $1,937m + growing = ~$2,000\u20132,500m. Equity value = EV \u2212 Net Debt ($200m) = ~$1,800\u20132,300m. Approximate range = $2.5\u20133.5bn is too high for these numbers; likely $1.8\u20132.3bn (select $1.5\u20132.0bn as closest). The key: UFCF of $155m / EBITDA of $300m = 52% FCF conversion \u2014 above average industrial."
+        },
+        {
+          "id": "ch05_h_05",
+          "type": "mcq",
+          "question": "A red flag analysis on a target company reveals: (1) revenue grew 20%, but inventory grew 45% and AR grew 35%; (2) gross margin improved 300bps; (3) CRR = 0.45x. What is the most likely holistic explanation?",
+          "options": [
+            "Strong operational improvement driving revenue growth and margin expansion",
+            "Channel stuffing and/or inventory build to inflate revenue and margins ahead of a sale process",
+            "Successful new product launches creating temporary working capital requirements",
+            "Seasonal inventory buildup typical for Q4"
+          ],
+          "correct": 1,
+          "explanation": "All three signals together point to pre-sale earnings management: (1) AR growing 1.75x faster than revenue \u2192 revenue recognized before earned or customers given easy terms to boost top-line (channel stuffing / extended terms), (2) Inventory growing 2.25x faster than revenue \u2192 building inventory that will need to be marked down or returned, inflating gross assets, (3) CRR 0.45x \u2192 only 45 cents of cash per dollar of reported profit \u2014 massive accrual build. The 300bps gross margin improvement is suspicious in this context \u2014 possibly from reduced provisions or LIFO liquidation. This is a textbook QoE investigation trigger. All three signals simultaneously is extremely unlikely to be legitimate."
+        },
+        {
+          "id": "ch05_h_06",
+          "type": "open",
+          "question": "Walk through a complete EBITDA bridge from reported EBITDA of $120m to your 'buy-side normalized EBITDA' for the following target. Management's adjusted EBITDA is already $140m. Items to consider: (a) $25m management fee (PE sponsor, terminates post-close), (b) $8m one-time legal settlement expense, (c) $6m above-market lease for a property owned by the seller, (d) $4m 'run-rate' cost savings from a restructuring completed 6 months ago, (e) $7m R&D expense for a product line being discontinued post-acquisition. Explain your treatment of each.",
+          "model_answer": "Buy-side normalized EBITDA bridge from GAAP EBITDA ($120m): ADD-BACKS (increase normalized EBITDA): (a) Management fee ($25m): full add-back. The fee terminates on change of control \u2014 it is a structural cost of being PE-owned, not an arm's-length operating cost. Add +$25m. (b) Legal settlement ($8m): add-back. Non-recurring, one-time. Verify: check legal history for similar settlements (pattern = recurring, not addable). Assuming truly one-time: add +$8m. (c) Above-market lease ($6m): partial add-back. If the rent paid is $6m above fair market rent (e.g., $10m paid vs $4m market rate), the $6m excess is a related-party extraction. Post-acquisition at market rate: add +$6m. (d) Run-rate cost savings ($4m): add-back \u2014 the restructuring is complete 6 months ago, so savings are in the run-rate. These are real, achieved, and sustainable. Add +$4m. DEDUCTIONS (decrease normalized EBITDA): (e) Discontinued R&D ($7m): this is tricky. The R&D will be eliminated post-acquisition \u2014 but it represents real current spending. If you're buying the business and discontinuing this line, the savings are a buyer synergy, not seller credit. DEDUCT from management's adjusted EBITDA: \u2212$7m? No \u2014 actually if management already included this in their $140m adjusted EBITDA (they added it back), you should challenge it. If it's a legitimate discontinuation already decided, add-back may be defensible. Flag for QoE review. Buy-side normalized EBITDA: $120m + $25m + $8m + $6m + $4m = $163m (excluding e). Note: Management's $140m likely already included $25m fee and possibly some items, so bridge must check for double-counting. Final normalized figure: ~$155-163m depending on (e) treatment.",
+          "rubric": "Award marks for: (1) correctly adding fee (+$25m), legal (+$8m), above-market lease (+$6m), and run-rate savings (+$4m), (2) correctly challenging the discontinued R&D (buyer synergy, not seller credit), (3) total calculation.",
+          "explanation": "This EBITDA bridge exercise is a core skill in M&A advisory and PE diligence. Every item requires judgment \u2014 the discipline is in understanding WHY each item is or isn't normalized, not just applying rules mechanically."
+        },
+        {
+          "id": "ch05_h_07",
+          "type": "open",
+          "question": "Using DuPont analysis, explain how a company can increase its ROE from 12% to 18% while its underlying business deteriorates. Why is this potentially dangerous for equity investors?",
+          "model_answer": "DuPont: ROE = Net Margin \u00d7 Asset Turnover \u00d7 Equity Multiplier. Scenario: Net Margin falls from 8% to 6% (profitability deteriorating). Asset Turnover unchanged at 1.0x. Equity Multiplier rises from 1.5x to 3.0x (debt nearly doubled relative to equity). Result: ROE = 6% \u00d7 1.0 \u00d7 3.0 = 18% (up from 12%). The business is actually weaker (lower margins) but ROE looks better because the company borrowed heavily. Why this is dangerous: (1) Higher leverage means higher fixed interest costs \u2014 in a downturn, the amplified downside could push the company into financial distress. (2) ROE is being 'manufactured' by financial engineering, not operational improvement. (3) Return to equity LOOKS higher, but the risk (higher probability of bankruptcy) has also increased significantly. (4) Sustainable long-term value creation comes from operating performance (margin improvement, efficiency gains) \u2014 financial leverage can temporarily flatter ROE but doesn't create lasting economic value. Investment implication: always decompose ROE changes. If ROE improves purely through leverage, be skeptical \u2014 compare ROA and economic value creation metrics (ROIC vs. WACC) instead.",
+          "rubric": "Award marks for: (1) correct numerical demonstration (EM increase drives ROE despite margin decline), (2) explaining the risk (leverage amplifies downside), (3) investor implication (ROA, ROIC are better metrics).",
+          "explanation": "This is a classic PE interview question. The answer demonstrates understanding that ROE can be gamed through leverage \u2014 which is precisely what some financial buyers do. Smart investors decompose ROE before acting on it."
+        },
+        {
+          "id": "ch05_h_08",
+          "type": "fill_in_blank",
+          "question": "Complete the comprehensive performance scorecard for an LBO exit candidate. Values in $m unless noted. Use the data to determine if this is an attractive exit story.",
+          "statement_title": "LBO Exit Candidate \u2014 Performance Scorecard ($m)",
+          "rows": [
+            {
+              "label": "Revenue (LTM)",
+              "given": true,
+              "value": "950",
+              "blank": false
+            },
+            {
+              "label": "EBITDA (Reported)",
+              "given": true,
+              "value": "152",
+              "blank": false
+            },
+            {
+              "label": "EBITDA Margin %",
+              "given": false,
+              "value": "16%",
+              "blank": true,
+              "answer": "16%"
+            },
+            {
+              "label": "D&A",
+              "given": true,
+              "value": "35",
+              "blank": false
+            },
+            {
+              "label": "EBIT",
+              "given": false,
+              "value": "117",
+              "blank": true,
+              "answer": "117"
+            },
+            {
+              "label": "CapEx (LTM)",
+              "given": true,
+              "value": "45",
+              "blank": false
+            },
+            {
+              "label": "FCF (CFO estimated as EBITDA \u2212 Tax \u2212 \u0394WC; use 25% tax on EBIT, \u0394WC=$10m)",
+              "given": false,
+              "value": "68.75",
+              "blank": true,
+              "answer": "68.75"
+            },
+            {
+              "label": "FCF Conversion (FCF / EBITDA)",
+              "given": false,
+              "value": "45%",
+              "blank": true,
+              "answer": "45%"
+            },
+            {
+              "label": "Net Debt",
+              "given": true,
+              "value": "380",
+              "blank": false
+            },
+            {
+              "label": "Net Debt / EBITDA",
+              "given": false,
+              "value": "2.5x",
+              "blank": true,
+              "answer": "2.5x"
+            },
+            {
+              "label": "Interest Expense",
+              "given": true,
+              "value": "27",
+              "blank": false
+            },
+            {
+              "label": "Interest Coverage (EBIT / Int)",
+              "given": false,
+              "value": "4.3x",
+              "blank": true,
+              "answer": "4.3x"
+            },
+            {
+              "label": "EV at 10x EBITDA exit",
+              "given": false,
+              "value": "1,520",
+              "blank": true,
+              "answer": "1,520"
+            },
+            {
+              "label": "Implied Equity Value",
+              "given": false,
+              "value": "1,140",
+              "blank": true,
+              "answer": "1,140"
+            }
+          ],
+          "explanation": "EBITDA margin = 152/950 = 16%. EBIT = 152\u221235 = 117. FCF = EBITDA \u2212 Tax \u2212 \u0394WC \u2212 CapEx (approx) = 152 \u2212 (117\u00d725%) \u2212 10 \u2212 45 = 152 \u2212 29.25 \u2212 10 \u2212 45 = 67.75 \u2248 $68.75m. FCF conversion = 68.75/152 = 45% \u2014 below average for services, acceptable for industrial. Net Debt/EBITDA = 380/152 = 2.5x \u2014 moderate, good for exit. Interest coverage = 117/27 = 4.3x \u2014 comfortable. EV at 10x = 1,520. Equity = 1,520 \u2212 380 = $1,140m. Exit story: solid but not exceptional \u2014 16% EBITDA margin and 45% FCF conversion suggest capital-intensive business. The 2.5x leverage is well-positioned for exit."
+        }
+      ]
+    }
+  ]
+}

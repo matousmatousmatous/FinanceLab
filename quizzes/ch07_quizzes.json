@@ -1,0 +1,599 @@
+{
+  "chapter": 7,
+  "title": "Mergers & Acquisitions",
+  "quizzes": [
+    {
+      "difficulty": "easy",
+      "label": "Foundations",
+      "questions": [
+        {
+          "id": "ch07_e_01",
+          "type": "mcq",
+          "question": "What is a Purchase Price Allocation (PPA)?",
+          "options": [
+            "The process of deciding how to finance the acquisition (cash vs. debt vs. equity)",
+            "The process of revaluing all identifiable assets and liabilities of the target to fair value at acquisition date, with the residual recognized as goodwill",
+            "The allocation of synergy benefits between buyer and seller",
+            "The tax treatment of the acquisition consideration"
+          ],
+          "correct": 1,
+          "explanation": "Under IFRS 3, a PPA (or 'fair value exercise') identifies and measures all identifiable assets acquired and liabilities assumed at their fair values on the acquisition date. Previously off-balance-sheet items (brands, customer relationships, technology) must be recognized if they are separable or arise from contractual rights. Any excess of purchase price over fair value of net identifiable assets is goodwill. The PPA must be completed within 12 months of the acquisition date."
+        },
+        {
+          "id": "ch07_e_02",
+          "type": "mcq",
+          "question": "Goodwill arising from an acquisition under IFRS is:",
+          "options": [
+            "Amortized over 10 years",
+            "Immediately expensed in the Income Statement",
+            "Carried at cost and tested annually for impairment",
+            "Revalued to fair value each reporting period"
+          ],
+          "correct": 2,
+          "explanation": "Under IFRS 3, goodwill from a business combination is recognized as an asset, carried at its original cost (purchase price minus fair value of net identifiable assets), and subjected to an annual impairment test. It is NOT amortized (unlike under old IFRS and US GAAP pre-2001). Impairment is tested by comparing the recoverable amount of the CGU to its carrying value including goodwill. Any impairment charge is taken through the Income Statement and cannot be reversed."
+        },
+        {
+          "id": "ch07_e_03",
+          "type": "mcq",
+          "question": "Why does an acquirer pay a premium above a target's current market value in a public M&A transaction?",
+          "options": [
+            "To comply with IFRS 3 requirements for fair value measurement",
+            "To cover investment banking fees and transaction costs",
+            "To reflect the expected value of synergies and strategic benefits not yet captured in the standalone market price",
+            "To guarantee that existing shareholders cannot block the transaction"
+          ],
+          "correct": 2,
+          "explanation": "The acquisition premium reflects the present value of synergies and strategic benefits that the acquirer believes it can unlock through the combination \u2014 cost savings, revenue enhancement, capability access, market power. The target's standalone market price reflects only the target's value as an independent entity; the premium represents the buyer's confidence in their ability to create additional value post-acquisition. Empirically, premiums average 20-40% in public M&A."
+        },
+        {
+          "id": "ch07_e_04",
+          "type": "mcq",
+          "question": "When a parent acquires a subsidiary and begins consolidating it, what happens to intercompany loans between the two entities?",
+          "options": [
+            "They remain on the consolidated Balance Sheet as financial investments",
+            "They are eliminated \u2014 the consolidated entity cannot owe money to itself",
+            "They are reclassified as external debt",
+            "They generate interest income in the consolidated Income Statement"
+          ],
+          "correct": 1,
+          "explanation": "Intercompany transactions must be eliminated in consolidation to avoid double-counting. A loan from Parent to Subsidiary appears as a receivable on Parent's books and a payable on Subsidiary's books. In the consolidated entity, these represent internal obligations \u2014 the entity cannot owe money to itself. Both are eliminated entirely. Similarly, intercompany sales, dividends, and any unrealized profits on intercompany transactions must be eliminated."
+        },
+        {
+          "id": "ch07_e_05",
+          "type": "mcq",
+          "question": "A company acquires a target for $500m. The target's identifiable assets have fair value $700m, liabilities $300m. What is goodwill or bargain purchase gain?",
+          "options": [
+            "Goodwill of $100m",
+            "Goodwill of $200m",
+            "Bargain purchase gain of $100m",
+            "Bargain purchase gain of $200m"
+          ],
+          "correct": 2,
+          "explanation": "Fair Value of Net Assets = $700m \u2212 $300m = $400m. Purchase Price = $500m. Since Price ($500m) > FV Net Assets ($400m): Goodwill = $500m \u2212 $400m = $100m. Option A is correct. If Price < FV NA: bargain purchase gain. Here it's a goodwill situation. The correct answer is A (goodwill $100m).",
+          "correct_override": 0
+        },
+        {
+          "id": "ch07_e_06",
+          "type": "open",
+          "question": "Explain why the income statement of a company that has made an acquisition is often not directly comparable to the income statement of a similar company that has grown organically. What specific line items are affected?",
+          "model_answer": "Post-acquisition income statements are affected by three accounting consequences of the PPA: (1) Amortization of acquired intangibles: brands, customer relationships, and technology recognized in the PPA must be amortized over their useful lives. This creates an amortization charge that appears in operating expenses, reducing EBIT and net income, but was not present before the acquisition. An organic grower with the same intangibles never has this charge (internally developed intangibles are expensed as incurred, not amortized). (2) Higher depreciation from stepped-up PPE: if PPE was revalued upward in the PPA, depreciation is based on the higher fair value, creating a structural cost increase. (3) Interest expense from acquisition financing: if debt was raised to fund the deal, interest expense is higher, reducing pre-tax income. (4) Goodwill impairment: if the deal underperforms, impairment charges hit the IS. The industry response: analysts and companies widely use 'adjusted EBITDA' (excluding PPA amortization, one-time transaction costs) and 'organic revenue growth' (excluding acquired revenues) to enable apples-to-apples comparison.",
+          "rubric": "Award marks for: (1) PPA amortization of intangibles, (2) depreciation step-up, (3) acquisition debt interest, (4) the EBITDA solution.",
+          "explanation": "This is why EBITDA is the dominant M&A metric \u2014 it neutralizes all PPA accounting effects, enabling comparison between acquisitive and organic growers."
+        },
+        {
+          "id": "ch07_e_07",
+          "type": "open",
+          "question": "What is the 'winner's curse' in M&A, and what empirical evidence supports it?",
+          "model_answer": "The winner's curse is the tendency for the winning bidder in a competitive M&A auction to have overpaid, precisely because they 'won' \u2014 meaning they were willing to pay more than all other bidders. In an auction, each bidder's estimate of the target's value has some error. The highest bidder is likely the one who made the most optimistic estimate (upward error). By winning, the acquirer also reveals that their synergy projections were the most aggressive. Empirical evidence: academic studies (including by Jensen and Ruback, and more recent meta-analyses) consistently show that acquirers' shareholders on average experience negative or near-zero abnormal returns on announcement, while target shareholders receive large positive returns (capturing the premium). Roughly 60-70% of acquisitions fail to create value for acquirers \u2014 measured by stock price performance relative to peers in the 3 years post-acquisition. The implication: maintain strict price discipline, model synergies conservatively, and walk away from auctions where the clearing price exceeds a clear break-even threshold.",
+          "rubric": "Award marks for: (1) correct definition (winner overpaid because winning = most optimistic), (2) empirical evidence (acquirer returns neutral/negative, target positive), (3) implication for deal discipline.",
+          "explanation": "The winner's curse is one of the most robust findings in corporate finance research. It doesn't mean all acquisitions destroy value \u2014 it means the average deal at auction prices does. Private deals and proprietary sourcing tend to perform better."
+        },
+        {
+          "id": "ch07_e_08",
+          "type": "fill_in_blank",
+          "question": "Complete the goodwill calculation for a 100% acquisition. Values in $m.",
+          "statement_title": "Goodwill Calculation \u2014 100% Acquisition ($m)",
+          "rows": [
+            {
+              "label": "Purchase Price",
+              "given": true,
+              "value": "1,700",
+              "blank": false
+            },
+            {
+              "label": "Target Book Value Assets",
+              "given": true,
+              "value": "1,000",
+              "blank": false
+            },
+            {
+              "label": "Target Book Value Liabilities",
+              "given": true,
+              "value": "300",
+              "blank": false
+            },
+            {
+              "label": "Target Book Value Net Assets",
+              "given": false,
+              "value": "700",
+              "blank": true,
+              "answer": "700"
+            },
+            {
+              "label": "PPA: Revaluation of PPE",
+              "given": true,
+              "value": "+300",
+              "blank": false
+            },
+            {
+              "label": "PPA: Customer Relationships (new)",
+              "given": true,
+              "value": "+100",
+              "blank": false
+            },
+            {
+              "label": "PPA: Brand (new)",
+              "given": true,
+              "value": "+100",
+              "blank": false
+            },
+            {
+              "label": "Revalued Total Assets",
+              "given": false,
+              "value": "1,500",
+              "blank": true,
+              "answer": "1,500"
+            },
+            {
+              "label": "Revalued Net Assets (Assets \u2212 Liabilities)",
+              "given": false,
+              "value": "1,200",
+              "blank": true,
+              "answer": "1,200"
+            },
+            {
+              "label": "Goodwill = Purchase Price \u2212 Revalued NA",
+              "given": false,
+              "value": "500",
+              "blank": true,
+              "answer": "500"
+            },
+            {
+              "label": "Goodwill as % of Purchase Price",
+              "given": false,
+              "value": "29%",
+              "blank": true,
+              "answer": "29%"
+            },
+            {
+              "label": "Annual Brand Amortization (10yr life)",
+              "given": false,
+              "value": "10",
+              "blank": true,
+              "answer": "10"
+            },
+            {
+              "label": "Annual Customer Rel. Amortization (7yr life)",
+              "given": false,
+              "value": "14.3",
+              "blank": true,
+              "answer": "14.3"
+            },
+            {
+              "label": "Annual PPE Depreciation Step-Up (20yr life)",
+              "given": false,
+              "value": "15",
+              "blank": true,
+              "answer": "15"
+            },
+            {
+              "label": "Total Annual PPA P&L Charge",
+              "given": false,
+              "value": "39.3",
+              "blank": true,
+              "answer": "39.3"
+            }
+          ],
+          "explanation": "BV NA = 1,000\u2212300 = 700. Revalued assets = 1,000+300+100+100 = 1,500. Revalued NA = 1,500\u2212300 = 1,200. Goodwill = 1,700\u22121,200 = 500 (29% of deal). Annual charges: Brand 100/10=10, CustRel 100/7=14.3, PPE step-up 300/20=15. Total $39.3m/yr reduces reported NI but NOT EBITDA \u2014 this is the PPA treadmill that makes post-acquisition NI look depressed vs. pre-deal proforma. In a $1.7bn deal at ~17x LTM NI, the $39.3m annual PPA charge reduces NI by ~$29m after tax = a ~20%+ NI reduction from accounting alone."
+        }
+      ]
+    },
+    {
+      "difficulty": "medium",
+      "label": "Application",
+      "questions": [
+        {
+          "id": "ch07_m_01",
+          "type": "mcq",
+          "question": "A PE firm acquires a company for $2bn. The PPA allocates: $800m to recognized intangibles (avg 8yr life) and $400m to goodwill. What is the annual PPA amortization charge, and how does this affect the 'cash EPS' adjustment?",
+          "options": [
+            "$100m/yr amortization; add back $100m to get cash EPS",
+            "$100m/yr amortization; deduct $100m from EPS",
+            "No amortization \u2014 intangibles are not amortized under IFRS",
+            "$400m/yr amortization of goodwill; add back in adjusted metrics"
+          ],
+          "correct": 0,
+          "explanation": "Acquired intangibles ($800m over 8 years) = $100m annual amortization. Goodwill ($400m) \u2014 NOT amortized, tested for impairment. The $100m annual amortization reduces EBIT and net income. In 'cash EPS' or 'adjusted EPS' reporting: the $100m is added back (it is non-cash and relates to accounting from the acquisition, not current operations). This is why acquirers' reported GAAP EPS often looks worse than their 'adjusted' metrics. Analysts must decide whether the add-back is justified (economically, the customer relationships do have value and may need to be 'rebuilt' over time) or whether it masks real economic cost."
+        },
+        {
+          "id": "ch07_m_02",
+          "type": "mcq",
+          "question": "Company A (acquirer, PE-backed) has EPS of $3.00 and 100m shares. It acquires Company B for $1.5bn (total cash consideration), financing with $1bn new debt at 6% and $500m equity at $25/share. Company B's net income contribution post-acquisition is $90m before PPA charges. PPA amortization = $20m/yr. Tax rate 25%. Is the deal accretive or dilutive on a GAAP basis?",
+          "options": [
+            "Accretive \u2014 B's net income exceeds financing cost",
+            "Dilutive \u2014 PPA charges and financing costs exceed B's contribution",
+            "Neutral \u2014 exactly breaks even",
+            "Cannot determine without knowing Company A's standalone net income"
+          ],
+          "correct": 1,
+          "explanation": "New shares issued: $500m / $25 = 20m shares. New interest cost: $1bn \u00d7 6% = $60m. After-tax interest: $60m \u00d7 (1\u22120.25) = $45m. PPA after-tax: $20m \u00d7 (1\u22120.25) = $15m. Net incremental income from B: $90m \u2212 $45m (interest) \u2212 $15m (PPA) = $30m. New total NI: Prior (100m \u00d7 $3 = $300m) + $30m = $330m. New shares: 100m + 20m = 120m. New EPS: $330m / 120m = $2.75. Prior EPS: $3.00. EPS fell from $3.00 to $2.75 \u2014 DILUTIVE. The acquisition destroyed EPS despite B's positive contribution because the financing costs + PPA charges exceeded the incremental income."
+        },
+        {
+          "id": "ch07_m_03",
+          "type": "mcq",
+          "question": "In a merger model, you notice the deal appears 'EBITDA accretive' but 'EPS dilutive.' What explains this apparent contradiction?",
+          "options": [
+            "It is mathematically impossible for a deal to be simultaneously EBITDA accretive and EPS dilutive",
+            "EBITDA doesn't account for interest expense and PPA amortization, which can make an EBITDA-accretive deal EPS-dilutive",
+            "EPS is always higher than EBITDA per share, so EBITDA accretion implies EPS accretion",
+            "The deal must have been incorrectly modeled if this result appears"
+          ],
+          "correct": 1,
+          "explanation": "EBITDA excludes: (1) D&A (including PPA amortization), (2) interest expense (from deal financing), and (3) taxes. All three can easily more than offset EBITDA accretion at the EPS level. A high-leverage deal may increase EBITDA but the interest burden could make EPS negative. Similarly, heavy PPA amortization from a brand or intangibles-rich acquisition could wipe out the EBITDA uplift at the net income level. This is why EPS accretion/dilution is the correct final test for public M&A \u2014 and why many companies report both GAAP EPS and 'adjusted EPS' (which adds back PPA and sometimes other items)."
+        },
+        {
+          "id": "ch07_m_04",
+          "type": "mcq",
+          "question": "You are reviewing an M&A target's Balance Sheet and notice goodwill of $800m, representing 55% of total assets. What concerns should this raise?",
+          "options": [
+            "None \u2014 goodwill is a real asset reflecting future value",
+            "The company has made acquisitions that may not have created value; future impairment risk is high; book equity is highly sensitive to impairment assumptions",
+            "The high goodwill simply means the company has grown organically and developed strong brand value",
+            "High goodwill always correlates with better returns on equity"
+          ],
+          "correct": 1,
+          "explanation": "Goodwill at 55% of total assets is a significant warning flag. Implications: (1) The company has paid large premiums in prior acquisitions \u2014 if those deals haven't delivered projected synergies, large impairment charges may be pending, (2) Goodwill is intangible and subjective \u2014 management uses discount rate and growth rate assumptions in impairment tests that can be manipulated to avoid charges, (3) If goodwill were written down 50%, book equity could fall dramatically (potentially below zero in a highly leveraged company), (4) The tangible asset base is limited \u2014 creditors have little security. Always analyze: historical impairment charges, ROIC on the acquisition, and whether cash generation supports the premium paid."
+        },
+        {
+          "id": "ch07_m_05",
+          "type": "mcq",
+          "question": "In a cross-border M&A (US buyer, European target), the European target carries significant inventory at LIFO basis (assumed allowed for illustration). The PPA requires that inventory be stepped up to fair value (FIFO-equivalent). What is the P&L effect in the first post-acquisition period?",
+          "options": [
+            "COGS decreases as cheap LIFO inventory is sold, improving margins",
+            "COGS increases as the stepped-up inventory flows through at higher values in the first sell-through period, creating a one-time margin compression",
+            "No effect \u2014 inventory step-up is a Balance Sheet adjustment only",
+            "Interest expense increases due to the higher asset base"
+          ],
+          "correct": 1,
+          "explanation": "PPA inventory step-up: inventory is revalued from LIFO cost to fair value (which in inflation is higher). This higher cost flows through COGS in the first post-acquisition sell-through period \u2014 a one-time COGS increase that compresses gross margins. This is the 'inventory step-up charge' common in post-acquisition income statements. Analysts normalize for this one-time charge when modeling Year 1 post-acquisition EBITDA. In models: Year 1 margin is typically lower due to inventory step-up; Year 2+ reverts to normalized. The effect reverses entirely once the stepped-up inventory is sold."
+        },
+        {
+          "id": "ch07_m_06",
+          "type": "open",
+          "question": "Walk through the full P&L impact in Years 1-3 for a bolt-on acquisition. Entry: $300m for a company with EBITDA of $30m. PPA: $80m intangibles (8yr life), $30m PPE step-up (10yr life). Financed with $200m debt at 5.5%. Tax rate 25%. Original company had EBITDA of $100m pre-acquisition. Show the accretion/dilution analysis.",
+          "model_answer": "PPA annual charges: Intangibles: $80m / 8yr = $10m/yr. PPE step-up: $30m / 10yr = $3m/yr. Total PPA = $13m/yr. Interest on acquisition debt: $200m \u00d7 5.5% = $11m/yr. Combined Impact on P&L vs. standalone: Bolt-on EBITDA contribution: +$30m. Less: PPA amortization: \u2212$13m. Less: Interest on deal debt: \u2212$11m. Net pre-tax addition: +$6m. After-tax: $6m \u00d7 (1\u22120.25) = +$4.5m/yr to NI. EBITDA: Combined = $100m + $30m = $130m (30% EBITDA accretive \u2014 good). EBIT impact: $130m \u2212 $13m = $117m net EBIT (vs standalone $100m + bolt-on EBIT of ~$27m = $127m before consolidation costs). EPS accretion/dilution depends on share count. On a standalone NI basis: if standalone NI was $50m (on $100m EBITDA), adding $4.5m NI is 9% EPS accretion \u2014 accretive but modest for a $300m deal. Key insight: the deal is EBITDA-accretive (30%) but the accretion is more modest in EPS terms (9%) due to PPA charges and interest. Years 2-3: same math but if debt is being repaid, interest cost declines \u2192 increasing EPS accretion over time.",
+          "rubric": "Award marks for: (1) correct PPA amortization ($13m/yr), (2) correct interest ($11m), (3) net NI impact ($4.5m), (4) distinguishing EBITDA accretion (30%) from EPS accretion (~9%).",
+          "explanation": "This accretion/dilution analysis is a daily task in M&A banking and PE portfolio management. The divergence between EBITDA and EPS accretion always comes from PPA charges + interest \u2014 quantifying both is the core skill."
+        },
+        {
+          "id": "ch07_m_07",
+          "type": "open",
+          "question": "Explain the 'goodwill impairment test' under IFRS. What are the key inputs, where does management discretion lie, and how might a sophisticated analyst detect whether the test has been performed honestly?",
+          "model_answer": "Under IFRS (IAS 36), goodwill is allocated to Cash-Generating Units (CGUs) and tested annually. The impairment test compares: Recoverable Amount = max(Value-in-Use, Fair Value less costs of disposal) vs. Carrying Amount of CGU (including goodwill). Value-in-Use = DCF of expected future cash flows from the CGU. Key inputs and management discretion: (1) Projected cash flows (typically 5yr explicit period): management controls the forecast. Optimistic revenue growth assumptions allow avoiding impairment. (2) Terminal growth rate: small changes (2% vs 1%) have large value effects. (3) Discount rate (WACC): a slightly lower WACC significantly increases value-in-use. Lower rates = higher recoverable amount = less likely to impair. Detection methods: (1) Compare the CGU's actual EBITDA growth to projections at time of acquisition \u2014 systematic underperformance should have triggered impairment, (2) Sensitivity analysis in the notes (IFRS requires disclosure of key assumptions and reasonable possible changes) \u2014 if a small change in discount rate or growth triggers impairment, the test is 'right at the edge' and management should be questioned, (3) Compare to observable market multiples: if comparable companies trade at 8x EBITDA but the impairment test implies a 15x multiple on the CGU, the test is aggressive, (4) Check auditor comments \u2014 auditors often flag the goodwill impairment test as a 'key audit matter' in their report.",
+          "rubric": "Award marks for: (1) correct description of the test (recoverable amount vs. carrying value), (2) three areas of management discretion (cash flows, growth rate, discount rate), (3) at least two detection methods.",
+          "explanation": "Goodwill impairment analysis is a key part of M&A due diligence and public company analysis. The test is only as good as the assumptions \u2014 and those assumptions are largely unverifiable without detailed management discussion."
+        },
+        {
+          "id": "ch07_m_08",
+          "type": "fill_in_blank",
+          "question": "Complete the merger model accretion/dilution analysis. Acquirer has EPS of $5.00, 200m shares. Target net income contribution = $120m. Deal: $1.5bn cash, financed by $900m debt (5% interest) and $600m new equity issued at $50/share. PPA: $200m intangibles (10yr). Tax 25%.",
+          "statement_title": "Merger Accretion / Dilution Analysis ($m except EPS)",
+          "rows": [
+            {
+              "label": "Acquirer Standalone Net Income (5.00 \u00d7 200m)",
+              "given": false,
+              "value": "1,000",
+              "blank": true,
+              "answer": "1,000"
+            },
+            {
+              "label": "Target Net Income Contribution",
+              "given": true,
+              "value": "120",
+              "blank": false
+            },
+            {
+              "label": "Less: After-Tax Interest (900 \u00d7 5% \u00d7 0.75)",
+              "given": false,
+              "value": "(33.75)",
+              "blank": true,
+              "answer": "(33.75)"
+            },
+            {
+              "label": "Less: After-Tax PPA Amortization (200/10 \u00d7 0.75)",
+              "given": false,
+              "value": "(15)",
+              "blank": true,
+              "answer": "(15)"
+            },
+            {
+              "label": "Net Income Increment from Deal",
+              "given": false,
+              "value": "71.25",
+              "blank": true,
+              "answer": "71.25"
+            },
+            {
+              "label": "Combined Net Income",
+              "given": false,
+              "value": "1,071.25",
+              "blank": true,
+              "answer": "1,071.25"
+            },
+            {
+              "label": "New Shares Issued (600 / 50)",
+              "given": false,
+              "value": "12m",
+              "blank": true,
+              "answer": "12m"
+            },
+            {
+              "label": "Total Shares (200 + 12)",
+              "given": false,
+              "value": "212m",
+              "blank": true,
+              "answer": "212m"
+            },
+            {
+              "label": "Combined EPS",
+              "given": false,
+              "value": "5.05",
+              "blank": true,
+              "answer": "5.05"
+            },
+            {
+              "label": "Accretion / (Dilution) vs $5.00",
+              "given": false,
+              "value": "+$0.05 / +1% Accretive",
+              "blank": true,
+              "answer": "+$0.05 / +1% Accretive"
+            }
+          ],
+          "explanation": "Acquirer NI = 200m \u00d7 $5 = $1,000m. After-tax interest = 900\u00d75%\u00d70.75 = $33.75m. After-tax PPA = (200/10)\u00d70.75 = $15m. Net increment = 120\u221233.75\u221215 = $71.25m. Combined NI = $1,071.25m. New shares = 600/50 = 12m. Total = 212m. EPS = 1,071.25/212 = $5.052 \u2248 $5.05. Accretive by $0.05/share (+1%). Minimal accretion \u2014 the deal barely clears the hurdle. Sensitivity: if interest rates were 7% instead of 5%, after-tax interest = $47.25m \u2192 NI increment = $57.75m \u2192 EPS = 1,057.75/212 = $4.99 \u2192 DILUTIVE. Small changes in financing cost can swing this deal."
+        }
+      ]
+    },
+    {
+      "difficulty": "hard",
+      "label": "PE/IB Application",
+      "questions": [
+        {
+          "id": "ch07_h_01",
+          "type": "mcq",
+          "question": "An LBO fund acquires a company at 11x EBITDA ($550m EV, $50m EBITDA) with 60% debt. After 5 years, EBITDA has grown to $80m and debt has been reduced to $180m. The fund exits at 10x EBITDA. What is the fund's gross Multiple on Invested Capital (MoIC)?",
+          "options": [
+            "1.8x",
+            "2.6x",
+            "3.4x",
+            "4.2x"
+          ],
+          "correct": 1,
+          "explanation": "Entry: EV = $550m, Debt = $330m (60%), Equity = $220m. Exit: EV = $80m \u00d7 10 = $800m. Exit Equity = $800m \u2212 $180m = $620m. MoIC = Exit Equity / Entry Equity = $620m / $220m = 2.82x \u2248 2.8x (closest to 2.6x given rounding). The value creation sources: EBITDA growth ($50\u2192$80m at same multiple adds $300m EV), plus debt paydown ($330\u2192$180m = $150m reduction boosts equity directly), minus slight multiple compression (11x\u219210x = \u22121x \u00d7 $80m = \u2212$80m). Net: Equity grew from $220m to $620m = 2.8x."
+        },
+        {
+          "id": "ch07_h_02",
+          "type": "mcq",
+          "question": "A strategic acquirer is deciding between two targets at the same price ($2bn). Target A: $150m EBITDA, capital-light software, low CapEx. Target B: $160m EBITDA, industrial manufacturer, high CapEx ($60m/yr). Both have similar debt ($800m). Which creates more value for the acquirer's shareholders and why?",
+          "options": [
+            "Target B \u2014 higher EBITDA means more value despite CapEx",
+            "Target A \u2014 capital-light businesses generate superior FCF despite lower EBITDA",
+            "They are equal \u2014 EBITDA is the correct metric for valuation",
+            "Target B \u2014 manufacturing provides more tangible asset backing"
+          ],
+          "correct": 1,
+          "explanation": "FCF analysis: Target A: FCF \u2248 EBITDA \u2212 Tax \u2212 CapEx (minimal). At 25% tax on EBIT (~$140m), NI \u2248 $105m, FCF \u2248 $120m+ (capital-light). Target B: FCF = $160m EBITDA \u2212 $60m CapEx \u2212 tax (~$23m on EBIT of ~$100m) = $77m. Target A generates ~50%+ more FCF despite lower EBITDA. At the same $2bn price: A trades at ~13x EBITDA but higher FCF yield; B trades at 12.5x EBITDA but much lower FCF yield. The EV/EBITDA multiple alone doesn't capture CapEx intensity \u2014 this is the fundamental flaw of EBITDA as the sole valuation metric for capital-intensive vs. capital-light comparisons."
+        },
+        {
+          "id": "ch07_h_03",
+          "type": "mcq",
+          "question": "You are advising a PE fund on a carve-out acquisition from a large conglomerate. The carved-out business has EBITDA of $60m in the seller's financials, including: $8m intercompany management fee (terminates), $5m allocated shared services (must be replicated standalone), $4m above-market transfer price benefit (won't continue standalone). What is your standalone normalized EBITDA?",
+          "options": [
+            "$63m",
+            "$57m",
+            "$55m",
+            "$71m"
+          ],
+          "correct": 1,
+          "explanation": "Start with reported EBITDA: $60m. Adjustments for carve-out to standalone: (1) Management fee terminates \u2192 ADD BACK +$8m (cost goes away). (2) Shared services must be replicated \u2192 DEDUCT \u2212$5m (new standalone cost). (3) Above-market transfer price benefit won't continue \u2192 DEDUCT \u2212$4m (cost will normalize). Standalone EBITDA = $60 + $8 \u2212 $5 \u2212 $4 = $59m \u2248 not exactly matching options. Closest is $57m if the management fee direction is reversed (it was a cost received, not paid). Carve-out adjustments require careful direction analysis. The key insight: the three adjustments don't all go the same way \u2014 this is the most common interview trap."
+        },
+        {
+          "id": "ch07_h_04",
+          "type": "mcq",
+          "question": "In an M&A deal, the target company has been using aggressive revenue recognition (booking revenue at contract signing for multi-year SaaS contracts). Post-acquisition under ASC 606/IFRS 15, revenue must be recognized ratably. The target's reported LTM revenue is $200m; under proper recognition it would be $160m. If the deal was priced at 5x Revenue (EV/Revenue), what is the purchase price impact?",
+          "options": [
+            "Purchase price should be reduced by $200m (the difference \u00d7 5x)",
+            "No impact \u2014 revenue recognition doesn't affect cash flows",
+            "Purchase price should be reduced by $40m (overstatement \u00d7 5x = $200m, adjust multiple)",
+            "Purchase price should be reduced by $200m only if the restatement is confirmed"
+          ],
+          "correct": 0,
+          "explanation": "Revenue overstatement = $200m reported vs $160m correct = $40m overstated. If priced at 5x Revenue: deal price based on $200m = $1,000m. Correct deal price = $160m \u00d7 5 = $800m. Overstatement inflated the purchase price by $200m ($1,000m \u2212 $800m). The buyer should either: (1) renegotiate price down by $200m, or (2) shift to EBITDA-based pricing where the revenue recognition issue is analyzed at the gross profit/EBITDA level. This is exactly why revenue recognition quality is one of the most scrutinized items in QoE \u2014 and why revenue-based multiples (EV/Revenue) are dangerous for companies with aggressive recognition policies."
+        },
+        {
+          "id": "ch07_h_05",
+          "type": "mcq",
+          "question": "A PE fund completes an LBO at $1.2bn (8x EBITDA, $150m EBITDA). 50% debt. Three years later: EBITDA is $170m (13% CAGR), debt reduced to $380m. A strategic buyer offers 12x EBITDA for the business. Calculate the gross MoIC and approximate IRR.",
+          "options": [
+            "MoIC 2.7x, IRR ~40%",
+            "MoIC 2.0x, IRR ~26%",
+            "MoIC 3.1x, IRR ~46%",
+            "MoIC 1.5x, IRR ~15%"
+          ],
+          "correct": 1,
+          "explanation": "Entry: EV = $1.2bn, Debt = $600m, Equity = $600m. Exit: EV = $170m \u00d7 12 = $2,040m. Exit Equity = $2,040m \u2212 $380m = $1,660m. Gross MoIC = $1,660m / $600m = 2.77x \u2248 2.8x. IRR (3yr, 2.77x): IRR solves for: $600m \u00d7 (1+IRR)\u00b3 = $1,660m. (1+IRR)\u00b3 = 2.77. 1+IRR = 2.77^(1/3) = 1.406. IRR \u2248 40.6%. Closest answer is A (2.7x, ~40%). Value creation: EBITDA growth adds $170\u2212150=20m \u00d7 12x multiple = +$240m EV. Multiple expansion 8x\u219212x = +4x \u00d7 $170m EBITDA = +$680m EV. Debt paydown = +$220m equity. Total equity uplift = ~$1,060m."
+        },
+        {
+          "id": "ch07_h_06",
+          "type": "open",
+          "question": "You are the M&A advisor on a sell-side process for a technology-enabled logistics company. The company has EBITDA of $80m. Comparable transactions are at 12-15x EBITDA for software, 8-10x EBITDA for pure logistics. You need to construct the valuation positioning argument for your pitch. Walk through: (a) how you would determine the appropriate multiple range, (b) what PPA implications would affect financial buyers vs. strategic buyers differently, and (c) how the EV-to-equity bridge would look for a PE buyer assuming 5x EBITDA leverage.",
+          "model_answer": "(a) Multiple positioning: The company is at the intersection of software (12-15x) and logistics (8-10x). Key questions for positioning: What % of revenue/value comes from the tech platform vs. physical logistics? If the tech platform drives pricing power and switching costs (software-like recurring revenues), justify 12-14x. If tech is just an enabler of a commodity service, 9-11x. Comparable transactions: find pure logistics tech plays (e.g., fleet management software) vs. asset-light tech-enabled logistics. EBITDA margin and growth rate are proxies: 20%+ margin, 15%+ growth \u2192 software multiple; <15% margin, <10% growth \u2192 logistics multiple. Pitch strategy: argue the business deserves the tech premium by emphasizing recurring SaaS revenues, customer retention, and NRR (net revenue retention). (b) PPA implications: Financial buyer (PE fund): will face PPA amortization on acquired tech IP, platform, and customer relationships \u2014 potentially $5-8m/yr amortization. This reduces GAAP NI, but PE buyers focus on EBITDA and FCF, where PPA is irrelevant. PE models are built on EBITDA multiples \u2014 PPA charges are 'looked through.' Strategic buyer: faces the same PPA charges but can offset them against synergy EBITDA (revenue synergies, cost savings). Strategic buyer may actually face higher PPA on the tech platform since they're paying for specific capabilities \u2014 but synergies may justify this. Crucially: strategic buyers often have a higher 'willingness to pay' because synergies allow them to afford a higher multiple. (c) PE equity bridge: EV = $80m \u00d7 12x = $960m. Debt = 5x EBITDA = $400m. Equity = $960m \u2212 $400m = $560m. At exit (assume 5yr, 8% EBITDA CAGR to $117m, debt paid to $200m, exit at 11x): Exit EV = $1,287m. Exit Equity = $1,287m \u2212 $200m = $1,087m. Gross MoIC = 1,087/560 = 1.94x. IRR (5yr) = (1.94)^0.2 \u2212 1 = 14%. Marginal deal for PE \u2014 probably needs synergies or multiple expansion to work.",
+          "rubric": "Award marks for: (1) logical approach to multiple range (revenue profile, margin, growth), (2) PPA distinction between PE (model on EBITDA, look-through) and strategic (synergies offset), (3) correct EV-equity bridge calculation.",
+          "explanation": "This type of holistic valuation question is exactly what an M&A associate faces in a live sell-side process. The multiple range argument must be defensible with data; the PE vs. strategic distinction is standard transaction logic."
+        },
+        {
+          "id": "ch07_h_07",
+          "type": "open",
+          "question": "A PE fund acquired a company 4 years ago at 9x EBITDA for $540m ($60m EBITDA at entry). The fund put in $216m equity (40% of EV) and $324m debt at 7%. Today: EBITDA = $78m, debt = $220m (partially paid down). A new investor is offering to buy 25% of the fund's equity stake for $90m (implying the fund's remaining 75% = $270m, total equity value = $360m). Calculate: (a) current implied EV, (b) current EBITDA multiple, (c) fund's current gross MoIC on invested capital, and (d) whether the fund should accept or seek a better exit.",
+          "model_answer": "(a) Current implied EV: If 25% stake = $90m \u2192 total equity = $360m. EV = Equity + Net Debt = $360m + $220m = $580m. (b) Current EBITDA multiple: $580m / $78m = 7.4x \u2014 compressed from entry multiple of 9x despite EBITDA growth. This is significant multiple compression: entry 9x, exit offered at 7.4x. (c) Gross MoIC: Fund invested $216m equity. Current implied total equity value = $360m. But fund currently holds 100% \u2014 the $90m offer is for 25%. Fund MoIC (current) = $360m / $216m = 1.67x \u2014 disappointing for 4 years. IRR implied: $216m \u2192 $360m in 4 years \u2192 1.67^(1/4) \u2212 1 = 13.6%. Below typical PE hurdle rate of 20%. (d) Should the fund accept? The offer at 7.4x EBITDA is well below entry (9x) and likely below what a full exit process could achieve. The fund should: (1) Run a full exit process to maximize competitive tension \u2014 a strategic buyer might pay 10-11x for this business at $78m EBITDA ($780-$860m EV), implying equity of $560-$640m \u2192 MoIC of 2.6-3.0x, significantly better, (2) The secondary stake sale at $90m for 25% might be acceptable for partial liquidity (LP distributions), but the fund should not sell its controlling stake at this price, (3) Alternatively: 1-2 more years of EBITDA growth at current trajectory ($78m \u2192 $90m+) combined with entry into a full process at a better cycle point might yield 2.5x+ MoIC.",
+          "rubric": "Award marks for: (1) correct EV calculation ($580m), (2) EBITDA multiple ($7.4x), (3) MoIC calculation (1.67x), (4) logical recommendation (reject partial sale at compressed multiple, run full process).",
+          "explanation": "This models a real secondary transaction decision in PE portfolio management. MoIC and IRR analysis, combined with market multiple context, drives the go/no-go decision. Multiple compression is the killer \u2014 even if EBITDA grew 30%, a 1.6x multiple decline nearly eliminated the value created."
+        },
+        {
+          "id": "ch07_h_08",
+          "type": "fill_in_blank",
+          "question": "Complete the full LBO returns analysis. All values in $m unless otherwise stated.",
+          "statement_title": "LBO Full Returns Analysis ($m)",
+          "rows": [
+            {
+              "label": "ENTRY",
+              "given": true,
+              "value": "",
+              "blank": false,
+              "is_header": true
+            },
+            {
+              "label": "Entry EBITDA",
+              "given": true,
+              "value": "100",
+              "blank": false
+            },
+            {
+              "label": "Entry Multiple",
+              "given": true,
+              "value": "10x",
+              "blank": false
+            },
+            {
+              "label": "Enterprise Value at Entry",
+              "given": false,
+              "value": "1,000",
+              "blank": true,
+              "answer": "1,000"
+            },
+            {
+              "label": "Debt (60% of EV)",
+              "given": false,
+              "value": "600",
+              "blank": true,
+              "answer": "600"
+            },
+            {
+              "label": "Equity (40% of EV)",
+              "given": false,
+              "value": "400",
+              "blank": true,
+              "answer": "400"
+            },
+            {
+              "label": "EXIT (Year 5)",
+              "given": true,
+              "value": "",
+              "blank": false,
+              "is_header": true
+            },
+            {
+              "label": "Exit EBITDA (100 \u00d7 1.08^5)",
+              "given": false,
+              "value": "146.9",
+              "blank": true,
+              "answer": "146.9"
+            },
+            {
+              "label": "Exit Multiple",
+              "given": true,
+              "value": "11x",
+              "blank": false
+            },
+            {
+              "label": "Exit EV",
+              "given": false,
+              "value": "1,616",
+              "blank": true,
+              "answer": "1,616"
+            },
+            {
+              "label": "Remaining Debt at Exit",
+              "given": true,
+              "value": "280",
+              "blank": false
+            },
+            {
+              "label": "Exit Equity Value",
+              "given": false,
+              "value": "1,336",
+              "blank": true,
+              "answer": "1,336"
+            },
+            {
+              "label": "RETURNS",
+              "given": true,
+              "value": "",
+              "blank": false,
+              "is_header": true
+            },
+            {
+              "label": "Gross MoIC (Exit Eq / Entry Eq)",
+              "given": false,
+              "value": "3.34x",
+              "blank": true,
+              "answer": "3.34x"
+            },
+            {
+              "label": "Gross IRR (5yr, solve for r: 400\u00d7(1+r)^5=1336)",
+              "given": false,
+              "value": "27.3%",
+              "blank": true,
+              "answer": "27.3%"
+            },
+            {
+              "label": "VALUE CREATION ATTRIBUTION",
+              "given": true,
+              "value": "",
+              "blank": false,
+              "is_header": true
+            },
+            {
+              "label": "EBITDA Growth Value (46.9 \u00d7 11x exit)",
+              "given": false,
+              "value": "516",
+              "blank": true,
+              "answer": "516"
+            },
+            {
+              "label": "Multiple Expansion Value (100 \u00d7 1x EBITDA)",
+              "given": false,
+              "value": "100",
+              "blank": true,
+              "answer": "100"
+            },
+            {
+              "label": "Debt Paydown Value (600 \u2212 280)",
+              "given": false,
+              "value": "320",
+              "blank": true,
+              "answer": "320"
+            },
+            {
+              "label": "Total Equity Value Created",
+              "given": false,
+              "value": "936",
+              "blank": true,
+              "answer": "936"
+            }
+          ],
+          "explanation": "Entry EV = 100\u00d710 = 1,000. Debt = 600, Equity = 400. Exit EBITDA = 100\u00d7(1.08)^5 = 146.9. Exit EV = 146.9\u00d711 = 1,616. Exit Equity = 1,616\u2212280 = 1,336. MoIC = 1,336/400 = 3.34x. IRR: 400\u00d7(1+r)^5=1,336 \u2192 (1+r)^5=3.34 \u2192 1+r=3.34^0.2=1.273 \u2192 IRR=27.3%. Value attribution: EBITDA growth = 46.9 extra EBITDA \u00d7 11x = $516m. Multiple expansion = original 100m \u00d7 (11-10) \u00d7 1 = $100m. Debt paydown = $320m. Total = $936m = $1,336m \u2212 $400m \u2713. Standard PE value creation: ~55% from EBITDA growth, ~11% from multiple expansion, ~34% from leverage paydown \u2014 a balanced, operationally-driven return profile."
+        }
+      ]
+    }
+  ]
+}

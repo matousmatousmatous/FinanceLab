@@ -851,6 +851,86 @@ mark.core-concept {
 .difficulty-btn.selected-ok     { background: var(--accent-glow); border-color: rgba(0,85,165,0.3); color: var(--accent); }
 .difficulty-btn.selected-hard   { background: var(--red-bg); border-color: rgba(185,28,28,0.3); color: var(--red); }
 
+/* ─── Difficulty Picker ─────────────────────────────────────────────────────── */
+
+.diff-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.diff-pick-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.12s, background 0.12s;
+  font-family: var(--font);
+  width: 100%;
+}
+
+.diff-pick-btn:hover {
+  border-color: var(--accent);
+  background: var(--accent-glow);
+}
+
+.diff-pick-btn.diff-done {
+  border-color: var(--green);
+}
+
+.diff-pick-icon {
+  font-size: 20px;
+  width: 28px;
+  text-align: center;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.diff-pick-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.diff-pick-label {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.diff-pick-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.diff-prev-score {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.diff-pick-arrow {
+  color: var(--text-muted);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.fib-section-header td {
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 10px 12px 4px;
+}
+
 /* ─── Example Card ──────────────────────────────────────────────────────────── */
 
 .example-card { display: flex; flex-direction: column; gap: 0; }

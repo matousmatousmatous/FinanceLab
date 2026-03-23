@@ -17,14 +17,15 @@ const state = {
   phase: null,          // 'learn' | 'example' | 'quiz' | 'results'
   session: {
     learnContent: null,
-    exampleContent: null,
     quiz: null,
+    quizAllData: null,    // full chapter quiz JSON with all difficulties
+    quizDifficulty: null, // 'easy' | 'medium' | 'hard'
     answers: {},
     gradingResults: null,
     difficultyRating: null,
     coreConceptsFound: [],
-    chapterText: null,    // extracted PDF text for this session
-    outline: null,        // Pass 1 outline from two-pass lesson generation
+    chapterText: null,
+    outline: null,
   },
   libraryQuiz: {
     questions: null,
@@ -365,18 +366,26 @@ async function resumeSession(ss) {
     }
   }
   state.currentTopic = { id: ss.topicId, title: ss.topicTitle || ss.topicId };
-  state.phase = ss.phase || 'learn';
-  state.session = { learnContent: null, exampleContent: null, quiz: null, answers: ss.answers || {}, gradingResults: null, difficultyRating: null, coreConceptsFound: [], chapterText: null };
+  state.phase = ss.phase === 'example' ? 'quiz' : (ss.phase || 'learn');
+  state.session = {
+    learnContent: null,
+    quiz: null,
+    quizAllData: null,
+    quizDifficulty: null,
+    answers: ss.answers || {},
+    gradingResults: null,
+    difficultyRating: null,
+    coreConceptsFound: [],
+    chapterText: null,
+    outline: null,
+  };
   state.view = 'session';
   render();
 
-  if (ss.phase === 'learn' || !ss.learnCompleted) {
+  if (state.phase === 'learn' || !ss.learnCompleted) {
     startLearnPhase(state.currentTopic);
-  } else if (ss.phase === 'example' || !ss.exampleCompleted) {
-    startExamplePhase(state.currentTopic);
-  } else if (ss.phase === 'quiz') {
-    startQuizPhase(state.currentTopic);
   }
+  // quiz phase: show difficulty picker (no auto-generation)
 }
 
 // ─── ─── ─── HOME VIEW ─── ─── ───
@@ -579,17 +588,18 @@ function attachHomeListeners() {
 
 // ─── ─── ─── SESSION VIEW ─── ─── ───
 
+const SESSION_PHASES = ['learn', 'quiz', 'results'];
+const SESSION_PHASE_LABELS = ['Read', 'Quiz', 'Results'];
+
 function buildStepperHTML(pi) {
-  const phases = ['learn', 'example', 'quiz', 'results'];
-  const phaseLabels = ['Learn', 'Example', 'Quiz', 'Results'];
-  const desktopSteps = phaseLabels.map((label, i) => `
+  const desktopSteps = SESSION_PHASE_LABELS.map((label, i) => `
     ${i > 0 ? '<div class="phase-connector"></div>' : ''}
     <div class="phase-step ${i < pi ? 'completed' : i === pi ? 'active' : 'pending'}">
       <span class="phase-dot"></span>
       <span class="phase-label">${label}</span>
     </div>`).join('');
 
-  const mobileDots = phases.map((_, i) =>
+  const mobileDots = SESSION_PHASES.map((_, i) =>
     `<span class="pdot ${i < pi ? 'done' : i === pi ? 'now' : ''}"></span>`
   ).join('');
 
@@ -597,13 +607,12 @@ function buildStepperHTML(pi) {
     <div class="phase-steps">${desktopSteps}</div>
     <div class="phase-stepper-mobile" id="phase-stepper-mobile">
       <div class="pdots">${mobileDots}</div>
-      <span class="pcurrent">${phaseLabels[pi] || ''}</span>
+      <span class="pcurrent">${SESSION_PHASE_LABELS[pi] || ''}</span>
     </div>`;
 }
 
 function buildSession() {
-  const phases = ['learn', 'example', 'quiz', 'results'];
-  const pi = phases.indexOf(state.phase);
+  const pi = SESSION_PHASES.indexOf(state.phase);
 
   return `
 <div class="session-view">
@@ -629,7 +638,6 @@ function buildSession() {
 function buildPhaseContent() {
   switch (state.phase) {
     case 'learn':   return buildLearn();
-    case 'example': return buildExample();
     case 'quiz':    return buildQuiz();
     case 'results': return buildResults();
     default:        return '<div class="loading-inline">Loading…</div>';
@@ -640,14 +648,12 @@ function refreshSessionMain() {
   const main = document.getElementById('session-main');
   if (main) main.innerHTML = buildPhaseContent();
 
-  const phases = ['learn', 'example', 'quiz', 'results'];
-  const phaseLabels = ['Learn', 'Example', 'Quiz', 'Results'];
-  const pi = phases.indexOf(state.phase);
+  const pi = SESSION_PHASES.indexOf(state.phase);
 
   // Update desktop stepper
   const steps = document.querySelector('.phase-steps');
   if (steps) {
-    steps.innerHTML = phaseLabels.map((label, i) => `
+    steps.innerHTML = SESSION_PHASE_LABELS.map((label, i) => `
       ${i > 0 ? '<div class="phase-connector"></div>' : ''}
       <div class="phase-step ${i < pi ? 'completed' : i === pi ? 'active' : 'pending'}">
         <span class="phase-dot"></span>
@@ -658,10 +664,10 @@ function refreshSessionMain() {
   // Update mobile stepper
   const mobileStepper = document.getElementById('phase-stepper-mobile');
   if (mobileStepper) {
-    const dots = phases.map((_, i) =>
+    const dots = SESSION_PHASES.map((_, i) =>
       `<span class="pdot ${i < pi ? 'done' : i === pi ? 'now' : ''}"></span>`
     ).join('');
-    mobileStepper.innerHTML = `<div class="pdots">${dots}</div><span class="pcurrent">${phaseLabels[pi] || ''}</span>`;
+    mobileStepper.innerHTML = `<div class="pdots">${dots}</div><span class="pcurrent">${SESSION_PHASE_LABELS[pi] || ''}</span>`;
   }
 
   attachSessionListeners();
@@ -680,6 +686,11 @@ function attachSessionListeners() {
 
   document.getElementById('next-phase-btn')?.addEventListener('click', advancePhase);
   document.getElementById('quiz-form')?.addEventListener('submit', handleQuizSubmit);
+
+  // Difficulty picker buttons
+  document.querySelectorAll('.diff-pick-btn').forEach(btn => {
+    btn.addEventListener('click', () => loadQuizForDifficulty(btn.dataset.diff));
+  });
   document.getElementById('finish-btn')?.addEventListener('click', () => {
     state.view = 'home';
     state.phase = null;
@@ -746,54 +757,65 @@ function buildLearn() {
   </div>
 
   <div class="phase-nav">
-    <button class="btn btn-primary btn-lg" id="next-phase-btn">Continue to Examples →</button>
-  </div>
-</div>`;
-}
-
-// ─── Example ──────────────────────────────────────────────────────────────────
-
-function buildExample() {
-  const c = state.session.exampleContent;
-  if (!c) return '<div class="loading-inline">Generating examples…</div>';
-
-  return `
-<div class="phase-content">
-  ${c.examples.map((ex, i) => `
-    <div class="content-card example-card">
-      <div class="example-header">
-        <span class="example-num">Example ${i + 1}</span>
-        <h2 class="example-title">${ex.title}</h2>
-      </div>
-      <div class="example-scenario markdown-body">${marked.parse(ex.scenario)}</div>
-      <div class="example-divider"><span>Solution</span></div>
-      <div class="example-solution markdown-body">${marked.parse(ex.solution)}</div>
-      ${ex.analystInsight ? `
-        <div class="analyst-insight">
-          <span class="insight-icon">◆</span>
-          <div><strong>Analyst Insight:</strong> ${ex.analystInsight}</div>
-        </div>` : ''}
-    </div>`).join('')}
-  <div class="phase-nav">
-    <button class="btn btn-primary btn-lg" id="next-phase-btn">Start Quiz →</button>
+    <button class="btn btn-primary btn-lg" id="next-phase-btn">Choose Quiz Difficulty →</button>
   </div>
 </div>`;
 }
 
 // ─── Quiz ─────────────────────────────────────────────────────────────────────
 
+function buildDifficultyPicker() {
+  const sessionId = state.currentSession?.session?.id;
+  const sessionProgress = state.progress?.sessions?.[sessionId] || {};
+  const done = sessionProgress.difficulties || {};
+
+  const DIFFS = [
+    { key: 'easy',   label: 'Foundations',        desc: 'Core concepts & definitions', icon: '○' },
+    { key: 'medium', label: 'Application',         desc: 'Multi-step problems',         icon: '◑' },
+    { key: 'hard',   label: 'PE / IB Application', desc: 'Interview-level questions',   icon: '●' },
+  ];
+
+  const cards = DIFFS.map(d => {
+    const prev = done[d.key];
+    const scoreHTML = prev
+      ? `<span class="diff-prev-score ${prev.score >= 80 ? 'score-high' : prev.score >= 65 ? 'score-mid' : 'score-low'}">${prev.score}% last attempt</span>`
+      : `<span class="diff-prev-score">Not attempted</span>`;
+    return `
+<button class="diff-pick-btn ${prev ? 'diff-done' : ''}" data-diff="${d.key}">
+  <div class="diff-pick-icon">${d.icon}</div>
+  <div class="diff-pick-info">
+    <div class="diff-pick-label">${d.label}</div>
+    <div class="diff-pick-desc">${d.desc}</div>
+    ${scoreHTML}
+  </div>
+  <div class="diff-pick-arrow">→</div>
+</button>`;
+  }).join('');
+
+  return `
+<div class="phase-content">
+  <div class="content-card">
+    <h2 style="margin-bottom:8px">Choose Quiz Difficulty</h2>
+    <p style="color:var(--text-muted);margin-bottom:24px">You can return and try all three difficulties. Each has 8 questions.</p>
+    <div class="diff-picker">${cards}</div>
+  </div>
+</div>`;
+}
+
 function buildQuiz() {
   const q = state.session.quiz;
-  if (!q) return '<div class="loading-inline">Generating quiz…</div>';
+  if (!q) return buildDifficultyPicker();
+
+  const diffLabel = { easy: 'Foundations', medium: 'Application', hard: 'PE / IB Application' }[state.session.quizDifficulty] || '';
 
   return `
 <div class="phase-content">
   <div class="quiz-header">
-    <h2>Quiz: ${state.currentTopic.title}</h2>
-    <p class="quiz-instructions">Answer all questions. Short answers are graded by AI — write in full sentences.</p>
+    <h2>${state.currentTopic.title}</h2>
+    <p class="quiz-instructions">${diffLabel} · ${q.questions.length} questions · Written answers graded by AI.</p>
   </div>
   <form class="quiz-form" id="quiz-form">
-    ${q.questions.map(buildQuestion).join('')}
+    ${q.questions.map((question, idx) => buildQuestion(question, idx + 1)).join('')}
     <div class="quiz-submit-area">
       <button type="submit" class="btn btn-primary btn-lg">Submit Answers</button>
     </div>
@@ -801,15 +823,17 @@ function buildQuiz() {
 </div>`;
 }
 
-function buildQuestion(q) {
+function buildQuestion(q, displayNum) {
   const savedAnswer = state.session.answers[q.id];
+  const qNum = displayNum !== undefined ? displayNum : q.id;
 
-  if (q.type === 'multiple_choice') {
+  // MCQ (supports both 'multiple_choice' and 'mcq')
+  if (q.type === 'multiple_choice' || q.type === 'mcq') {
     return `
 <div class="question-card" data-qid="${q.id}" data-type="multiple_choice">
   <div class="question-header">
     <span class="question-type-badge">Multiple Choice</span>
-    <span class="question-num">Q${q.id}</span>
+    <span class="question-num">Q${qNum}</span>
   </div>
   <p class="question-text">${q.question}</p>
   <div class="mc-options">
@@ -823,47 +847,56 @@ function buildQuestion(q) {
 </div>`;
   }
 
-  if (q.type === 'short_answer') {
+  // Written / open answer (supports both 'short_answer' and 'open')
+  if (q.type === 'short_answer' || q.type === 'open') {
     return `
 <div class="question-card" data-qid="${q.id}" data-type="short_answer">
   <div class="question-header">
-    <span class="question-type-badge">Short Answer</span>
-    <span class="question-num">Q${q.id}</span>
+    <span class="question-type-badge">Written Answer</span>
+    <span class="question-num">Q${qNum}</span>
   </div>
   <p class="question-text">${q.question}</p>
-  <textarea class="short-answer-input" name="q${q.id}" rows="5"
-    placeholder="Write your answer here…">${savedAnswer || ''}</textarea>
+  <textarea class="short-answer-input" name="q${q.id}" rows="6"
+    placeholder="Write your answer here — full sentences, show your reasoning…">${savedAnswer || ''}</textarea>
 </div>`;
   }
 
+  // Fill-in-blank (supports new direct rows format)
   if (q.type === 'fill_in_blank') {
     const savedCells = savedAnswer || {};
+    const rows = q.rows || (q.table && q.table.rows) || [];
+    const tableTitle = q.statement_title || q.title || '';
+    const questionText = q.question || q.context || '';
+
+    const rowsHTML = rows.map(row => {
+      if (row.is_header) {
+        return `<tr class="fib-section-header"><td colspan="2">${row.label}</td></tr>`;
+      }
+      return `
+<tr class="${row.blank ? 'blank-row' : ''}">
+  <td class="row-label">${row.label}</td>
+  <td class="row-value">
+    ${row.blank
+      ? `<input type="text" class="fib-input"
+          data-qid="${q.id}" data-label="${row.label}"
+          placeholder="?" value="${savedCells[row.label] || ''}" />`
+      : `<span class="given-value">${row.value || ''}</span>`}
+  </td>
+</tr>`;
+    }).join('');
+
     return `
 <div class="question-card fill-in-blank-card" data-qid="${q.id}" data-type="fill_in_blank">
   <div class="question-header">
     <span class="question-type-badge">Fill in the Blank</span>
-    <span class="question-num">Q${q.id}</span>
+    <span class="question-num">Q${qNum}</span>
   </div>
-  <h3 class="fib-title">${q.title}</h3>
-  <p class="question-text">${q.context}</p>
+  <p class="question-text">${questionText}</p>
+  ${tableTitle ? `<h3 class="fib-title">${tableTitle}</h3>` : ''}
   <div class="fib-table-wrapper">
     <table class="financial-table">
-      <thead>
-        <tr>${q.table.headers.map(h => `<th>${h}</th>`).join('')}</tr>
-      </thead>
-      <tbody>
-        ${q.table.rows.map(row => `
-          <tr class="${row.blank ? 'blank-row' : ''}">
-            <td class="row-label">${row.label}</td>
-            <td class="row-value">
-              ${row.blank
-                ? `<input type="text" class="fib-input"
-                    data-qid="${q.id}" data-label="${row.label}"
-                    placeholder="?" value="${savedCells[row.label] || ''}" />`
-                : `<span class="given-value">${row.value}</span>`}
-            </td>
-          </tr>`).join('')}
-      </tbody>
+      <thead><tr><th>Line Item</th><th>Amount</th></tr></thead>
+      <tbody>${rowsHTML}</tbody>
     </table>
   </div>
   <div class="fib-hint">Cells marked with ? require calculation.</div>
@@ -883,10 +916,10 @@ function attachQuizAutoSave() {
     if (!quiz) return;
     const answers = {};
     quiz.questions.forEach(q => {
-      if (q.type === 'multiple_choice') {
+      if (q.type === 'multiple_choice' || q.type === 'mcq') {
         const sel = form.querySelector(`input[name="q${q.id}"]:checked`);
         if (sel) answers[q.id] = parseInt(sel.value, 10);
-      } else if (q.type === 'short_answer') {
+      } else if (q.type === 'short_answer' || q.type === 'open') {
         const ta = form.querySelector(`textarea[name="q${q.id}"]`);
         if (ta) answers[q.id] = ta.value.trim();
       } else if (q.type === 'fill_in_blank') {
@@ -953,9 +986,40 @@ function buildResults() {
     ${r.results.map(res => buildQuestionResult(res, quiz)).join('')}
   </div>
 
+  ${buildRetryDifficultyButtons()}
+
   <div class="phase-nav results-nav">
     <button class="btn btn-primary btn-lg" id="finish-btn">Back to Home →</button>
   </div>
+</div>`;
+}
+
+function buildRetryDifficultyButtons() {
+  const sessionId = state.currentSession?.session?.id;
+  if (!sessionId || state.srsReviewEntry) return '';
+  const sessionProgress = state.progress?.sessions?.[sessionId] || {};
+  const done = sessionProgress.difficulties || {};
+  const current = state.session.quizDifficulty;
+
+  const DIFFS = [
+    { key: 'easy',   label: 'Foundations' },
+    { key: 'medium', label: 'Application' },
+    { key: 'hard',   label: 'PE / IB Application' },
+  ];
+
+  const others = DIFFS.filter(d => d.key !== current);
+  if (!others.length) return '';
+
+  const btns = others.map(d => {
+    const prev = done[d.key];
+    const tag = prev ? `(${prev.score}% last time)` : '(not attempted)';
+    return `<button class="btn btn-ghost diff-pick-btn" data-diff="${d.key}" style="margin:4px">${d.label} ${tag}</button>`;
+  }).join('');
+
+  return `
+<div class="content-card" style="margin-top:16px">
+  <div style="font-weight:600;margin-bottom:8px">Try another difficulty:</div>
+  <div style="display:flex;flex-wrap:wrap;gap:4px">${btns}</div>
 </div>`;
 }
 
@@ -970,6 +1034,8 @@ function buildQuestionResult(result, quiz) {
 
   if (result.type === 'multiple_choice') {
     const ui = state.session.answers[question.id];
+    const correctIdx = result.correct_index !== undefined ? result.correct_index
+      : (question.correct_index !== undefined ? question.correct_index : question.correct);
     answerHTML = `
       <div class="result-answer">
         <div class="user-answer">
@@ -977,7 +1043,7 @@ function buildQuestionResult(result, quiz) {
           ${ui !== undefined ? question.options[ui] : '(no answer)'}
           ${result.correct ? '<span class="correct-mark">✓</span>' : '<span class="wrong-mark">✗</span>'}
         </div>
-        ${!result.correct ? `<div class="correct-answer"><strong>Correct:</strong> ${question.options[question.correct_index]}</div>` : ''}
+        ${!result.correct ? `<div class="correct-answer"><strong>Correct:</strong> ${question.options[correctIdx]}</div>` : ''}
         ${question.explanation ? `<div class="explanation">${question.explanation}</div>` : ''}
       </div>`;
   } else if (result.type === 'short_answer') {
@@ -1003,7 +1069,7 @@ function buildQuestionResult(result, quiz) {
       </div>`;
   }
 
-  const typeLabel = { multiple_choice: 'MC', short_answer: 'SA', fill_in_blank: 'FIB' }[result.type] || '?';
+  const typeLabel = { multiple_choice: 'MC', mcq: 'MC', short_answer: 'SA', open: 'SA', fill_in_blank: 'FIB' }[result.type] || '?';
   const preview = question.question.length > 80 ? question.question.slice(0, 80) + '…' : question.question;
 
   return `
@@ -1033,48 +1099,24 @@ async function startCurriculumSession(chapter, session, curriculum) {
   state.currentSession = { chapter, session, curriculum: curriculum || state.curriculum };
   state.currentTopic = { id: session.id, title: session.title };
   state.phase = 'learn';
-  state.session = { learnContent: null, exampleContent: null, quiz: null, answers: {}, gradingResults: null, difficultyRating: null, coreConceptsFound: [], chapterText: null };
+  state.session = {
+    learnContent: null,
+    quiz: null,
+    quizAllData: null,
+    quizDifficulty: null,
+    answers: {},
+    gradingResults: null,
+    difficultyRating: null,
+    coreConceptsFound: [],
+    chapterText: null,
+    outline: null,
+  };
   state.view = 'session';
   render();
-
-  // Determine which PDF path to use (Brealey vs Harrison)
-  const curriculumId = session.id;
-  const isBrealey = curriculumId.startsWith('bm');
-  const hasPdf = state.config?.supabaseEnabled
-    ? (isBrealey ? (state.config?.brealeyStoragePath || true) : (state.config?.harrisonStoragePath || true))
-    : (isBrealey ? state.config?.brealeyPdfPath : state.config?.pdfPath);
-
-  // Extract PDF text for this session's focus pages
-  let chapterText = null;
-  if (session.focusPages?.pdf) {
-    if (!hasPdf) {
-      toast('No PDF path set — lesson will use general knowledge. Add your PDF path in Settings.', 'warn');
-    } else {
-      setLoading(true, 'Extracting textbook pages…');
-      try {
-        const pages = session.focusPages.pdf;
-        const parts = pages.split(/[–—-]/);
-        const start = parseInt(parts[0].trim(), 10);
-        const end   = parseInt(parts[1]?.trim(), 10) || start;
-        const result = await API.post('/api/extract-pages', { start, end, curriculumId });
-        chapterText = result.text || null;
-        if (!chapterText || chapterText.trim().length < 100) {
-          toast(`PDF extraction returned very little text (${chapterText?.length || 0} chars). Check your PDF path in Settings.`, 'warn');
-          chapterText = null;
-        }
-      } catch (e) {
-        toast('PDF extraction failed: ' + e.message + ' — lesson will use general knowledge.', 'warn');
-        console.warn('PDF extraction failed:', e.message);
-      } finally {
-        setLoading(false);
-      }
-    }
-  }
-  state.session.chapterText = chapterText;
-  startLearnPhase(state.currentTopic, chapterText);
+  startLearnPhase(state.currentTopic);
 }
 
-async function startLearnPhase(topic, chapterText) {
+async function startLearnPhase(topic) {
   setLoading(true, 'Loading lesson…');
   const stageTimer = setTimeout(() => setLoading(true, 'Writing lesson…'), 4000);
   try {
@@ -1083,7 +1125,7 @@ async function startLearnPhase(topic, chapterText) {
     const data = await API.post('/api/learn', {
       topicId: topic.id,
       topicTitle: topic.title,
-      chapterText: chapterText || null,
+      chapterText: null,
       learningObjectives: session?.learningObjectives || null,
       analystNote: session?.analystNote || null,
       spotlightCompany: chapter?.spotlightCompany || null,
@@ -1124,54 +1166,41 @@ async function saveConceptsToLibrary(concepts, source) {
   }
 }
 
-async function startExamplePhase(topic, chapterText) {
-  setLoading(true, 'Generating examples…');
-  try {
-    const data = await API.post('/api/example', {
-      topicId: topic.id,
-      topicTitle: topic.title,
-      chapterText: chapterText || state.session.chapterText || null,
-    });
-    state.session.exampleContent = data;
-  } catch (err) {
-    toast('Failed to generate examples: ' + err.message);
-  } finally {
-    setLoading(false);
+async function advancePhase() {
+  if (state.phase === 'learn') {
+    state.phase = 'quiz';
+    state.session.quiz = null;
+    state.session.quizDifficulty = null;
+    state.session.answers = {};
     refreshSessionMain();
   }
 }
 
-async function startQuizPhase(topic, chapterText, isReview) {
-  setLoading(true, isReview ? 'Generating review quiz…' : 'Generating quiz…');
+async function loadQuizForDifficulty(difficulty) {
+  const chapterId = state.currentSession?.chapter?.id; // e.g. "ch01"
+  if (!chapterId) { toast('Cannot determine chapter for quiz.'); return; }
+
+  setLoading(true, 'Loading quiz…');
   try {
-    const reviewEntry = state.srsReviewEntry;
-    const data = await API.post('/api/quiz/generate', {
-      topicId: topic.id,
-      topicTitle: topic.title,
-      chapterText: chapterText || state.session.chapterText || null,
-      reviewMode: isReview || false,
-      weakSpots: isReview ? (reviewEntry?.weak_spots || []) : undefined,
-      outline: state.session.outline || undefined,
-    });
-    state.session.quiz = data;
+    // Load full chapter quiz data if not yet cached
+    if (!state.session.quizAllData) {
+      const data = await API.get(`/api/quiz/chapter/${chapterId}`);
+      state.session.quizAllData = data;
+    }
+    const quizzes = state.session.quizAllData.quizzes || [];
+    const selected = quizzes.find(q => q.difficulty === difficulty);
+    if (!selected) { toast(`No ${difficulty} quiz found for this chapter.`); return; }
+
+    state.session.quizDifficulty = difficulty;
+    state.session.quiz = { questions: selected.questions, difficulty, label: selected.label };
+    state.session.answers = {};
+    state.session.gradingResults = null;
   } catch (err) {
-    toast('Failed to generate quiz: ' + err.message);
+    toast('Failed to load quiz: ' + err.message);
   } finally {
     setLoading(false);
     refreshSessionMain();
     attachQuizAutoSave();
-  }
-}
-
-async function advancePhase() {
-  if (state.phase === 'learn') {
-    state.phase = 'example';
-    refreshSessionMain();
-    await startExamplePhase(state.currentTopic);
-  } else if (state.phase === 'example') {
-    state.phase = 'quiz';
-    refreshSessionMain();
-    await startQuizPhase(state.currentTopic, null, false);
   }
 }
 
@@ -1181,10 +1210,10 @@ async function handleQuizSubmit(e) {
   const answers = {};
 
   quiz.questions.forEach(q => {
-    if (q.type === 'multiple_choice') {
+    if (q.type === 'multiple_choice' || q.type === 'mcq') {
       const sel = document.querySelector(`input[name="q${q.id}"]:checked`);
       answers[q.id] = sel ? parseInt(sel.value, 10) : undefined;
-    } else if (q.type === 'short_answer') {
+    } else if (q.type === 'short_answer' || q.type === 'open') {
       const ta = document.querySelector(`textarea[name="q${q.id}"]`);
       answers[q.id] = ta ? ta.value.trim() : '';
     } else if (q.type === 'fill_in_blank') {
@@ -1196,8 +1225,8 @@ async function handleQuizSubmit(e) {
   });
 
   const missing = quiz.questions.filter(q => {
-    if (q.type === 'multiple_choice') return answers[q.id] === undefined;
-    if (q.type === 'short_answer') return !answers[q.id];
+    if (q.type === 'multiple_choice' || q.type === 'mcq') return answers[q.id] === undefined;
+    if (q.type === 'short_answer' || q.type === 'open') return !answers[q.id];
     return false;
   });
 
@@ -1222,6 +1251,7 @@ async function handleQuizSubmit(e) {
       answers,
       sessionId: state.currentSession?.session?.id || null,
       chapterId: state.currentSession?.chapter?.id || null,
+      difficulty: state.session.quizDifficulty || null,
     });
     state.session.gradingResults = results;
 
@@ -1264,10 +1294,20 @@ async function startSRSReview(entry) {
   state.currentSession = { chapter, session: sessionDef, curriculum };
   state.currentTopic = { id: sessionDef.id, title: sessionDef.title };
   state.phase = 'quiz';
-  state.session = { learnContent: null, exampleContent: null, quiz: null, answers: {}, gradingResults: null, difficultyRating: null, coreConceptsFound: [], chapterText: null, outline: null };
+  state.session = {
+    learnContent: null,
+    quiz: null,
+    quizAllData: null,
+    quizDifficulty: null,
+    answers: {},
+    gradingResults: null,
+    difficultyRating: null,
+    coreConceptsFound: [],
+    chapterText: null,
+    outline: null,
+  };
   state.view = 'session';
   render();
-  await startQuizPhase(state.currentTopic, null, true);
 }
 
 // ─── ─── ─── SANDBOX VIEW ─── ─── ───
