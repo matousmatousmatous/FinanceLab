@@ -31,7 +31,9 @@
       "Read(//Users/mac/FinanceLab/.claude/worktrees/stoic-davinci/**)",
       "Bash(done)",
       "Bash(python3 -c \":*)",
-      "Bash(brew list:*)"
+      "Bash(brew list:*)",
+      "Bash(ls /Users/mac/FinanceLab/.claude/worktrees/stoic-davinci/*.json)",
+      "Bash(gh pr:*)"
     ]
   }
 }
